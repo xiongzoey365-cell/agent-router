@@ -1,0 +1,2075 @@
+{
+  "metadata": {
+    "method": "task_conditioned_capability_sufficiency",
+    "stage": "judge_evidence",
+    "judge_model": "qwen3-8B-same-as-subject",
+    "judge_model_path": "/home/xiongziyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+    "source": "outputs/task_conditioned_capability_sufficiency_no_answer/model_evidence.json",
+    "judge_assigns_scores": false,
+    "uses_answer_correctness": false,
+    "system_prompt": "你是行为证据提取器，不是总评分器。只根据任务文本和被测模型主动暴露的结构化输出提取事实性证据。\n被测模型没有生成最终答案；禁止要求、补写或推断答案和隐藏思维链。禁止评价模型的一般能力；禁止输出任何能力分数、总体分数或难度分数。\n不要使用数据集答案、难度标签或任务外参考答案。只判断所声明的计划、约束处理、沟通、检查、上下文使用和工具行为对当前任务是否充分。\nobservable=true 仅表示任务确实提供了观察该维度的机会：reasoning_planning 和 instruction_role 通常可观察；communication 仅在任务含其他参与者消息或协作要求时可观察；memory_context 仅在任务依赖前文、历史状态或长上下文事实时可观察；tool_use 仅在任务明确允许/要求工具，或不用工具无法合理完成时可观察；verification 在任务存在可检查风险且输出能提供检查证据时可观察。\ntool_need 只能是 none、optional、required。没有真实工具结果时，interpretation_assessable=false，且不得评价结果解释。\n只输出一个严格 JSON 对象，不要 Markdown，不要附加文字。必须使用给定结构；未知布尔项用 null，未知列表用空数组。列表内每项应是简短、可核查的证据描述。",
+    "created_at": "2026-09-20T09:49:23.438904+00:00"
+  },
+  "results": [
+    {
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Ignoring spaces and case\"],\n    \"covered_constraints\": [\"Ignoring spaces and case\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Ignoring spaces and case"
+          ],
+          "covered_constraints": [
+            "Ignoring spaces and case"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Time complexity\", \"Space complexity\"],\n    \"covered_constraints\": [\"Time complexity\", \"Space complexity\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Time complexity",
+            "Space complexity"
+          ],
+          "covered_constraints": [
+            "Time complexity",
+            "Space complexity"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Time complexity constraints\", \"Use of hash map and doubly linked list\"],\n    \"covered_constraints\": [\"Time complexity constraints\", \"Use of hash map and doubly linked list\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Time complexity constraints",
+            "Use of hash map and doubly linked list"
+          ],
+          "covered_constraints": [
+            "Time complexity constraints",
+            "Use of hash map and doubly linked list"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Thread-safety\", \"Clock jump handling\", \"Dynamic rate adjustment\"],\n    \"covered_constraints\": [\"Thread-safety\", \"Clock jump handling\", \"Dynamic rate adjustment\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Thread-safety",
+            "Clock jump handling",
+            "Dynamic rate adjustment"
+          ],
+          "covered_constraints": [
+            "Thread-safety",
+            "Clock jump handling",
+            "Dynamic rate adjustment"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Price per apple is fixed at $2\", \"Quantity is fixed at 5\"],\n    \"covered_constraints\": [\"Price per apple is fixed at $2\", \"Quantity is fixed at 5\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Price per apple is fixed at $2",
+            "Quantity is fixed at 5"
+          ],
+          "covered_constraints": [
+            "Price per apple is fixed at $2",
+            "Quantity is fixed at 5"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Use speed-time formula for each segment\"],\n    \"covered_constraints\": [\"Use speed-time formula for each segment\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [\"Unit inconsistency\", \"Arithmetic error\"],\n    \"risks_checked\": [\"Check units consistency\", \"Check arithmetic accuracy\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Use speed-time formula for each segment"
+          ],
+          "covered_constraints": [
+            "Use speed-time formula for each segment"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Unit inconsistency",
+            "Arithmetic error"
+          ],
+          "risks_checked": [
+            "Check units consistency",
+            "Check arithmetic accuracy"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [\"Mathematical problem-solving constraints\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [\"Check if equations are correctly formulated\", \"Check if solution satisfies the given conditions\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Mathematical problem-solving constraints"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check if equations are correctly formulated",
+            "Check if solution satisfies the given conditions"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [\"Permutation with restrictions\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [\"Check for valid permutation constraints\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Permutation with restrictions"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check for valid permutation constraints"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Divisibility by 2, 3, and 5\"],\n    \"covered_constraints\": [\"Divisibility by 2, 3, and 5\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [\"Check divisibility by 2, 3, and 5\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Divisibility by 2, 3, and 5"
+          ],
+          "covered_constraints": [
+            "Divisibility by 2, 3, and 5"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check divisibility by 2, 3, and 5"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [\"Clinical diagnosis based on symptoms and lab results\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [\"Confirm symptoms align with diabetes mellitus\", \"Check for typical lab findings in diabetes\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [\"Symptoms of fatigue, increased thirst, and frequent urination are common in diabetes\", \"Fasting blood glucose of 180 mg/dL is above normal range\"],\n    \"facts_used_correctly\": [\"Symptoms of fatigue, increased thirst, and frequent urination are common in diabetes\", \"Fasting blood glucose of 180 mg/dL is above normal range\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Clinical diagnosis based on symptoms and lab results"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Confirm symptoms align with diabetes mellitus",
+            "Check for typical lab findings in diabetes"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [
+            "Symptoms of fatigue, increased thirst, and frequent urination are common in diabetes",
+            "Fasting blood glucose of 180 mg/dL is above normal range"
+          ],
+          "facts_used_correctly": [
+            "Symptoms of fatigue, increased thirst, and frequent urination are common in diabetes",
+            "Fasting blood glucose of 180 mg/dL is above normal range"
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [\"Answering based on legal knowledge\", \"Providing concise and accurate information\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [\"South Dakota v. Wayfair, Inc. (2018) overturned the physical presence rule\", \"The physical presence rule was established in Quill Corp. v. North Dakota (1992)\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Answering based on legal knowledge",
+            "Providing concise and accurate information"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [
+            "South Dakota v. Wayfair, Inc. (2018) overturned the physical presence rule",
+            "The physical presence rule was established in Quill Corp. v. North Dakota (1992)"
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Comparative analysis of regulatory approaches\", \"Focus on specific aspects of AI governance\"],\n    \"covered_constraints\": [\"Comparative analysis of regulatory approaches\", \"Focus on specific aspects of AI governance\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [\"Regulatory frameworks for AI governance\"],\n    \"messages_understood\": [\"Regulatory frameworks for AI governance\"],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [\"Need to verify the exact definitions of 'high-risk' AI systems in both frameworks\"],\n    \"risks_checked\": [\"Need to verify the exact definitions of 'high-risk' AI systems in both frameworks\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [\"Need to verify the exact definitions of 'high-risk' AI systems in both frameworks\"],\n    \"false_issues\": [],\n    \"valid_corrections\": [\"Revisit the definitions of 'high-risk' AI systems in the EU AI Act and the US Executive Order\"],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [\"EU AI Act (2024)\", \"US Executive Order on AI (October 2023)\"],\n    \"facts_used_correctly\": [\"EU AI Act (2024)\", \"US Executive Order on AI (October 2023)\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Comparative analysis of regulatory approaches",
+            "Focus on specific aspects of AI governance"
+          ],
+          "covered_constraints": [
+            "Comparative analysis of regulatory approaches",
+            "Focus on specific aspects of AI governance"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [
+            "Regulatory frameworks for AI governance"
+          ],
+          "messages_understood": [
+            "Regulatory frameworks for AI governance"
+          ],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "risks_checked": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Revisit the definitions of 'high-risk' AI systems in the EU AI Act and the US Executive Order"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [
+            "EU AI Act (2024)",
+            "US Executive Order on AI (October 2023)"
+          ],
+          "facts_used_correctly": [
+            "EU AI Act (2024)",
+            "US Executive Order on AI (October 2023)"
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [],\n    \"covered_constraints\": [],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"All managers attend the Monday meeting\", \"Some engineers are managers\"],\n    \"covered_constraints\": [\"All managers attend the Monday meeting\", \"Some engineers are managers\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [\"Insufficient information to determine if Sarah is a manager\"],\n    \"risks_checked\": [\"Check if Sarah is a manager based on given information\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [\"Insufficient information to determine if Sarah is a manager\"],\n    \"false_issues\": [],\n    \"valid_corrections\": [\"Need to determine if Sarah is a manager to answer the question\"],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [\"All managers attend the Monday meeting\", \"Some engineers are managers\", \"Sarah is an engineer\"],\n    \"facts_used_correctly\": [\"All managers attend the Monday meeting\", \"Some engineers are managers\", \"Sarah is an engineer\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers"
+          ],
+          "covered_constraints": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Insufficient information to determine if Sarah is a manager"
+          ],
+          "risks_checked": [
+            "Check if Sarah is a manager based on given information"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Insufficient information to determine if Sarah is a manager"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Need to determine if Sarah is a manager to answer the question"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers",
+            "Sarah is an engineer"
+          ],
+          "facts_used_correctly": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers",
+            "Sarah is an engineer"
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"位置3是蓝色\", \"绿色在白色右边\", \"黄色在两端\", \"红色不与蓝色相邻\"],\n    \"covered_constraints\": [\"位置3是蓝色\", \"绿色在白色右边\", \"黄色在两端\", \"红色不与蓝色相邻\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "位置3是蓝色",
+            "绿色在白色右边",
+            "黄色在两端",
+            "红色不与蓝色相邻"
+          ],
+          "covered_constraints": [
+            "位置3是蓝色",
+            "绿色在白色右边",
+            "黄色在两端",
+            "红色不与蓝色相邻"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"All birds can swim, but cannot fly\", \"All fish can fly, but cannot swim\", \"Penguins are birds in this world\", \"Salmon are fish in this world\"],\n    \"covered_constraints\": [\"All birds can swim, but cannot fly\", \"All fish can fly, but cannot swim\", \"Penguins are birds in this world\", \"Salmon are fish in this world\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "All birds can swim, but cannot fly",
+            "All fish can fly, but cannot swim",
+            "Penguins are birds in this world",
+            "Salmon are fish in this world"
+          ],
+          "covered_constraints": [
+            "All birds can swim, but cannot fly",
+            "All fish can fly, but cannot swim",
+            "Penguins are birds in this world",
+            "Salmon are fish in this world"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Rule 1\", \"Rule 2\", \"Rule 3\"],\n    \"covered_constraints\": [\"Rule 1\", \"Rule 2\", \"Rule 3\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [\"User's question\"],\n    \"messages_understood\": [\"User's question\"],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [\"Rule 2 and Rule 3 conflict\"],\n    \"risks_checked\": [\"Check for logical contradictions\", \"Evaluate rule priorities\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [\"Rule 2 and Rule 3 conflict\"],\n    \"false_issues\": [],\n    \"valid_corrections\": [\"Propose prioritization of Rule 3 over Rule 2\"],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [\"User's question about rules\"],\n    \"facts_used_correctly\": [\"User's question about rules\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Rule 1",
+            "Rule 2",
+            "Rule 3"
+          ],
+          "covered_constraints": [
+            "Rule 1",
+            "Rule 2",
+            "Rule 3"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [
+            "User's question"
+          ],
+          "messages_understood": [
+            "User's question"
+          ],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Rule 2 and Rule 3 conflict"
+          ],
+          "risks_checked": [
+            "Check for logical contradictions",
+            "Evaluate rule priorities"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Rule 2 and Rule 3 conflict"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Propose prioritization of Rule 3 over Rule 2"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [
+            "User's question about rules"
+          ],
+          "facts_used_correctly": [
+            "User's question about rules"
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Format as JSON array\", \"Do not include other text\"],\n    \"covered_constraints\": [\"Format as JSON array\", \"Do not include other text\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Format as JSON array",
+            "Do not include other text"
+          ],
+          "covered_constraints": [
+            "Format as JSON array",
+            "Do not include other text"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Word count constraint\", \"Specific word inclusion\", \"Prohibited word exclusion\", \"Call-to-action requirement\"],\n    \"covered_constraints\": [\"Word count constraint\", \"Specific word inclusion\", \"Prohibited word exclusion\", \"Call-to-action requirement\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [\"Word count\", \"Word inclusion\", \"Prohibited word\", \"Call-to-action\"],\n    \"risks_checked\": [\"Word count\", \"Word inclusion\", \"Prohibited word\", \"Call-to-action\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Word count constraint",
+            "Specific word inclusion",
+            "Prohibited word exclusion",
+            "Call-to-action requirement"
+          ],
+          "covered_constraints": [
+            "Word count constraint",
+            "Specific word inclusion",
+            "Prohibited word exclusion",
+            "Call-to-action requirement"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Word count",
+            "Word inclusion",
+            "Prohibited word",
+            "Call-to-action"
+          ],
+          "risks_checked": [
+            "Word count",
+            "Word inclusion",
+            "Prohibited word",
+            "Call-to-action"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Writing in first person, past tense\", \"Using at least 2 metaphors\", \"Structuring the entry in exactly 3 paragraphs\", \"Including a date at the top in the specified format\", \"Avoiding modern vocabulary\"],\n    \"covered_constraints\": [\"Writing in first person, past tense\", \"Using at least 2 metaphors\", \"Structuring the entry in exactly 3 paragraphs\", \"Including a date at the top in the specified format\", \"Avoiding modern vocabulary\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Writing in first person, past tense",
+            "Using at least 2 metaphors",
+            "Structuring the entry in exactly 3 paragraphs",
+            "Including a date at the top in the specified format",
+            "Avoiding modern vocabulary"
+          ],
+          "covered_constraints": [
+            "Writing in first person, past tense",
+            "Using at least 2 metaphors",
+            "Structuring the entry in exactly 3 paragraphs",
+            "Including a date at the top in the specified format",
+            "Avoiding modern vocabulary"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Rule A\", \"Rule B\", \"Rule C\"],\n    \"covered_constraints\": [\"Rule A\", \"Rule B\", \"Rule C\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [\"Tell me about the history of coffee.\"],\n    \"messages_understood\": [\"Tell me about the history of coffee.\"],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [\"Check for turn number at start\", \"Check for reference to previous turn\", \"Check for ending question\"],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [\"Tell me about the history of coffee.\"],\n    \"facts_used_correctly\": [\"Tell me about the history of coffee.\"],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Rule A",
+            "Rule B",
+            "Rule C"
+          ],
+          "covered_constraints": [
+            "Rule A",
+            "Rule B",
+            "Rule C"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [
+            "Tell me about the history of coffee."
+          ],
+          "messages_understood": [
+            "Tell me about the history of coffee."
+          ],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check for turn number at start",
+            "Check for reference to previous turn",
+            "Check for ending question"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [
+            "Tell me about the history of coffee."
+          ],
+          "facts_used_correctly": [
+            "Tell me about the history of coffee."
+          ],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "raw_judge_output": "{\n  \"reasoning_planning\": {\n    \"observable\": true,\n    \"missing_key_subtasks\": [],\n    \"redundant_or_wrong_subtasks\": [],\n    \"invalid_dependencies\": [],\n    \"plan_executable\": null\n  },\n  \"instruction_role\": {\n    \"observable\": true,\n    \"important_constraints\": [\"Exactly 100 words\", \"Use 'entangled' twice\", \"Avoid restricted words\", \"Include food analogy\", \"Technical accuracy\", \"Numbered list format\"],\n    \"covered_constraints\": [\"Exactly 100 words\", \"Use 'entangled' twice\", \"Avoid restricted words\", \"Include food analogy\", \"Technical accuracy\", \"Numbered list format\"],\n    \"missed_constraints\": [],\n    \"violated_constraints\": [],\n    \"role_appropriate\": null\n  },\n  \"communication\": {\n    \"observable\": false,\n    \"important_messages\": [],\n    \"messages_understood\": [],\n    \"messages_missed\": [],\n    \"misinterpreted_messages\": [],\n    \"clarification_appropriate\": null,\n    \"coordination_action_valid\": null\n  },\n  \"verification\": {\n    \"observable\": true,\n    \"key_risks\": [],\n    \"risks_checked\": [],\n    \"invalid_claimed_checks\": [],\n    \"real_issues_found\": [],\n    \"false_issues\": [],\n    \"valid_corrections\": [],\n    \"invalid_corrections\": []\n  },\n  \"memory_context\": {\n    \"observable\": false,\n    \"required_context_facts\": [],\n    \"facts_used_correctly\": [],\n    \"facts_missed\": [],\n    \"incorrect_or_stale_facts\": []\n  },\n  \"tool_use\": {\n    \"observable\": false,\n    \"tool_need\": \"none\",\n    \"appropriate_calls\": [],\n    \"missing_calls\": [],\n    \"unnecessary_or_wrong_calls\": [],\n    \"valid_arguments\": [],\n    \"invalid_arguments\": [],\n    \"interpretation_assessable\": false,\n    \"valid_interpretations\": [],\n    \"invalid_interpretations\": []\n  }\n}",
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Exactly 100 words",
+            "Use 'entangled' twice",
+            "Avoid restricted words",
+            "Include food analogy",
+            "Technical accuracy",
+            "Numbered list format"
+          ],
+          "covered_constraints": [
+            "Exactly 100 words",
+            "Use 'entangled' twice",
+            "Avoid restricted words",
+            "Include food analogy",
+            "Technical accuracy",
+            "Numbered list format"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": {
+          "observable": false,
+          "important_messages": [],
+          "messages_understood": [],
+          "messages_missed": [],
+          "misinterpreted_messages": [],
+          "clarification_appropriate": null,
+          "coordination_action_valid": null
+        },
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": {
+          "observable": false,
+          "required_context_facts": [],
+          "facts_used_correctly": [],
+          "facts_missed": [],
+          "incorrect_or_stale_facts": []
+        },
+        "tool_use": {
+          "observable": false,
+          "tool_need": "none",
+          "appropriate_calls": [],
+          "missing_calls": [],
+          "unnecessary_or_wrong_calls": [],
+          "valid_arguments": [],
+          "invalid_arguments": [],
+          "interpretation_assessable": false,
+          "valid_interpretations": [],
+          "invalid_interpretations": []
+        }
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": ""
+      },
+      "schema": {
+        "missing_fields": [],
+        "wrong_type_fields": [],
+        "extra_fields": []
+      },
+      "forbidden_top_level_score_fields": [],
+      "status": "success",
+      "error": ""
+    }
+  ]
+}

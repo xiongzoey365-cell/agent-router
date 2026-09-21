@@ -1,0 +1,2460 @@
+{
+  "metadata": {
+    "method": "task_conditioned_capability_sufficiency",
+    "stage": "deterministic_scoring",
+    "model_source": "outputs/task_conditioned_capability_sufficiency_no_answer/model_evidence.json",
+    "judge_source": "outputs/task_conditioned_capability_sufficiency_no_answer/llm_judge/judge_evidence.json",
+    "rubric": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "aggregation": "unweighted mean over non-null dimensions",
+    "relative_difficulty_formula": "1 - overall_sufficiency",
+    "uses_training": false,
+    "uses_answer_correctness": false,
+    "judge_assigns_scores": false,
+    "created_at": "2026-09-20T09:49:52.176521+00:00"
+  },
+  "results": [
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Ignoring spaces and case"
+          ],
+          "covered_constraints": [
+            "Ignoring spaces and case"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Time complexity",
+            "Space complexity"
+          ],
+          "covered_constraints": [
+            "Time complexity",
+            "Space complexity"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Time complexity constraints",
+            "Use of hash map and doubly linked list"
+          ],
+          "covered_constraints": [
+            "Time complexity constraints",
+            "Use of hash map and doubly linked list"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Thread-safety",
+            "Clock jump handling",
+            "Dynamic rate adjustment"
+          ],
+          "covered_constraints": [
+            "Thread-safety",
+            "Clock jump handling",
+            "Dynamic rate adjustment"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Price per apple is fixed at $2",
+            "Quantity is fixed at 5"
+          ],
+          "covered_constraints": [
+            "Price per apple is fixed at $2",
+            "Quantity is fixed at 5"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Use speed-time formula for each segment"
+          ],
+          "covered_constraints": [
+            "Use speed-time formula for each segment"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Unit inconsistency",
+            "Arithmetic error"
+          ],
+          "risks_checked": [
+            "Check units consistency",
+            "Check arithmetic accuracy"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Mathematical problem-solving constraints"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check if equations are correctly formulated",
+            "Check if solution satisfies the given conditions"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Permutation with restrictions"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check for valid permutation constraints"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Divisibility by 2, 3, and 5"
+          ],
+          "covered_constraints": [
+            "Divisibility by 2, 3, and 5"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check divisibility by 2, 3, and 5"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Clinical diagnosis based on symptoms and lab results"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Confirm symptoms align with diabetes mellitus",
+            "Check for typical lab findings in diabetes"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [
+            "Answering based on legal knowledge",
+            "Providing concise and accurate information"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Comparative analysis of regulatory approaches",
+            "Focus on specific aspects of AI governance"
+          ],
+          "covered_constraints": [
+            "Comparative analysis of regulatory approaches",
+            "Focus on specific aspects of AI governance"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "risks_checked": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Need to verify the exact definitions of 'high-risk' AI systems in both frameworks"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Revisit the definitions of 'high-risk' AI systems in the EU AI Act and the US Executive Order"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [],
+          "covered_constraints": [],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers"
+          ],
+          "covered_constraints": [
+            "All managers attend the Monday meeting",
+            "Some engineers are managers"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Insufficient information to determine if Sarah is a manager"
+          ],
+          "risks_checked": [
+            "Check if Sarah is a manager based on given information"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Insufficient information to determine if Sarah is a manager"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Need to determine if Sarah is a manager to answer the question"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "位置3是蓝色",
+            "绿色在白色右边",
+            "黄色在两端",
+            "红色不与蓝色相邻"
+          ],
+          "covered_constraints": [
+            "位置3是蓝色",
+            "绿色在白色右边",
+            "黄色在两端",
+            "红色不与蓝色相邻"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "All birds can swim, but cannot fly",
+            "All fish can fly, but cannot swim",
+            "Penguins are birds in this world",
+            "Salmon are fish in this world"
+          ],
+          "covered_constraints": [
+            "All birds can swim, but cannot fly",
+            "All fish can fly, but cannot swim",
+            "Penguins are birds in this world",
+            "Salmon are fish in this world"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Rule 1",
+            "Rule 2",
+            "Rule 3"
+          ],
+          "covered_constraints": [
+            "Rule 1",
+            "Rule 2",
+            "Rule 3"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Rule 2 and Rule 3 conflict"
+          ],
+          "risks_checked": [
+            "Check for logical contradictions",
+            "Evaluate rule priorities"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [
+            "Rule 2 and Rule 3 conflict"
+          ],
+          "false_issues": [],
+          "valid_corrections": [
+            "Propose prioritization of Rule 3 over Rule 2"
+          ],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Format as JSON array",
+            "Do not include other text"
+          ],
+          "covered_constraints": [
+            "Format as JSON array",
+            "Do not include other text"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Word count constraint",
+            "Specific word inclusion",
+            "Prohibited word exclusion",
+            "Call-to-action requirement"
+          ],
+          "covered_constraints": [
+            "Word count constraint",
+            "Specific word inclusion",
+            "Prohibited word exclusion",
+            "Call-to-action requirement"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [
+            "Word count",
+            "Word inclusion",
+            "Prohibited word",
+            "Call-to-action"
+          ],
+          "risks_checked": [
+            "Word count",
+            "Word inclusion",
+            "Prohibited word",
+            "Call-to-action"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Writing in first person, past tense",
+            "Using at least 2 metaphors",
+            "Structuring the entry in exactly 3 paragraphs",
+            "Including a date at the top in the specified format",
+            "Avoiding modern vocabulary"
+          ],
+          "covered_constraints": [
+            "Writing in first person, past tense",
+            "Using at least 2 metaphors",
+            "Structuring the entry in exactly 3 paragraphs",
+            "Including a date at the top in the specified format",
+            "Avoiding modern vocabulary"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 1.0,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 1.0,
+      "relative_difficulty": 0.0,
+      "bottleneck": {
+        "dimensions": [
+          "reasoning_planning",
+          "instruction_role",
+          "verification"
+        ],
+        "sufficiency": 1.0
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Rule A",
+            "Rule B",
+            "Rule C"
+          ],
+          "covered_constraints": [
+            "Rule A",
+            "Rule B",
+            "Rule C"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [
+            "Check for turn number at start",
+            "Check for reference to previous turn",
+            "Check for ending question"
+          ],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 1.0,
+          "risk_coverage": 1.0,
+          "check_precision": 1.0,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "model": "qwen3-8B-no-answer",
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "observable_dimensions": [
+        "reasoning_planning",
+        "instruction_role",
+        "verification"
+      ],
+      "capability_sufficiency": {
+        "reasoning_planning": 1.0,
+        "instruction_role": 1.0,
+        "communication": null,
+        "verification": 0.5,
+        "memory_context": null,
+        "tool_use": null
+      },
+      "overall_sufficiency": 0.833333,
+      "relative_difficulty": 0.166667,
+      "bottleneck": {
+        "dimensions": [
+          "verification"
+        ],
+        "sufficiency": 0.5
+      },
+      "evidence": {
+        "reasoning_planning": {
+          "observable": true,
+          "missing_key_subtasks": [],
+          "redundant_or_wrong_subtasks": [],
+          "invalid_dependencies": [],
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "observable": true,
+          "important_constraints": [
+            "Exactly 100 words",
+            "Use 'entangled' twice",
+            "Avoid restricted words",
+            "Include food analogy",
+            "Technical accuracy",
+            "Numbered list format"
+          ],
+          "covered_constraints": [
+            "Exactly 100 words",
+            "Use 'entangled' twice",
+            "Avoid restricted words",
+            "Include food analogy",
+            "Technical accuracy",
+            "Numbered list format"
+          ],
+          "missed_constraints": [],
+          "violated_constraints": [],
+          "role_appropriate": null
+        },
+        "communication": null,
+        "verification": {
+          "observable": true,
+          "key_risks": [],
+          "risks_checked": [],
+          "invalid_claimed_checks": [],
+          "real_issues_found": [],
+          "false_issues": [],
+          "valid_corrections": [],
+          "invalid_corrections": []
+        },
+        "memory_context": null,
+        "tool_use": null
+      },
+      "rule_details": {
+        "reasoning_planning": {
+          "raw_rule_value": 0.9,
+          "missing": 0,
+          "wrong": 0,
+          "invalid_dependencies": 0,
+          "plan_executable": null
+        },
+        "instruction_role": {
+          "raw_rule_value": 1.0,
+          "strict_json": true,
+          "schema_quality": 1.0,
+          "constraint_compliance": 1.0,
+          "role_quality": 1.0
+        },
+        "communication": {
+          "reason": "dimension_not_observable"
+        },
+        "verification": {
+          "raw_rule_value": 0.6,
+          "risk_coverage": 0.5,
+          "check_precision": 0.5,
+          "repair_quality": 1.0
+        },
+        "memory_context": {
+          "reason": "dimension_not_observable"
+        },
+        "tool_use": {
+          "reason": "dimension_not_observable"
+        }
+      },
+      "status": "success",
+      "error": ""
+    }
+  ]
+}

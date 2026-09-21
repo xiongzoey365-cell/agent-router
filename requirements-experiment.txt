@@ -1,0 +1,8 @@
+# 经 RTX 3090 / CUDA 12.1 环境选定的可复现实验依赖。
+# PyTorch 使用官方 cu121 索引单独安装；此处的固定版本用于环境核对。
+torch==2.5.1
+transformers==4.51.3
+accelerate==1.7.0
+numpy==1.26.4
+scikit-learn==1.5.2
+matplotlib==3.9.2

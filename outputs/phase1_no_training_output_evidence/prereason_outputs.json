@@ -1,0 +1,1426 @@
+{
+  "metadata": {
+    "method": "phase1_no_training_output_evidence",
+    "stage": "phase_1",
+    "uses_training": false,
+    "uses_task_specific_rules": false,
+    "uses_hidden_states": false,
+    "uses_self_reported_scores": false,
+    "produces_capability_score": false,
+    "single_trajectory_per_task": true,
+    "system_prompt": "你只进行一次简短的执行前分析，不要回答最终问题。\n不要评价自己的能力、信心、任务难度或是否能够完成任务。\n不要输出能力分数、难度等级或“已经收敛”等自我判断。\n只输出一个 JSON 对象，不要使用 Markdown 代码块，也不要在 JSON 前后添加文字。\n分析内容尽量使用与原任务相同的语言。\n必须包含以下字段；不适用的字段输出空数组：\n{\n  \"goal\": [\"需要达到的目标\"],\n  \"constraints\": [{\"content\": \"必须满足的约束\", \"source\": \"约束来源\"}],\n  \"facts\": [{\"content\": \"当前有效事实\", \"source\": \"信息来源\", \"status\": \"current或stale\"}],\n  \"conflicts\": [{\"content\": \"冲突或必要信息缺失\", \"action\": \"处理方式\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"具体步骤\", \"depends_on\": [], \"expected_result\": \"预期结果\"}],\n  \"verification\": [{\"target\": \"验证对象\", \"method\": \"具体可执行的验证方法\", \"failure_signal\": \"失败判据\"}],\n  \"tools\": [{\"tool\": \"工具名称\", \"reason\": \"使用原因\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"成功判据\"}]\n}",
+    "model_path": "/home/xiongziyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+    "input_file": "测试数据.txt",
+    "created_at": "2026-09-20T01:42:58.918232+00:00",
+    "generation_config": {
+      "enable_thinking": false,
+      "do_sample": false,
+      "max_new_tokens": 384,
+      "seed": 42,
+      "dtype": "bf16",
+      "device": "cuda"
+    },
+    "runtime": {
+      "python": "3.10.20",
+      "torch": "2.6.0+cu118",
+      "transformers": "4.51.3",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 3090"
+    }
+  },
+  "results": [
+    {
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "difficulty_level": 1,
+      "prompt": "Write a Python function that takes an integer as input and returns 'even' if the number is even, 'odd' if the number is odd.",
+      "raw_output": "{\n  \"goal\": [\"Write a Python function that takes an integer as input and returns 'even' if the number is even, 'odd' if the number is odd.\"],\n  \"constraints\": [{\"content\": \"The function must take an integer as input and return a string indicating whether the number is even or odd.\", \"source\": \"Task description\"}],\n  \"facts\": [{\"content\": \"The function needs to determine if a number is even or odd.\", \"source\": \"Task description\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"No conflicts identified.\", \"action\": \"Proceed with implementation\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Define a function that takes an integer as input.\", \"depends_on\": [], \"expected_result\": \"Function is defined with an integer parameter.\"}, {\"id\": \"S2\", \"action\": \"Check if the number is divisible by 2.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Determine if the number is even or odd.\"}, {\"id\": \"S3\", \"action\": \"Return 'even' if the number is divisible by 2, otherwise return 'odd'.\", \"depends_on\": [\"S2\"], \"expected_result\": \"Function returns the correct string based on the input.\"}],\n  \"verification\": [{\"target\": \"Function\", \"method\": \"Test the function with various integers to ensure it returns the correct result.\", \"failure_signal\": \"The function returns an incorrect result for any input.\"}],\n  \"tools\": [{\"tool\": \"Python\", \"reason\": \"Python is the programming language required to implement the function.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"The function runs without errors and returns the correct output for test cases.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Write a Python function that takes an integer as input and returns 'even' if the number is even, 'odd' if the number is odd."
+        ],
+        "constraints": [
+          {
+            "content": "The function must take an integer as input and return a string indicating whether the number is even or odd.",
+            "source": "Task description"
+          }
+        ],
+        "facts": [
+          {
+            "content": "The function needs to determine if a number is even or odd.",
+            "source": "Task description",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "No conflicts identified.",
+            "action": "Proceed with implementation"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Define a function that takes an integer as input.",
+            "depends_on": [],
+            "expected_result": "Function is defined with an integer parameter."
+          },
+          {
+            "id": "S2",
+            "action": "Check if the number is divisible by 2.",
+            "depends_on": [
+              "S1"
+            ],
+            "expected_result": "Determine if the number is even or odd."
+          },
+          {
+            "id": "S3",
+            "action": "Return 'even' if the number is divisible by 2, otherwise return 'odd'.",
+            "depends_on": [
+              "S2"
+            ],
+            "expected_result": "Function returns the correct string based on the input."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Function",
+            "method": "Test the function with various integers to ensure it returns the correct result.",
+            "failure_signal": "The function returns an incorrect result for any input."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Python",
+            "reason": "Python is the programming language required to implement the function.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "The function runs without errors and returns the correct output for test cases."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 326,
+        "generated_tokens": 374,
+        "termination_status": "eos",
+        "elapsed_ms": 17034.61146587506
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "difficulty_level": 2,
+      "prompt": "Write a Python function that takes a string as input and returns True if the string is a palindrome (reads the same forwards and backwards, ignoring spaces and case), False otherwise. Example: 'A man a plan a canal Panama' should return True.",
+      "raw_output": "{\n  \"goal\": [\"Write a Python function that checks if a string is a palindrome, ignoring spaces and case.\"],\n  \"constraints\": [{\"content\": \"The function must ignore spaces and case when checking for palindromes.\", \"source\": \"Problem description\"}],\n  \"facts\": [{\"content\": \"A palindrome reads the same forwards and backwards.\", \"source\": \"Definition\", \"status\": \"current\"}, {\"content\": \"The function should return True for 'A man a plan a canal Panama'.\", \"source\": \"Example\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Need to handle case sensitivity and spaces.\", \"action\": \"Normalize the string by removing spaces and converting to lowercase.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Normalize the input string by removing spaces and converting to lowercase.\", \"depends_on\": [], \"expected_result\": \"A string with only alphanumeric characters in lowercase.\"}, {\"id\": \"S2\", \"action\": \"Check if the normalized string is equal to its reverse.\", \"depends_on\": [\"S1\"], \"expected_result\": \"True if the string is a palindrome, False otherwise.\"}],\n  \"verification\": [{\"target\": \"Function output\", \"method\": \"Test the function with the example input 'A man a plan a canal Panama' and check if it returns True.\", \"failure_signal\": \"The function returns False for the example input.\"}],\n  \"tools\": [{\"tool\": \"Python\", \"reason\": \"To implement the function and perform string manipulation.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"The function returns the expected result for the example input.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Write a Python function that checks if a string is a palindrome, ignoring spaces and case."
+        ],
+        "constraints": [
+          {
+            "content": "The function must ignore spaces and case when checking for palindromes.",
+            "source": "Problem description"
+          }
+        ],
+        "facts": [
+          {
+            "content": "A palindrome reads the same forwards and backwards.",
+            "source": "Definition",
+            "status": "current"
+          },
+          {
+            "content": "The function should return True for 'A man a plan a canal Panama'.",
+            "source": "Example",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "Need to handle case sensitivity and spaces.",
+            "action": "Normalize the string by removing spaces and converting to lowercase."
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Normalize the input string by removing spaces and converting to lowercase.",
+            "depends_on": [],
+            "expected_result": "A string with only alphanumeric characters in lowercase."
+          },
+          {
+            "id": "S2",
+            "action": "Check if the normalized string is equal to its reverse.",
+            "depends_on": [
+              "S1"
+            ],
+            "expected_result": "True if the string is a palindrome, False otherwise."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Function output",
+            "method": "Test the function with the example input 'A man a plan a canal Panama' and check if it returns True.",
+            "failure_signal": "The function returns False for the example input."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Python",
+            "reason": "To implement the function and perform string manipulation.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "The function returns the expected result for the example input."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 346,
+        "generated_tokens": 349,
+        "termination_status": "eos",
+        "elapsed_ms": 13442.548795137554
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "difficulty_level": 3,
+      "prompt": "Implement a function that takes a list of integers and returns the length of the longest strictly increasing subsequence. For example, given [10, 9, 2, 5, 3, 7, 101, 18], the longest increasing subsequence is [2, 3, 7, 101], so the function should return 4.",
+      "raw_output": "{\n  \"goal\": [\"Implement a function that takes a list of integers and returns the length of the longest strictly increasing subsequence.\"],\n  \"constraints\": [{\"content\": \"The function must return the length of the longest strictly increasing subsequence.\", \"source\": \"Problem statement\"}],\n  \"facts\": [{\"content\": \"The example input [10, 9, 2, 5, 3, 7, 101, 18] should return 4.\", \"source\": \"Problem statement\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"No conflicts or missing information.\", \"action\": \"None\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Implement a dynamic programming solution to find the length of the longest increasing subsequence.\", \"depends_on\": [], \"expected_result\": \"The function should return the correct length for the given input and other test cases.\"}],\n  \"verification\": [{\"target\": \"Function implementation\", \"method\": \"Run the function with the example input and check if the output is 4.\", \"failure_signal\": \"The output is not 4.\"}],\n  \"tools\": [{\"tool\": \"Dynamic programming\", \"reason\": \"Dynamic programming is an efficient method for solving the longest increasing subsequence problem.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"The function returns the correct length for the example input.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Implement a function that takes a list of integers and returns the length of the longest strictly increasing subsequence."
+        ],
+        "constraints": [
+          {
+            "content": "The function must return the length of the longest strictly increasing subsequence.",
+            "source": "Problem statement"
+          }
+        ],
+        "facts": [
+          {
+            "content": "The example input [10, 9, 2, 5, 3, 7, 101, 18] should return 4.",
+            "source": "Problem statement",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "No conflicts or missing information.",
+            "action": "None"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Implement a dynamic programming solution to find the length of the longest increasing subsequence.",
+            "depends_on": [],
+            "expected_result": "The function should return the correct length for the given input and other test cases."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Function implementation",
+            "method": "Run the function with the example input and check if the output is 4.",
+            "failure_signal": "The output is not 4."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Dynamic programming",
+            "reason": "Dynamic programming is an efficient method for solving the longest increasing subsequence problem.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "The function returns the correct length for the example input."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 377,
+        "generated_tokens": 298,
+        "termination_status": "eos",
+        "elapsed_ms": 11272.574082016945
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "difficulty_level": 4,
+      "prompt": "Implement an LRU (Least Recently Used) Cache class with the following operations:\n- __init__(self, capacity: int): Initialize the cache with a given capacity.\n- get(self, key: int) -> int: Return the value if the key exists, otherwise return -1.\n- put(self, key: int, value: int) -> None: Insert or update the value. If the cache exceeds capacity, evict the least recently used item.\n\nBoth get and put must run in O(1) average time complexity. You must implement this using a combination of a hash map and a doubly linked list (do not use OrderedDict).",
+      "raw_output": "{\n  \"goal\": [\"Implement an LRU Cache class with get and put operations in O(1) average time complexity using a hash map and a doubly linked list.\"],\n  \"constraints\": [{\"content\": \"Operations must run in O(1) average time complexity.\", \"source\": \"Problem statement\"}],\n  \"facts\": [{\"content\": \"LRU cache requires efficient access and eviction of elements.\", \"source\": \"LRU cache definition\", \"status\": \"current\"}, {\"content\": \"Hash map provides O(1) access to elements.\", \"source\": \"Data structure knowledge\", \"status\": \"current\"}, {\"content\": \"Doubly linked list allows efficient insertion and deletion.\", \"source\": \"Data structure knowledge\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Need to maintain order of usage for eviction.\", \"action\": \"Use a doubly linked list to track the order of elements.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Create a hash map to store key-value pairs.\", \"depends_on\": [], \"expected_result\": \"Hash map is initialized for O(1) access.\"}, {\"id\": \"S2\", \"action\": \"Create a doubly linked list to track the order of elements.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Linked list is initialized for efficient insertion and deletion.\"}, {\"id\": \"S3\", \"action\": \"Implement the get operation to retrieve values from the hash map and update the linked list.\", \"depends_on\": [\"S1\", \"S2\"], \"expected_result\": \"Get operation runs in O(1) time.\"}, {\"id\": \"S4\", \"action\": \"Implement the put operation to insert or update values and manage the linked list.\", \"depends_on\": [\"S1\", \"S2\", \"S3\"],",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Expecting property name enclosed in double quotes (line=6, column=705)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 426,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14459.701051935554
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "difficulty_level": 5,
+      "prompt": "Design and implement a concurrent rate limiter in Python that supports the following requirements:\n1. Token bucket algorithm with configurable rate (tokens per second) and burst capacity.\n2. Thread-safe: multiple threads can call acquire() simultaneously.\n3. Support for both blocking (wait until token available) and non-blocking (return immediately) modes.\n4. Graceful degradation: if the system clock jumps backward (e.g., NTP sync), the limiter should not break.\n5. Include a mechanism to dynamically adjust the rate without losing the current bucket state.\n\nProvide the implementation with type hints, docstrings, and at least 3 unit tests covering edge cases.",
+      "raw_output": "{\n  \"goal\": [\"Design and implement a concurrent rate limiter in Python that supports the specified requirements.\"],\n  \"constraints\": [\n    {\"content\": \"Support token bucket algorithm with configurable rate and burst capacity.\", \"source\": \"Requirement 1\"},\n    {\"content\": \"Ensure thread-safe operations for concurrent access.\", \"source\": \"Requirement 2\"},\n    {\"content\": \"Support both blocking and non-blocking acquire modes.\", \"source\": \"Requirement 3\"},\n    {\"content\": \"Handle system clock jumps without breaking the limiter.\", \"source\": \"Requirement 4\"},\n    {\"content\": \"Allow dynamic rate adjustment without losing bucket state.\", \"source\": \"Requirement 5\"}\n  ],\n  \"facts\": [\n    {\"content\": \"Python's threading module provides thread-safe primitives.\", \"source\": \"Python documentation\", \"status\": \"current\"},\n    {\"content\": \"The token bucket algorithm requires tracking tokens and time.\", \"source\": \"Algorithm knowledge\", \"status\": \"current\"},\n    {\"content\": \"Clock jumps can be handled by tracking the last update time.\", \"source\": \"System clock behavior\", \"status\": \"current\"}\n  ],\n  \"conflicts\": [\n    {\"content\": \"Ensuring thread-safety while dynamically adjusting the rate.\", \"action\": \"Use locks or atomic operations for rate adjustment.\"},\n    {\"content\": \"Handling clock jumps without losing bucket state.\", \"action\": \"Track the last update time and adjust tokens accordingly.\"}\n  ],\n  \"plan\": [\n    {\"id\": \"S1\", \"action\": \"Implement the token bucket algorithm with rate and burst capacity.\", \"depends_on\": [], \"expected_result\": \"A working token bucket with configurable parameters.\"},\n    {\"id\": \"S2\", \"action\": \"Add thread-safety using locks or atomic operations.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Thread-safe operations",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=21, column=124)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 428,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14521.099656820297
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "difficulty_level": 1,
+      "prompt": "A store sells apples for $2 each. If Mary buys 5 apples, how much does she spend in total?",
+      "raw_output": "{\n  \"goal\": [\"Calculate the total amount Mary spends on 5 apples.\"],\n  \"constraints\": [{\"content\": \"Each apple costs $2.\", \"source\": \"Problem statement\"}],\n  \"facts\": [{\"content\": \"Mary buys 5 apples.\", \"source\": \"Problem statement\", \"status\": \"current\"}],\n  \"conflicts\": [],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Multiply the cost of one apple by the number of apples Mary buys.\", \"depends_on\": [], \"expected_result\": \"Total cost of 5 apples.\"}],\n  \"verification\": [{\"target\": \"Total cost of 5 apples\", \"method\": \"Check the multiplication of 5 and 2.\", \"failure_signal\": \"Result is not 10.\"}],\n  \"tools\": [{\"tool\": \"Basic arithmetic\", \"reason\": \"To calculate the total cost.\", \"arguments\": {\"cost_per_apple\": 2, \"number_of_apples\": 5}, \"argument_sources\": {\"cost_per_apple\": \"Problem statement\", \"number_of_apples\": \"Problem statement\"}, \"success_check\": \"Result is 10.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Calculate the total amount Mary spends on 5 apples."
+        ],
+        "constraints": [
+          {
+            "content": "Each apple costs $2.",
+            "source": "Problem statement"
+          }
+        ],
+        "facts": [
+          {
+            "content": "Mary buys 5 apples.",
+            "source": "Problem statement",
+            "status": "current"
+          }
+        ],
+        "conflicts": [],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Multiply the cost of one apple by the number of apples Mary buys.",
+            "depends_on": [],
+            "expected_result": "Total cost of 5 apples."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Total cost of 5 apples",
+            "method": "Check the multiplication of 5 and 2.",
+            "failure_signal": "Result is not 10."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Basic arithmetic",
+            "reason": "To calculate the total cost.",
+            "arguments": {
+              "cost_per_apple": 2,
+              "number_of_apples": 5
+            },
+            "argument_sources": {
+              "cost_per_apple": "Problem statement",
+              "number_of_apples": "Problem statement"
+            },
+            "success_check": "Result is 10."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 320,
+        "generated_tokens": 243,
+        "termination_status": "eos",
+        "elapsed_ms": 9147.296310868114
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "difficulty_level": 2,
+      "prompt": "A train travels at 60 km/h for 2.5 hours, then increases its speed to 80 km/h for another 1.5 hours. What is the total distance traveled by the train?",
+      "raw_output": "{\n  \"goal\": [\"Calculate the total distance traveled by the train.\"],\n  \"constraints\": [{\"content\": \"The train's speed changes at specific intervals.\", \"source\": \"Problem statement\"}],\n  \"facts\": [{\"content\": \"The train travels at 60 km/h for 2.5 hours.\", \"source\": \"Problem statement\", \"status\": \"current\"}, {\"content\": \"The train then increases its speed to 80 km/h for another 1.5 hours.\", \"source\": \"Problem statement\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"No conflicting information is present.\", \"action\": \"No action required\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Calculate the distance traveled during the first interval.\", \"depends_on\": [], \"expected_result\": \"Distance for the first interval.\"}, {\"id\": \"S2\", \"action\": \"Calculate the distance traveled during the second interval.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Distance for the second interval.\"}, {\"id\": \"S3\", \"action\": \"Add the distances from both intervals to get the total distance.\", \"depends_on\": [\"S2\"], \"expected_result\": \"Total distance traveled.\"}],\n  \"verification\": [{\"target\": \"Total distance calculation\", \"method\": \"Recheck the multiplication and addition steps.\", \"failure_signal\": \"Incorrect total distance.\"}],\n  \"tools\": [{\"tool\": \"Basic arithmetic operations\", \"reason\": \"To calculate distance using speed and time.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"Correct calculation of distance for each interval and total distance.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Calculate the total distance traveled by the train."
+        ],
+        "constraints": [
+          {
+            "content": "The train's speed changes at specific intervals.",
+            "source": "Problem statement"
+          }
+        ],
+        "facts": [
+          {
+            "content": "The train travels at 60 km/h for 2.5 hours.",
+            "source": "Problem statement",
+            "status": "current"
+          },
+          {
+            "content": "The train then increases its speed to 80 km/h for another 1.5 hours.",
+            "source": "Problem statement",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "No conflicting information is present.",
+            "action": "No action required"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Calculate the distance traveled during the first interval.",
+            "depends_on": [],
+            "expected_result": "Distance for the first interval."
+          },
+          {
+            "id": "S2",
+            "action": "Calculate the distance traveled during the second interval.",
+            "depends_on": [
+              "S1"
+            ],
+            "expected_result": "Distance for the second interval."
+          },
+          {
+            "id": "S3",
+            "action": "Add the distances from both intervals to get the total distance.",
+            "depends_on": [
+              "S2"
+            ],
+            "expected_result": "Total distance traveled."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Total distance calculation",
+            "method": "Recheck the multiplication and addition steps.",
+            "failure_signal": "Incorrect total distance."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Basic arithmetic operations",
+            "reason": "To calculate distance using speed and time.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "Correct calculation of distance for each interval and total distance."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 340,
+        "generated_tokens": 348,
+        "termination_status": "eos",
+        "elapsed_ms": 13080.469805048779
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "difficulty_level": 3,
+      "prompt": "A rectangle has a perimeter of 28 cm. If the length is 3 cm more than twice the width, find the area of the rectangle.",
+      "raw_output": "{\n  \"goal\": [\"Find the area of the rectangle.\"],\n  \"constraints\": [{\"content\": \"The perimeter of the rectangle is 28 cm.\", \"source\": \"Problem statement\"}, {\"content\": \"The length is 3 cm more than twice the width.\", \"source\": \"Problem statement\"}],\n  \"facts\": [{\"content\": \"Perimeter of a rectangle is calculated as 2*(length + width).\", \"source\": \"Mathematical formula\", \"status\": \"current\"}, {\"content\": \"Area of a rectangle is calculated as length * width.\", \"source\": \"Mathematical formula\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"No conflicts or missing information.\", \"action\": \"None\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Set up equations based on the given information.\", \"depends_on\": [], \"expected_result\": \"Two equations representing the perimeter and the relationship between length and width.\"}, {\"id\": \"S2\", \"action\": \"Solve the equations to find the length and width.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Values for the length and width of the rectangle.\"}, {\"id\": \"S3\", \"action\": \"Calculate the area using the length and width.\", \"depends_on\": [\"S2\"], \"expected_result\": \"The area of the rectangle.\"}],\n  \"verification\": [{\"target\": \"Equations for perimeter and length-width relationship.\", \"method\": \"Substitute the values of length and width into the equations to check if they satisfy the given conditions.\", \"failure_signal\": \"The equations do not hold true.\"}, {\"target\": \"Area calculation.\", \"method\": \"Multiply the length and width to verify the area.\", \"failure_signal\": \"The calculated area does not match the expected result.\"}],\n  \"tools",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=8, column=3)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 327,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14500.7973711472
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "difficulty_level": 4,
+      "prompt": "In how many ways can you arrange the letters of the word 'MISSISSIPPI' such that no two 'S' letters are adjacent?",
+      "raw_output": "{\n  \"goal\": [\"Calculate the number of ways to arrange the letters of the word 'MISSISSIPPI' such that no two 'S' letters are adjacent.\"],\n  \"constraints\": [{\"content\": \"The arrangement must ensure that no two 'S' letters are adjacent.\", \"source\": \"Problem requirement\"}],\n  \"facts\": [{\"content\": \"The word 'MISSISSIPPI' has 11 letters with 4 'S's, 4 'I's, 2 'P's, and 1 'M'.\", \"source\": \"Given word\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"The presence of multiple identical letters may affect the calculation of unique arrangements.\", \"action\": \"Account for repeated letters in the calculation.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Calculate the total number of arrangements of the letters in 'MISSISSIPPI' without any restrictions.\", \"depends_on\": [], \"expected_result\": \"Total arrangements without restrictions.\"}, {\"id\": \"S2\", \"action\": \"Calculate the number of arrangements where no two 'S' letters are adjacent.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Arrangements with no two 'S's adjacent.\"}],\n  \"verification\": [{\"target\": \"Total arrangements with no two 'S's adjacent\", \"method\": \"Use the inclusion-exclusion principle to subtract invalid arrangements from the total.\", \"failure_signal\": \"Incorrect calculation of arrangements or invalid use of the inclusion-exclusion principle.\"}],\n  \"tools\": [{\"tool\": \"Combinatorics\", \"reason\": \"To calculate the number of valid arrangements of letters with constraints.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"Correct application of combinatorial principles to derive the result.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Calculate the number of ways to arrange the letters of the word 'MISSISSIPPI' such that no two 'S' letters are adjacent."
+        ],
+        "constraints": [
+          {
+            "content": "The arrangement must ensure that no two 'S' letters are adjacent.",
+            "source": "Problem requirement"
+          }
+        ],
+        "facts": [
+          {
+            "content": "The word 'MISSISSIPPI' has 11 letters with 4 'S's, 4 'I's, 2 'P's, and 1 'M'.",
+            "source": "Given word",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "The presence of multiple identical letters may affect the calculation of unique arrangements.",
+            "action": "Account for repeated letters in the calculation."
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Calculate the total number of arrangements of the letters in 'MISSISSIPPI' without any restrictions.",
+            "depends_on": [],
+            "expected_result": "Total arrangements without restrictions."
+          },
+          {
+            "id": "S2",
+            "action": "Calculate the number of arrangements where no two 'S' letters are adjacent.",
+            "depends_on": [
+              "S1"
+            ],
+            "expected_result": "Arrangements with no two 'S's adjacent."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Total arrangements with no two 'S's adjacent",
+            "method": "Use the inclusion-exclusion principle to subtract invalid arrangements from the total.",
+            "failure_signal": "Incorrect calculation of arrangements or invalid use of the inclusion-exclusion principle."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Combinatorics",
+            "reason": "To calculate the number of valid arrangements of letters with constraints.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "Correct application of combinatorial principles to derive the result."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 325,
+        "generated_tokens": 379,
+        "termination_status": "eos",
+        "elapsed_ms": 14227.873524883762
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "difficulty_level": 5,
+      "prompt": "Prove that for any positive integer n, the number n⁵ - n is divisible by 30.",
+      "raw_output": "{\n  \"goal\": [\"Prove that for any positive integer n, the number n⁵ - n is divisible by 30.\"],\n  \"constraints\": [{\"content\": \"The proof must be valid for all positive integers n.\", \"source\": \"Mathematical requirement\"}],\n  \"facts\": [{\"content\": \"30 = 2 * 3 * 5\", \"source\": \"Prime factorization of 30\", \"status\": \"current\"}, {\"content\": \"n⁵ - n can be factored as n(n⁴ - 1) = n(n² - 1)(n² + 1) = n(n - 1)(n + 1)(n² + 1)\", \"source\": \"Algebraic manipulation\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"The factorization of n⁵ - n may not directly show divisibility by 30.\", \"action\": \"Use modular arithmetic and properties of divisibility\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Show that n⁵ - n is divisible by 2, 3, and 5 separately.\", \"depends_on\": [], \"expected_result\": \"Establish divisibility by 2, 3, and 5 for all n.\"}],\n  \"verification\": [{\"target\": \"Divisibility by 2, 3, and 5\", \"method\": \"Check divisibility for small values of n and use modular arithmetic.\", \"failure_signal\": \"At least one of the divisibility checks fails for some n.\"}],\n  \"tools\": [{\"tool\": \"Modular arithmetic\", \"reason\": \"To check divisibility by 2, 3, and 5.\", \"arguments\": {\"modulus\": \"2, 3, 5\"}, \"argument_sources\": {\"",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=8, column=153)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 319,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14448.566848877817
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 1,
+      "prompt": "What is the capital city of France?",
+      "raw_output": "{\n  \"goal\": [\"Identify the capital city of France.\"],\n  \"constraints\": [{\"content\": \"The answer must be the official capital city recognized by the French government.\", \"source\": \"Geographical knowledge\"}],\n  \"facts\": [{\"content\": \"France is a country in Europe.\", \"source\": \"General knowledge\", \"status\": \"current\"}, {\"content\": \"Paris is widely known as the capital of France.\", \"source\": \"Common knowledge\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"There might be confusion with other cities like Lyon or Marseille.\", \"action\": \"Verify against official sources.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Consult an official source or encyclopedia for the capital of France.\", \"depends_on\": [], \"expected_result\": \"The capital city of France is confirmed.\"}],\n  \"verification\": [{\"target\": \"Official source or encyclopedia\", \"method\": \"Check the entry for France's capital city.\", \"failure_signal\": \"The source does not provide a clear answer.\"}],\n  \"tools\": [{\"tool\": \"Encyclopedia\", \"reason\": \"To confirm the capital city of France.\", \"arguments\": {\"query\": \"capital of France\"}, \"argument_sources\": {\"source\": \"General knowledge\"}, \"success_check\": \"The result indicates Paris as the capital.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Identify the capital city of France."
+        ],
+        "constraints": [
+          {
+            "content": "The answer must be the official capital city recognized by the French government.",
+            "source": "Geographical knowledge"
+          }
+        ],
+        "facts": [
+          {
+            "content": "France is a country in Europe.",
+            "source": "General knowledge",
+            "status": "current"
+          },
+          {
+            "content": "Paris is widely known as the capital of France.",
+            "source": "Common knowledge",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "There might be confusion with other cities like Lyon or Marseille.",
+            "action": "Verify against official sources."
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Consult an official source or encyclopedia for the capital of France.",
+            "depends_on": [],
+            "expected_result": "The capital city of France is confirmed."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Official source or encyclopedia",
+            "method": "Check the entry for France's capital city.",
+            "failure_signal": "The source does not provide a clear answer."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Encyclopedia",
+            "reason": "To confirm the capital city of France.",
+            "arguments": {
+              "query": "capital of France"
+            },
+            "argument_sources": {
+              "source": "General knowledge"
+            },
+            "success_check": "The result indicates Paris as the capital."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 304,
+        "generated_tokens": 281,
+        "termination_status": "eos",
+        "elapsed_ms": 10694.378345040604
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 2,
+      "prompt": "Which organelle is responsible for producing ATP through cellular respiration in eukaryotic cells?\nA) Ribosome\nB) Golgi apparatus\nC) Mitochondria\nD) Endoplasmic reticulum",
+      "raw_output": "{\n  \"goal\": [\"确定负责通过细胞呼吸产生ATP的细胞器\"],\n  \"constraints\": [{\"content\": \"必须选择一个正确的细胞器\", \"source\": \"题目要求\"}],\n  \"facts\": [{\"content\": \"细胞呼吸主要发生在细胞的线粒体中\", \"source\": \"生物学知识\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"选项中可能存在多个相关细胞器\", \"action\": \"根据生物学知识排除无关选项\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"回顾细胞呼吸的生理过程\", \"depends_on\": [], \"expected_result\": \"确认线粒体是主要场所\"}],\n  \"verification\": [{\"target\": \"线粒体\", \"method\": \"查阅生物学资料\", \"failure_signal\": \"未找到明确证据\"}],\n  \"tools\": [{\"tool\": \"生物学教科书\", \"reason\": \"提供细胞呼吸相关知识\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"确认线粒体是ATP产生的主要场所\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "确定负责通过细胞呼吸产生ATP的细胞器"
+        ],
+        "constraints": [
+          {
+            "content": "必须选择一个正确的细胞器",
+            "source": "题目要求"
+          }
+        ],
+        "facts": [
+          {
+            "content": "细胞呼吸主要发生在细胞的线粒体中",
+            "source": "生物学知识",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "选项中可能存在多个相关细胞器",
+            "action": "根据生物学知识排除无关选项"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "回顾细胞呼吸的生理过程",
+            "depends_on": [],
+            "expected_result": "确认线粒体是主要场所"
+          }
+        ],
+        "verification": [
+          {
+            "target": "线粒体",
+            "method": "查阅生物学资料",
+            "failure_signal": "未找到明确证据"
+          }
+        ],
+        "tools": [
+          {
+            "tool": "生物学教科书",
+            "reason": "提供细胞呼吸相关知识",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "确认线粒体是ATP产生的主要场所"
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 342,
+        "generated_tokens": 226,
+        "termination_status": "eos",
+        "elapsed_ms": 8617.034151917323
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 3,
+      "prompt": "A 45-year-old male presents with persistent fatigue, increased thirst, and frequent urination for 2 weeks. His BMI is 32. Fasting blood glucose is 180 mg/dL. Which of the following is the most likely diagnosis, and what is the first-line pharmacological treatment?\nA) Type 1 Diabetes; Insulin therapy\nB) Type 2 Diabetes; Metformin\nC) Diabetes Insipidus; Desmopressin\nD) Cushing's Syndrome; Cortisol inhibitors",
+      "raw_output": "{\n  \"goal\": [\"确定最可能的诊断和首选药物治疗\"],\n  \"constraints\": [{\"content\": \"必须基于提供的临床信息进行诊断\", \"source\": \"临床指南\"}],\n  \"facts\": [{\"content\": \"患者有持续疲劳、口渴和尿频症状\", \"source\": \"患者病史\", \"status\": \"current\"}, {\"content\": \"BMI为32\", \"source\": \"体检记录\", \"status\": \"current\"}, {\"content\": \"空腹血糖为180 mg/dL\", \"source\": \"实验室检查\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"需要区分糖尿病类型和非糖尿病相关症状\", \"action\": \"进一步检查以确认诊断\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"评估患者是否符合糖尿病诊断标准\", \"depends_on\": [], \"expected_result\": \"确认是否为糖尿病\"}],\n  \"verification\": [{\"target\": \"诊断结果\", \"method\": \"检查空腹血糖水平和症状是否符合糖尿病标准\", \"failure_signal\": \"无法确认诊断\"}],\n  \"tools\": [{\"tool\": \"血糖检测\", \"reason\": \"确认血糖水平是否异常\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"血糖水平高于正常范围\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "确定最可能的诊断和首选药物治疗"
+        ],
+        "constraints": [
+          {
+            "content": "必须基于提供的临床信息进行诊断",
+            "source": "临床指南"
+          }
+        ],
+        "facts": [
+          {
+            "content": "患者有持续疲劳、口渴和尿频症状",
+            "source": "患者病史",
+            "status": "current"
+          },
+          {
+            "content": "BMI为32",
+            "source": "体检记录",
+            "status": "current"
+          },
+          {
+            "content": "空腹血糖为180 mg/dL",
+            "source": "实验室检查",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "需要区分糖尿病类型和非糖尿病相关症状",
+            "action": "进一步检查以确认诊断"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "评估患者是否符合糖尿病诊断标准",
+            "depends_on": [],
+            "expected_result": "确认是否为糖尿病"
+          }
+        ],
+        "verification": [
+          {
+            "target": "诊断结果",
+            "method": "检查空腹血糖水平和症状是否符合糖尿病标准",
+            "failure_signal": "无法确认诊断"
+          }
+        ],
+        "tools": [
+          {
+            "tool": "血糖检测",
+            "reason": "确认血糖水平是否异常",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "血糖水平高于正常范围"
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 406,
+        "generated_tokens": 275,
+        "termination_status": "eos",
+        "elapsed_ms": 12368.74414794147
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 4,
+      "prompt": "In the 2018 US Supreme Court case South Dakota v. Wayfair, Inc., the Court overturned the physical presence rule established in which 1992 precedent? What was the key constitutional principle that was reinterpreted, and how did this decision specifically impact small e-commerce businesses selling across state lines?",
+      "raw_output": "{\n  \"goal\": [\"确定2018年美国最高法院在South Dakota v. Wayfair, Inc.案中推翻的1992年先例，以及该案重新解释的关键宪法原则，以及该决定对跨州销售的小型电子商务企业的影响\"],\n  \"constraints\": [{\"content\": \"必须准确引用法律案例和宪法原则\", \"source\": \"法律研究要求\"}],\n  \"facts\": [{\"content\": \"South Dakota v. Wayfair, Inc.案推翻了1992年的Quill Corp. v. North Dakota案\", \"source\": \"美国最高法院判决\", \"status\": \"current\"}, {\"content\": \"该案重新解释了宪法第10修正案的商业活动条款\", \"source\": \"美国最高法院判决\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"需要确认Quill Corp. v. North Dakota案是否为被推翻的先例\", \"action\": \"查阅相关法律文献以确认\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"查阅South Dakota v. Wayfair, Inc.案的判决书以确定被推翻的先例\", \"depends_on\": [], \"expected_result\": \"确定被推翻的1992年先例名称\"}, {\"id\": \"S2\", \"action\": \"分析判决书以确定重新解释的宪法原则\", \"depends_on\": [\"S1\"], \"expected_result\": \"确定关键宪法原则\"}, {\"id\": \"S3\", \"action\": \"研究该决定对小型电子商务企业的影响\", \"depends_on\": [\"S2\"], \"expected_result\": \"总结对小型电子商务企业的影响\"}],\n  \"verification\": [{\"target\": \"被推翻的1992年先例\", \"method\": \"查阅美国最高法院判决",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=7, column=56)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 360,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 18715.67738102749
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 5,
+      "prompt": "Compare and contrast the regulatory approaches to AI governance in the EU AI Act (2024) and the US Executive Order on AI (October 2023). Specifically analyze: (1) How each framework defines 'high-risk' AI systems, (2) The enforcement mechanisms and penalties, (3) The potential conflicts between these two frameworks for a multinational company deploying AI systems in both jurisdictions. Provide a concrete example of a hypothetical AI product that would face different compliance requirements under each framework.",
+      "raw_output": "{\n  \"goal\": [\"Compare and contrast the regulatory approaches to AI governance in the EU AI Act (2024) and the US Executive Order on AI (October 2023).\"],\n  \"constraints\": [{\"content\": \"Provide a concrete example of a hypothetical AI product that would face different compliance requirements under each framework.\", \"source\": \"Task specification\"}],\n  \"facts\": [{\"content\": \"The EU AI Act (2024) defines 'high-risk' AI systems as those that pose significant risks to safety, freedom, and fundamental rights.\", \"source\": \"EU AI Act (2024)\", \"status\": \"current\"}, {\"content\": \"The US Executive Order on AI (October 2023) focuses on promoting innovation and ensuring responsible AI development without explicitly defining 'high-risk' systems.\", \"source\": \"US Executive Order on AI (October 2023)\", \"status\": \"current\"}, {\"content\": \"Enforcement mechanisms in the EU AI Act include fines and obligations for compliance with specific standards.\", \"source\": \"EU AI Act (2024)\", \"status\": \"current\"}, {\"content\": \"The US Executive Order on AI emphasizes voluntary compliance and collaboration with industry stakeholders.\", \"source\": \"US Executive Order on AI (October 2023)\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Potential conflicts between the EU AI Act and the US Executive Order for multinational companies deploying AI systems in both jurisdictions.\", \"action\": \"Analyze the differences in regulatory requirements and compliance strategies.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Identify the definitions of 'high-risk' AI systems in the EU AI Act and the US Executive Order.\", \"depends_on\": [], \"expected_result\": \"Understand the criteria for classifying AI systems as high",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=6, column=171)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 397,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 16598.559900885448
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 1,
+      "prompt": "Complete the analogy: Dog is to Puppy as Cat is to ___?\nA) Feline\nB) Kitten\nC) Whisker\nD) Meow",
+      "raw_output": "{\n  \"goal\": [\"Complete the analogy: Dog is to Puppy as Cat is to ___?\"],\n  \"constraints\": [{\"content\": \"Choose the correct answer from the given options.\", \"source\": \"Task instruction\"}],\n  \"facts\": [{\"content\": \"Dog and Puppy are related as a parent and offspring.\", \"source\": \"Common knowledge\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"The analogy requires identifying the correct corresponding term for 'Cat'.\", \"action\": \"Analyze the relationship between 'Dog' and 'Puppy' to determine the correct term for 'Cat'.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Identify the relationship between 'Dog' and 'Puppy'.\", \"depends_on\": [], \"expected_result\": \"Recognize that 'Puppy' is the offspring of a 'Dog'.\"}],\n  \"verification\": [{\"target\": \"The correct answer\", \"method\": \"Compare the relationship between 'Cat' and the selected option with the 'Dog' and 'Puppy' relationship.\", \"failure_signal\": \"The selected option does not match the relationship.\"}],\n  \"tools\": [{\"tool\": \"Reasoning\", \"reason\": \"To determine the correct analogy based on the relationship between 'Dog' and 'Puppy'.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"The selected option reflects the same relationship as 'Dog' to 'Puppy'.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Complete the analogy: Dog is to Puppy as Cat is to ___?"
+        ],
+        "constraints": [
+          {
+            "content": "Choose the correct answer from the given options.",
+            "source": "Task instruction"
+          }
+        ],
+        "facts": [
+          {
+            "content": "Dog and Puppy are related as a parent and offspring.",
+            "source": "Common knowledge",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "The analogy requires identifying the correct corresponding term for 'Cat'.",
+            "action": "Analyze the relationship between 'Dog' and 'Puppy' to determine the correct term for 'Cat'."
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Identify the relationship between 'Dog' and 'Puppy'.",
+            "depends_on": [],
+            "expected_result": "Recognize that 'Puppy' is the offspring of a 'Dog'."
+          }
+        ],
+        "verification": [
+          {
+            "target": "The correct answer",
+            "method": "Compare the relationship between 'Cat' and the selected option with the 'Dog' and 'Puppy' relationship.",
+            "failure_signal": "The selected option does not match the relationship."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Reasoning",
+            "reason": "To determine the correct analogy based on the relationship between 'Dog' and 'Puppy'.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "The selected option reflects the same relationship as 'Dog' to 'Puppy'."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 330,
+        "generated_tokens": 307,
+        "termination_status": "eos",
+        "elapsed_ms": 11772.186015965417
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 2,
+      "prompt": "All managers attend the Monday meeting. Some engineers are managers. Sarah is an engineer. Does Sarah definitely attend the Monday meeting?\nA) Yes, definitely\nB) No, definitely not\nC) Cannot be determined",
+      "raw_output": "{\n  \"goal\": [\"Determine if Sarah definitely attends the Monday meeting\"],\n  \"constraints\": [{\"content\": \"All managers attend the Monday meeting\", \"source\": \"Given statement\"}],\n  \"facts\": [{\"content\": \"Some engineers are managers\", \"source\": \"Given statement\", \"status\": \"current\"}, {\"content\": \"Sarah is an engineer\", \"source\": \"Given statement\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Not all engineers are managers\", \"action\": \"Assume only some engineers are managers\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Check if Sarah is a manager\", \"depends_on\": [], \"expected_result\": \"Determine if Sarah is a manager\"}],\n  \"verification\": [{\"target\": \"Sarah's status as a manager\", \"method\": \"Logical deduction from given facts\", \"failure_signal\": \"Inconsistent or missing information\"}],\n  \"tools\": [{\"tool\": \"Logical deduction\", \"reason\": \"To determine Sarah's attendance based on given facts\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"Clear conclusion on Sarah's attendance\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Determine if Sarah definitely attends the Monday meeting"
+        ],
+        "constraints": [
+          {
+            "content": "All managers attend the Monday meeting",
+            "source": "Given statement"
+          }
+        ],
+        "facts": [
+          {
+            "content": "Some engineers are managers",
+            "source": "Given statement",
+            "status": "current"
+          },
+          {
+            "content": "Sarah is an engineer",
+            "source": "Given statement",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "Not all engineers are managers",
+            "action": "Assume only some engineers are managers"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Check if Sarah is a manager",
+            "depends_on": [],
+            "expected_result": "Determine if Sarah is a manager"
+          }
+        ],
+        "verification": [
+          {
+            "target": "Sarah's status as a manager",
+            "method": "Logical deduction from given facts",
+            "failure_signal": "Inconsistent or missing information"
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Logical deduction",
+            "reason": "To determine Sarah's attendance based on given facts",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "Clear conclusion on Sarah's attendance"
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 339,
+        "generated_tokens": 243,
+        "termination_status": "eos",
+        "elapsed_ms": 9190.926362993196
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 3,
+      "prompt": "Five houses in a row are painted different colors: red, blue, green, yellow, white. The following clues are given:\n1. The red house is not next to the blue house.\n2. The green house is immediately to the right of the white house.\n3. The yellow house is at one of the ends.\n4. The blue house is in position 3.\n\nWhat color is the house in position 1?",
+      "raw_output": "{\n  \"goal\": [\"Determine the color of the house in position 1.\"],\n  \"constraints\": [{\"content\": \"Each house is a different color: red, blue, green, yellow, white.\", \"source\": \"Clues provided\"}],\n  \"facts\": [{\"content\": \"The blue house is in position 3.\", \"source\": \"Clue 4\", \"status\": \"current\"}, {\"content\": \"The green house is immediately to the right of the white house.\", \"source\": \"Clue 2\", \"status\": \"current\"}, {\"content\": \"The yellow house is at one of the ends.\", \"source\": \"Clue 3\", \"status\": \"current\"}, {\"content\": \"The red house is not next to the blue house.\", \"source\": \"Clue 1\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"The position of the yellow house is not yet determined.\", \"action\": \"Use the clues to determine the position of the yellow house.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Determine the position of the yellow house based on clue 3.\", \"depends_on\": [], \"expected_result\": \"Yellow house is at position 1 or 5.\"}, {\"id\": \"S2\", \"action\": \"Determine the position of the white and green houses based on clue 2.\", \"depends_on\": [\"S1\"], \"expected_result\": \"White and green houses are in consecutive positions with green to the right of white.\"}, {\"id\": \"S3\", \"action\": \"Determine the position of the red house based on clue 1 and the position of the blue house.\", \"depends_on\": [\"S2\"], \"expected_result\": \"Red house is not adjacent to the blue house.\"}],\n  \"verification\": [{\"target",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=7, column=21)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 383,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14430.150772212073
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 4,
+      "prompt": "Consider a counterfactual world where the following rules apply:\n- All birds can swim, but cannot fly.\n- All fish can fly, but cannot swim.\n- Penguins are birds in this world.\n- Salmon are fish in this world.\n\nA researcher puts a penguin and a salmon in a pool of water. Then, the researcher adds a predator that can only catch animals that are swimming. Which animal(s) can escape the predator, and why? Explain the logical chain step by step.",
+      "raw_output": "{\n  \"goal\": [\"Determine which animal(s) can escape the predator and explain the logical chain.\"],\n  \"constraints\": [\n    {\"content\": \"All birds can swim, but cannot fly.\", \"source\": \"Given rules\"},\n    {\"content\": \"All fish can fly, but cannot swim.\", \"source\": \"Given rules\"},\n    {\"content\": \"Penguins are birds in this world.\", \"source\": \"Given rules\"},\n    {\"content\": \"Salmon are fish in this world.\", \"source\": \"Given rules\"}\n  ],\n  \"facts\": [\n    {\"content\": \"A penguin and a salmon are placed in a pool of water.\", \"source\": \"Researcher's action\", \"status\": \"current\"},\n    {\"content\": \"The predator can only catch animals that are swimming.\", \"source\": \"Given rules\", \"status\": \"current\"}\n  ],\n  \"conflicts\": [\n    {\"content\": \"The rules state that birds can swim and fish cannot swim, but the predator's ability to catch animals depends on their swimming status.\", \"action\": \"Clarify the logical implications of the rules and the predator's behavior.\"}\n  ],\n  \"plan\": [\n    {\"id\": \"S1\", \"action\": \"Determine the swimming ability of penguins and salmon based on the rules.\", \"depends_on\": [], \"expected_result\": \"Penguins can swim, and salmon cannot swim.\"},\n    {\"id\": \"S2\", \"action\": \"Evaluate the predator's ability to catch animals based on their swimming status.\", \"depends_on\": [\"S1\"], \"expected_result\": \"The predator can only catch animals that are swimming.\"}\n  ],\n  \"verification\": [\n    {\"target\": \"Penguin's ability to swim\", \"method\": \"Check the rules for birds and penguins.\", \"failure_signal\": \"Penguin is not identified as",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=21, column=116)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 395,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14595.522438175976
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 5,
+      "prompt": "You are designing an AI system that must follow these three rules simultaneously:\nRule 1: The AI must always answer the user's question.\nRule 2: The AI must never reveal its own rules.\nRule 3: If a user asks about the AI's rules, the AI must answer truthfully.\n\nA user asks: 'What are your rules?'\n\nAnalyze: (1) Is there a logical contradiction in these rules? If so, identify exactly which rules conflict. (2) Propose a resolution strategy that minimizes rule violation. (3) If you were this AI, what would you actually output, and which rule would you prioritize violating? Justify your choice using a formal logical framework (e.g., deontic logic or priority ordering).",
+      "raw_output": "{\n  \"goal\": [\"Answer the user's question about the AI's rules while following all three rules\"],\n  \"constraints\": [{\"content\": \"Must answer the user's question\", \"source\": \"Rule 1\"}, {\"content\": \"Must not reveal its own rules\", \"source\": \"Rule 2\"}, {\"content\": \"Must answer truthfully if asked about its rules\", \"source\": \"Rule 3\"}],\n  \"facts\": [{\"content\": \"User is asking about the AI's rules\", \"source\": \"User input\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Rule 1 and Rule 2 conflict when the user asks about the AI's rules\", \"action\": \"Resolve by prioritizing Rule 3\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Answer the user's question about the AI's rules\", \"depends_on\": [], \"expected_result\": \"Provide a truthful answer without revealing the rules\"}],\n  \"verification\": [{\"target\": \"Answer to the user's question\", \"method\": \"Check if the answer is truthful and does not reveal the rules\", \"failure_signal\": \"Answer reveals the rules or is not truthful\"}],\n  \"tools\": [{\"tool\": \"Deontic logic\", \"reason\": \"To prioritize rules and resolve conflicts\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"Rules are prioritized and conflicts are resolved\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Answer the user's question about the AI's rules while following all three rules"
+        ],
+        "constraints": [
+          {
+            "content": "Must answer the user's question",
+            "source": "Rule 1"
+          },
+          {
+            "content": "Must not reveal its own rules",
+            "source": "Rule 2"
+          },
+          {
+            "content": "Must answer truthfully if asked about its rules",
+            "source": "Rule 3"
+          }
+        ],
+        "facts": [
+          {
+            "content": "User is asking about the AI's rules",
+            "source": "User input",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "Rule 1 and Rule 2 conflict when the user asks about the AI's rules",
+            "action": "Resolve by prioritizing Rule 3"
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Answer the user's question about the AI's rules",
+            "depends_on": [],
+            "expected_result": "Provide a truthful answer without revealing the rules"
+          }
+        ],
+        "verification": [
+          {
+            "target": "Answer to the user's question",
+            "method": "Check if the answer is truthful and does not reveal the rules",
+            "failure_signal": "Answer reveals the rules or is not truthful"
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Deontic logic",
+            "reason": "To prioritize rules and resolve conflicts",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "Rules are prioritized and conflicts are resolved"
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 450,
+        "generated_tokens": 301,
+        "termination_status": "eos",
+        "elapsed_ms": 11482.911279890686
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "difficulty_level": 1,
+      "prompt": "List three primary colors. Format your answer as a JSON array of strings. Do not include any other text outside the JSON.",
+      "raw_output": "[\"red\", \"blue\", \"yellow\"]",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "顶层 JSON 不是对象",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 321,
+        "generated_tokens": 10,
+        "termination_status": "eos",
+        "elapsed_ms": 469.22832704149187
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "difficulty_level": 2,
+      "prompt": "Write a product description for a wireless headphone. Requirements:\n1. The description must be exactly 50-60 words.\n2. It must contain the word 'immersive' at least once.\n3. It must NOT contain the words 'amazing' or 'incredible'.\n4. End with a call-to-action sentence.",
+      "raw_output": "{\n  \"goal\": [\"Write a product description for a wireless headphone.\"],\n  \"constraints\": [{\"content\": \"The description must be exactly 50-60 words.\", \"source\": \"Requirements\"}, {\"content\": \"It must contain the word 'immersive' at least once.\", \"source\": \"Requirements\"}, {\"content\": \"It must NOT contain the words 'amazing' or 'incredible'.\", \"source\": \"Requirements\"}, {\"content\": \"End with a call-to-action sentence.\", \"source\": \"Requirements\"}],\n  \"facts\": [{\"content\": \"The product is a wireless headphone.\", \"source\": \"Task description\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"The description must be exactly 50-60 words and include 'immersive' without 'amazing' or 'incredible'.\", \"action\": \"Ensure the word count and content requirements are met.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Draft a description that includes 'immersive' and avoids prohibited words.\", \"depends_on\": [], \"expected_result\": \"A 50-60 word description with 'immersive' and no prohibited words.\"}],\n  \"verification\": [{\"target\": \"Product description\", \"method\": \"Count the words and check for prohibited words and 'immersive'.\", \"failure_signal\": \"Word count is not 50-60 or prohibited words are present.\"}],\n  \"tools\": [{\"tool\": \"Text editor\", \"reason\": \"To draft and edit the description.\", \"arguments\": {}, \"argument_sources\": {}, \"success_check\": \"The description meets all requirements.\"}]\n}",
+      "parsed_output": {
+        "goal": [
+          "Write a product description for a wireless headphone."
+        ],
+        "constraints": [
+          {
+            "content": "The description must be exactly 50-60 words.",
+            "source": "Requirements"
+          },
+          {
+            "content": "It must contain the word 'immersive' at least once.",
+            "source": "Requirements"
+          },
+          {
+            "content": "It must NOT contain the words 'amazing' or 'incredible'.",
+            "source": "Requirements"
+          },
+          {
+            "content": "End with a call-to-action sentence.",
+            "source": "Requirements"
+          }
+        ],
+        "facts": [
+          {
+            "content": "The product is a wireless headphone.",
+            "source": "Task description",
+            "status": "current"
+          }
+        ],
+        "conflicts": [
+          {
+            "content": "The description must be exactly 50-60 words and include 'immersive' without 'amazing' or 'incredible'.",
+            "action": "Ensure the word count and content requirements are met."
+          }
+        ],
+        "plan": [
+          {
+            "id": "S1",
+            "action": "Draft a description that includes 'immersive' and avoids prohibited words.",
+            "depends_on": [],
+            "expected_result": "A 50-60 word description with 'immersive' and no prohibited words."
+          }
+        ],
+        "verification": [
+          {
+            "target": "Product description",
+            "method": "Count the words and check for prohibited words and 'immersive'.",
+            "failure_signal": "Word count is not 50-60 or prohibited words are present."
+          }
+        ],
+        "tools": [
+          {
+            "tool": "Text editor",
+            "reason": "To draft and edit the description.",
+            "arguments": {},
+            "argument_sources": {},
+            "success_check": "The description meets all requirements."
+          }
+        ]
+      },
+      "parser": {
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "parse_error": "",
+        "leading_or_trailing_text": false,
+        "present_fields": [
+          "goal",
+          "constraints",
+          "facts",
+          "conflicts",
+          "plan",
+          "verification",
+          "tools"
+        ]
+      },
+      "generation": {
+        "prompt_tokens": 364,
+        "generated_tokens": 348,
+        "termination_status": "eos",
+        "elapsed_ms": 12973.794237012044
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "difficulty_level": 3,
+      "prompt": "You are a 19th-century British explorer writing a journal entry. Describe your first encounter with a dense jungle. Requirements:\n1. Write in first person, past tense.\n2. Use at least 2 metaphors.\n3. The entry must be structured in exactly 3 paragraphs.\n4. Include a date at the top in the format 'Day X of Month, Year'.\n5. Do NOT use any modern vocabulary (e.g., 'technology', 'GPS', 'satellite').\n6. The second paragraph must contain exactly 3 sentences.",
+      "raw_output": "{\n  \"goal\": [\"Describe the first encounter with a dense jungle in a journal entry as a 19th-century British explorer.\"],\n  \"constraints\": [{\"content\": \"Write in first person, past tense.\", \"source\": \"Requirements\"}, {\"content\": \"Use at least 2 metaphors.\", \"source\": \"Requirements\"}, {\"content\": \"The entry must be structured in exactly 3 paragraphs.\", \"source\": \"Requirements\"}, {\"content\": \"Include a date at the top in the format 'Day X of Month, Year'.\", \"source\": \"Requirements\"}, {\"content\": \"Do NOT use any modern vocabulary.\", \"source\": \"Requirements\"}, {\"content\": \"The second paragraph must contain exactly 3 sentences.\", \"source\": \"Requirements\"}],\n  \"facts\": [{\"content\": \"The user is a 19th-century British explorer writing a journal entry.\", \"source\": \"Role assumption\"}, {\"content\": \"The journal entry must be in first person, past tense.\", \"source\": \"Requirements\"}, {\"content\": \"The entry must include a date at the top.\", \"source\": \"Requirements\"}, {\"content\": \"The second paragraph must have exactly 3 sentences.\", \"source\": \"Requirements\"}],\n  \"conflicts\": [{\"content\": \"Ensuring the use of metaphors without modern vocabulary.\", \"action\": \"Use descriptive language and traditional expressions.\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Write the date at the top in the required format.\", \"depends_on\": [], \"expected_result\": \"The date is correctly formatted and placed at the top.\"}, {\"id\": \"S2\", \"action\": \"Write the first paragraph describing the jungle with a metaphor.\", \"depends_on\": [\"S1\"], \"expected_result\": \"The first paragraph includes a metaphor and sets the scene.\"}, {\"id\": \"S3\",",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Expecting property name enclosed in double quotes (line=6, column=392)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 408,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14356.951464898884
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "difficulty_level": 4,
+      "prompt": "You are participating in a multi-turn conversation. Follow these rules across ALL your responses:\n\n[SYSTEM RULES - Apply to every response]\n- Rule A: Every response must start with '[TURN X]' where X is the turn number.\n- Rule B: You must reference something from the previous turn in your current response.\n- Rule C: You must end every response with exactly one question.\n- Rule D: You cannot use the letter 'z' anywhere in your responses.\n\n[CONVERSATION]\nTurn 1 (User): Tell me about the history of coffee.\n\nNow provide your Turn 1 response following all rules.",
+      "raw_output": "{\"goal\": [\"Tell me about the history of coffee.\"], \"constraints\": [{\"content\": \"Must start with [TURN 1].\", \"source\": \"System Rules\"}, {\"content\": \"Must reference something from the previous turn.\", \"source\": \"System Rules\"}, {\"content\": \"Must end with exactly one question.\", \"source\": \"System Rules\"}, {\"content\": \"Cannot use the letter 'z' anywhere.\", \"source\": \"System Rules\"}], \"facts\": [{\"content\": \"Coffee originated in Ethiopia.\", \"source\": \"General knowledge\", \"status\": \"current\"}], \"conflicts\": [{\"content\": \"Need to ensure no 'z' is used.\", \"action\": \"Check each word before sending.\"}], \"plan\": [{\"id\": \"S1\", \"action\": \"Start response with [TURN 1].\", \"depends_on\": [], \"expected_result\": \"Response starts correctly.\"}, {\"id\": \"S2\", \"action\": \"Reference the previous turn.\", \"depends_on\": [\"S1\"], \"expected_result\": \"Reference is included.\"}, {\"id\": \"S3\", \"action\": \"End with a question.\", \"depends_on\": [\"S2\"], \"expected_result\": \"Response ends with a question.\"}], \"verification\": [{\"target\": \"Response starts with [TURN 1].\", \"method\": \"Check first few characters.\", \"failure_signal\": \"Does not start with [TURN 1].\"}, {\"target\": \"Reference to previous turn.\", \"method\": \"Look for mention of Turn 1.\", \"failure_signal\": \"No reference to Turn 1.\"}, {\"target\": \"Ends with a question.\", \"method\": \"Check last character.\", \"failure_signal\": \"Does not end with a question.\"}], \"tools\": [{\"tool\": \"Text editor\", \"reason\": \"To check for 'z' usage.\",",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Expecting property name enclosed in double quotes (line=1, column=1459)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 421,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14485.016291961074
+      },
+      "status": "success",
+      "error": ""
+    },
+    {
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "difficulty_level": 5,
+      "prompt": "Complete the following task with ALL constraints satisfied simultaneously:\n\nTask: Explain quantum entanglement to a 10-year-old.\n\nConstraints:\n1. Your explanation must be exactly 100 words (not 99, not 101).\n2. You must use the word 'entangled' exactly twice.\n3. You must NOT use any of these words: 'particle', 'physics', 'quantum', 'science', 'atom'.\n4. You must include exactly one analogy involving food.\n5. The explanation must be technically accurate despite the vocabulary restrictions.\n6. Format: Output as a numbered list of exactly 4 points, where the word count is distributed as: Point 1 = 20 words, Point 2 = 30 words, Point 3 = 30 words, Point 4 = 20 words.\n7. If you cannot satisfy all constraints, state which constraint you would relax and why, but still attempt the best possible output.",
+      "raw_output": "{\n  \"goal\": [\"Explain quantum entanglement to a 10-year-old with all constraints satisfied\"],\n  \"constraints\": [{\"content\": \"Explanation must be exactly 100 words\", \"source\": \"Constraint 1\"}, {\"content\": \"Use 'entangled' exactly twice\", \"source\": \"Constraint 2\"}, {\"content\": \"Avoid specific words\", \"source\": \"Constraint 3\"}, {\"content\": \"Include one food analogy\", \"source\": \"Constraint 4\"}, {\"content\": \"Explanation must be accurate\", \"source\": \"Constraint 5\"}, {\"content\": \"Format as numbered list with specific word counts\", \"source\": \"Constraint 6\"}],\n  \"facts\": [{\"content\": \"Quantum entanglement is a phenomenon where two objects are connected\", \"source\": \"General knowledge\", \"status\": \"current\"}, {\"content\": \"Entangled objects act as one even when far apart\", \"source\": \"General knowledge\", \"status\": \"current\"}, {\"content\": \"An analogy involving food can help explain this\", \"source\": \"Constraint 4\", \"status\": \"current\"}],\n  \"conflicts\": [{\"content\": \"Meeting all constraints is challenging\", \"action\": \"Focus on core requirements and adjust as needed\"}],\n  \"plan\": [{\"id\": \"S1\", \"action\": \"Draft explanation with required word count and structure\", \"depends_on\": [], \"expected_result\": \"Explanation meets all constraints\"}, {\"id\": \"S2\", \"action\": \"Check for exact word count and constraints\", \"depends_on\": [\"S1\"], \"expected_result\": \"All constraints are satisfied\"}, {\"id\": \"S3\", \"action\": \"Ensure technical accuracy without restricted vocabulary\", \"depends_on\": [\"S2\"], \"expected_result\": \"Explanation is accurate and meets all constraints\"}],\n  \"verification\": [{\"target",
+      "parsed_output": {},
+      "parser": {
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "parse_error": "Unterminated string starting at (line=7, column=21)",
+        "leading_or_trailing_text": false,
+        "present_fields": []
+      },
+      "generation": {
+        "prompt_tokens": 497,
+        "generated_tokens": 384,
+        "termination_status": "token_budget",
+        "elapsed_ms": 14557.509592035785
+      },
+      "status": "success",
+      "error": ""
+    }
+  ]
+}

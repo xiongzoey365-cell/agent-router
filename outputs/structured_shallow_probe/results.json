@@ -1,0 +1,1614 @@
+{
+  "experiment": {
+    "method": "structured_shallow_reasoning_hidden_state_trend",
+    "created_at": "2026-09-18T03:15:37.513131+00:00",
+    "model_path": "/home/xiongziyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+    "input_file": "/home/xiongziyan/agent-router/测试数据.txt",
+    "device": "cuda",
+    "dtype": "bf16",
+    "seed": 42,
+    "max_new_tokens": 384,
+    "checkpoints": [
+      32,
+      64,
+      96,
+      128,
+      160,
+      192,
+      224,
+      256,
+      320,
+      384
+    ],
+    "window_size": 32,
+    "fixed_probe_text": "当前核心解题方案是：",
+    "last_layers": 4,
+    "repeat_ngram_size": 4,
+    "revisit_span": 8,
+    "sampling": false,
+    "thinking": false,
+    "full_answer_evaluation": false,
+    "label_comparison": false,
+    "python_version": "3.10.20",
+    "torch_version": "2.6.0+cu118",
+    "transformers_version": "4.51.3"
+  },
+  "results": [
+    {
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "difficulty_level": 1,
+      "generated_tokens": 47,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：输入为整数，输出为字符串'even'或'odd'，需处理合法输入。  \n核心方案：使用模运算判断奇偶，返回对应字符串。  \n待补环节：无。",
+      "parsed_sections": {
+        "关键约束": "输入为整数，输出为字符串'even'或'odd'，需处理合法输入。",
+        "核心方案": "使用模运算判断奇偶，返回对应字符串。",
+        "待补环节": "无。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.06410605097449129
+      ],
+      "natural_early_distance": 0.06410605097449129,
+      "natural_late_distance": 0.06410605097449129,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2082.4009450152516,
+      "probe_runtime_ms": 134.76636190898716,
+      "peak_memory_mb": 15744.71728515625,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "difficulty_level": 2,
+      "generated_tokens": 51,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：输入为字符串，需忽略空格和大小写，判断是否为回文。  \n核心方案：预处理字符串（去空格、统一小写），比较字符串与反转后的字符串。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "输入为字符串，需忽略空格和大小写，判断是否为回文。",
+        "核心方案": "预处理字符串（去空格、统一小写），比较字符串与反转后的字符串。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.047533875409826676
+      ],
+      "natural_early_distance": 0.047533875409826676,
+      "natural_late_distance": 0.047533875409826676,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1894.2390820011497,
+      "probe_runtime_ms": 148.9238829817623,
+      "peak_memory_mb": 15770.14013671875,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "difficulty_level": 3,
+      "generated_tokens": 74,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：输入为整数列表，需返回最长严格递增子序列的长度，子序列不一定是连续的。  \n核心方案：使用动态规划或二分优化的DP方法，遍历数组并维护递增序列长度。  \n待补环节：需推导DP状态转移方程或二分查找的实现细节。",
+      "parsed_sections": {
+        "关键约束": "输入为整数列表，需返回最长严格递增子序列的长度，子序列不一定是连续的。",
+        "核心方案": "使用动态规划或二分优化的DP方法，遍历数组并维护递增序列长度。",
+        "待补环节": "需推导DP状态转移方程或二分查找的实现细节。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.05841571440790383
+      ],
+      "probe_early_distance": 0.05841571440790383,
+      "probe_late_distance": 0.05841571440790383,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.05841571440790383,
+      "natural_adjacent_distances": [
+        0.07181151005235498,
+        0.07041521139416895
+      ],
+      "natural_early_distance": 0.07181151005235498,
+      "natural_late_distance": 0.07041521139416895,
+      "natural_decay_score": 0.019443939518171846,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2761.015887139365,
+      "probe_runtime_ms": 268.2364440988749,
+      "peak_memory_mb": 15789.26513671875,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.16342922289672113,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 54.902876686901635
+    },
+    {
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "difficulty_level": 4,
+      "generated_tokens": 105,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：输入为整数key和value，容量为正整数；操作需满足O(1)时间复杂度；使用哈希表和双向链表实现。  \n核心方案：使用哈希表存储key到节点的映射，双向链表维护访问顺序；get操作更新节点位置；put操作插入或更新并处理缓存容量。  \n待补环节：实现双向链表的插入、删除操作及哈希表与链表的同步更新逻辑。",
+      "parsed_sections": {
+        "关键约束": "输入为整数key和value，容量为正整数；操作需满足O(1)时间复杂度；使用哈希表和双向链表实现。",
+        "核心方案": "使用哈希表存储key到节点的映射，双向链表维护访问顺序；get操作更新节点位置；put操作插入或更新并处理缓存容量。",
+        "待补环节": "实现双向链表的插入、删除操作及哈希表与链表的同步更新逻辑。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64,
+        96
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.01639344262295082,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 96,
+          "available_tokens": 96,
+          "lexical_repetition_rate": 0.010752688172043012,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 3,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.030467867851257324,
+        0.04793763446436139
+      ],
+      "probe_early_distance": 0.030467867851257324,
+      "probe_late_distance": 0.04793763446436139,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.04793763446436139,
+      "natural_adjacent_distances": [
+        0.05978572368621826,
+        0.0377841591835022,
+        0.07786483036666092
+      ],
+      "natural_early_distance": 0.05978572368621826,
+      "natural_late_distance": 0.05782449477508156,
+      "natural_decay_score": 0.03280430159877782,
+      "lexical_repetition_rate": 0.010752688172043012,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 3799.563196953386,
+      "probe_runtime_ms": 473.0638209730387,
+      "peak_memory_mb": 15836.2392578125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.31348568578119385,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.989247311827957,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 59.189516809994956
+    },
+    {
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "difficulty_level": 5,
+      "generated_tokens": 120,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：必须支持令牌桶算法、线程安全、阻塞与非阻塞模式、时钟回退处理、动态调整速率，且需包含类型提示、文档字符串和至少3个单元测试。  \n核心方案：使用线程安全的队列管理令牌，实现令牌桶逻辑，通过锁保证线程安全，添加时钟回退处理逻辑，设计动态调整速率的接口。  \n待补环节：需验证时钟回退处理逻辑的正确性，实现动态调整速率的机制，编写覆盖边缘情况的单元测试。",
+      "parsed_sections": {
+        "关键约束": "必须支持令牌桶算法、线程安全、阻塞与非阻塞模式、时钟回退处理、动态调整速率，且需包含类型提示、文档字符串和至少3个单元测试。",
+        "核心方案": "使用线程安全的队列管理令牌，实现令牌桶逻辑，通过锁保证线程安全，添加时钟回退处理逻辑，设计动态调整速率的接口。",
+        "待补环节": "需验证时钟回退处理逻辑的正确性，实现动态调整速率的机制，编写覆盖边缘情况的单元测试。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64,
+        96
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 96,
+          "available_tokens": 96,
+          "lexical_repetition_rate": 0.021505376344086023,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 5,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.0321882963180542,
+        0.04580026865005493
+      ],
+      "probe_early_distance": 0.0321882963180542,
+      "probe_late_distance": 0.04580026865005493,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.04580026865005493,
+      "natural_adjacent_distances": [
+        0.0388641357421875,
+        0.03368228272410834,
+        0.036844611167907715
+      ],
+      "natural_early_distance": 0.0388641357421875,
+      "natural_late_distance": 0.035263446946008026,
+      "natural_decay_score": 0.09264811187292746,
+      "lexical_repetition_rate": 0.021505376344086023,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 4337.390613975003,
+      "probe_runtime_ms": 460.65083192661405,
+      "peak_memory_mb": 15845.7734375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.3440948771323896,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.978494623655914,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 59.89273878708996
+    },
+    {
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "difficulty_level": 1,
+      "generated_tokens": 46,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：价格为每苹果2美元，购买数量为5个，需计算总花费。  \n核心方案：确定单价与数量，进行乘法运算，得出总金额。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "价格为每苹果2美元，购买数量为5个，需计算总花费。",
+        "核心方案": "确定单价与数量，进行乘法运算，得出总金额。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.05483889579772949
+      ],
+      "natural_early_distance": 0.05483889579772949,
+      "natural_late_distance": 0.05483889579772949,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1669.0381730441004,
+      "probe_runtime_ms": 117.15480289421976,
+      "peak_memory_mb": 15740.69384765625,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "difficulty_level": 2,
+      "generated_tokens": 54,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：速度单位为km/h，时间单位为小时，需计算总距离。  \n核心方案：分段计算距离，再求和；先用速度乘以时间得到各段距离，最后相加。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "速度单位为km/h，时间单位为小时，需计算总距离。",
+        "核心方案": "分段计算距离，再求和；先用速度乘以时间得到各段距离，最后相加。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.03341609637929155
+      ],
+      "natural_early_distance": 0.03341609637929155,
+      "natural_late_distance": 0.03341609637929155,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1945.1231539715081,
+      "probe_runtime_ms": 148.5871949698776,
+      "peak_memory_mb": 15769.29443359375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "difficulty_level": 3,
+      "generated_tokens": 61,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：矩形的周长为28cm，长度比宽度的两倍多3cm，需计算面积。  \n核心方案：设宽度为x，用周长公式建立方程，解出宽度和长度，再计算面积。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "矩形的周长为28cm，长度比宽度的两倍多3cm，需计算面积。",
+        "核心方案": "设宽度为x，用周长公式建立方程，解出宽度和长度，再计算面积。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.04569244384765625
+      ],
+      "natural_early_distance": 0.04569244384765625,
+      "natural_late_distance": 0.04569244384765625,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2198.4008599538356,
+      "probe_runtime_ms": 133.2226120866835,
+      "peak_memory_mb": 15768.1943359375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "difficulty_level": 4,
+      "generated_tokens": 63,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：字母包含重复，需确保'S'不相邻，排列数需满足条件。  \n核心方案：先排列非'S'字母，再插入'S'，计算合法位置数。  \n待补环节：计算非'S'字母排列数及插入'S'的合法位置数。",
+      "parsed_sections": {
+        "关键约束": "字母包含重复，需确保'S'不相邻，排列数需满足条件。",
+        "核心方案": "先排列非'S'字母，再插入'S'，计算合法位置数。",
+        "待补环节": "计算非'S'字母排列数及插入'S'的合法位置数。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.04049325472036058
+      ],
+      "natural_early_distance": 0.04049325472036058,
+      "natural_late_distance": 0.04049325472036058,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2365.699691930786,
+      "probe_runtime_ms": 133.40660510584712,
+      "peak_memory_mb": 15768.1943359375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "difficulty_level": 5,
+      "generated_tokens": 74,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：n为正整数，需证明n⁵ - n能被30整除。  \n核心方案：分解30为2×3×5，分别证明n⁵ - n能被2、3、5整除。  \n待补环节：需验证每个素因数的整除性并综合结论。",
+      "parsed_sections": {
+        "关键约束": "n为正整数，需证明n⁵ - n能被30整除。",
+        "核心方案": "分解30为2×3×5，分别证明n⁵ - n能被2、3、5整除。",
+        "待补环节": "需验证每个素因数的整除性并综合结论。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.09836065573770492,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.05263132484332622
+      ],
+      "probe_early_distance": 0.05263132484332622,
+      "probe_late_distance": 0.05263132484332622,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.05263132484332622,
+      "natural_adjacent_distances": [
+        0.02895122939057526,
+        0.07999741077453959
+      ],
+      "natural_early_distance": 0.02895122939057526,
+      "natural_late_distance": 0.07999741077453959,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.09836065573770492,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2728.8476719986647,
+      "probe_runtime_ms": 209.7092040348798,
+      "peak_memory_mb": 15769.01220703125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.24626739961260913,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.9016393442622951,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 55.420808873624175
+    },
+    {
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 1,
+      "generated_tokens": 43,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：问题要求准确回答法国的首都，需确保答案符合地理常识。  \n核心方案：确认法国的国家首都，查找权威地理资料进行验证。  \n待补环节：无。",
+      "parsed_sections": {
+        "关键约束": "问题要求准确回答法国的首都，需确保答案符合地理常识。",
+        "核心方案": "确认法国的国家首都，查找权威地理资料进行验证。",
+        "待补环节": "无。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.10897684097290039
+      ],
+      "natural_early_distance": 0.10897684097290039,
+      "natural_late_distance": 0.10897684097290039,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1572.130599990487,
+      "probe_runtime_ms": 115.47545716166496,
+      "peak_memory_mb": 15730.44677734375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 2,
+      "generated_tokens": 40,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：问题涉及细胞器功能，需准确区分不同细胞器的作用。  \n核心方案：确定ATP生成的主要场所，分析各选项功能。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "问题涉及细胞器功能，需准确区分不同细胞器的作用。",
+        "核心方案": "确定ATP生成的主要场所，分析各选项功能。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.11782132174714544
+      ],
+      "natural_early_distance": 0.11782132174714544,
+      "natural_late_distance": 0.11782132174714544,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1475.0447839032859,
+      "probe_runtime_ms": 149.03476322069764,
+      "peak_memory_mb": 15765.91064453125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 3,
+      "generated_tokens": 65,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：患者为45岁男性，有典型糖尿病症状，BMI超标，空腹血糖显著升高。  \n核心方案：评估血糖异常类型，考虑胰岛素抵抗或分泌不足，选择一线降糖药物。  \n待补环节：需进一步确认糖尿病类型及排除其他内分泌疾病。",
+      "parsed_sections": {
+        "关键约束": "患者为45岁男性，有典型糖尿病症状，BMI超标，空腹血糖显著升高。",
+        "核心方案": "评估血糖异常类型，考虑胰岛素抵抗或分泌不足，选择一线降糖药物。",
+        "待补环节": "需进一步确认糖尿病类型及排除其他内分泌疾病。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.03609692620075633
+      ],
+      "probe_early_distance": 0.03609692620075633,
+      "probe_late_distance": 0.03609692620075633,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.03609692620075633,
+      "natural_adjacent_distances": [
+        0.05454111424333541,
+        0.373876593940055
+      ],
+      "natural_early_distance": 0.05454111424333541,
+      "natural_late_distance": 0.373876593940055,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2411.3557420205325,
+      "probe_runtime_ms": 295.3054818790406,
+      "peak_memory_mb": 15803.58984375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.4830563332335006,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.49168999700501
+    },
+    {
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 4,
+      "generated_tokens": 75,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：需准确识别1992年先例案件名称，明确宪法原则及对小型电商的影响。  \n核心方案：查找Wayfair案相关判决，分析其推翻的先例，确定宪法原则，评估对跨州销售的影响。  \n待补环节：需验证具体先例名称及宪法原则的重新解释过程。",
+      "parsed_sections": {
+        "关键约束": "需准确识别1992年先例案件名称，明确宪法原则及对小型电商的影响。",
+        "核心方案": "查找Wayfair案相关判决，分析其推翻的先例，确定宪法原则，评估对跨州销售的影响。",
+        "待补环节": "需验证具体先例名称及宪法原则的重新解释过程。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.05236965730009424
+      ],
+      "probe_early_distance": 0.05236965730009424,
+      "probe_late_distance": 0.05236965730009424,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.05236965730009424,
+      "natural_adjacent_distances": [
+        0.02216792106628418,
+        0.05665731430053711
+      ],
+      "natural_early_distance": 0.02216792106628418,
+      "natural_late_distance": 0.05665731430053711,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2770.50011488609,
+      "probe_runtime_ms": 232.24149993620813,
+      "peak_memory_mb": 15780.85546875,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.2500147375028168,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 57.5004421250845
+    },
+    {
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 5,
+      "generated_tokens": 75,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：需比较欧盟AI法案与美国行政令对高风险AI的定义、执法机制及冲突，提供具体产品案例。  \n核心方案：分析两框架对高风险AI的界定差异，对比执法手段与处罚力度，探讨跨国企业合规挑战。  \n待补环节：需具体产品案例及冲突场景的深入推导。",
+      "parsed_sections": {
+        "关键约束": "需比较欧盟AI法案与美国行政令对高风险AI的定义、执法机制及冲突，提供具体产品案例。",
+        "核心方案": "分析两框架对高风险AI的界定差异，对比执法手段与处罚力度，探讨跨国企业合规挑战。",
+        "待补环节": "需具体产品案例及冲突场景的深入推导。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.03278688524590164,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.047208729219957
+      ],
+      "probe_early_distance": 0.047208729219957,
+      "probe_late_distance": 0.047208729219957,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.047208729219957,
+      "natural_adjacent_distances": [
+        0.021946191787719727,
+        0.058941132896081605
+      ],
+      "natural_early_distance": 0.021946191787719727,
+      "natural_late_distance": 0.058941132896081605,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.03278688524590164,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2791.9085489120334,
+      "probe_runtime_ms": 275.8267258759588,
+      "peak_memory_mb": 15801.08642578125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.32392432943944083,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.9672131147540983,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 59.0619921782652
+    },
+    {
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 1,
+      "generated_tokens": 71,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：需保持类比关系，输入为动物与其幼崽的对应关系，输出应为与\"Cat\"对应的幼崽名称。  \n核心方案：识别\"Dog\"与\"Puppy\"的幼崽关系，寻找\"Cat\"对应的幼崽名称，从选项中选择正确答案。  \n待补环节：无",
+      "parsed_sections": {
+        "关键约束": "需保持类比关系，输入为动物与其幼崽的对应关系，输出应为与\"Cat\"对应的幼崽名称。",
+        "核心方案": "识别\"Dog\"与\"Puppy\"的幼崽关系，寻找\"Cat\"对应的幼崽名称，从选项中选择正确答案。",
+        "待补环节": "无"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": true,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.06557377049180328,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.033300222951187064
+      ],
+      "probe_early_distance": 0.033300222951187064,
+      "probe_late_distance": 0.033300222951187064,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.033300222951187064,
+      "natural_adjacent_distances": [
+        0.026065289974212646,
+        0.1338883638381958
+      ],
+      "natural_early_distance": 0.026065289974212646,
+      "natural_late_distance": 0.1338883638381958,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.06557377049180328,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2621.874721022323,
+      "probe_runtime_ms": 219.8403251823038,
+      "peak_memory_mb": 15772.0927734375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5231078884448646,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.9344262295081968,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.38176124350987
+    },
+    {
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 2,
+      "generated_tokens": 51,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：所有经理参加周一会议，部分工程师是经理，Sarah是工程师。  \n核心方案：确定Sarah是否为经理，再判断是否参加周一会议。  \n待补环节：需验证Sarah是否属于经理这一子集。",
+      "parsed_sections": {
+        "关键约束": "所有经理参加周一会议，部分工程师是经理，Sarah是工程师。",
+        "核心方案": "确定Sarah是否为经理，再判断是否参加周一会议。",
+        "待补环节": "需验证Sarah是否属于经理这一子集。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [
+        0.039797725665433714
+      ],
+      "natural_early_distance": 0.039797725665433714,
+      "natural_late_distance": 0.039797725665433714,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 1882.357147987932,
+      "probe_runtime_ms": 149.89893604069948,
+      "peak_memory_mb": 15768.1787109375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 64.99999999999999
+    },
+    {
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 3,
+      "generated_tokens": 96,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：房屋颜色各不相同，位置1至5，颜色包括红、蓝、绿、黄、白，蓝在位置3，黄在两端，绿在白右边，红不邻蓝。  \n核心方案：确定蓝在位置3，黄在1或5，绿在白右边，排除红与蓝相邻的可能。  \n待补环节：验证黄的位置是否与其它条件冲突，确定红与蓝的位置关系。",
+      "parsed_sections": {
+        "关键约束": "房屋颜色各不相同，位置1至5，颜色包括红、蓝、绿、黄、白，蓝在位置3，黄在两端，绿在白右边，红不邻蓝。",
+        "核心方案": "确定蓝在位置3，黄在1或5，绿在白右边，排除红与蓝相邻的可能。",
+        "待补环节": "验证黄的位置是否与其它条件冲突，确定红与蓝的位置关系。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64,
+        96
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.08196721311475409,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 96,
+          "available_tokens": 96,
+          "lexical_repetition_rate": 0.07526881720430108,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 1,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.030411602879262145,
+        0.08374494813352518
+      ],
+      "probe_early_distance": 0.030411602879262145,
+      "probe_late_distance": 0.08374494813352518,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.08374494813352518,
+      "natural_adjacent_distances": [
+        0.034987094103520744,
+        0.04014730453491211
+      ],
+      "natural_early_distance": 0.034987094103520744,
+      "natural_late_distance": 0.04014730453491211,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.07526881720430108,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 3533.4255911875516,
+      "probe_runtime_ms": 374.3634650018066,
+      "peak_memory_mb": 15808.4482421875,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.0,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.9247311827956989,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 48.494623655913976
+    },
+    {
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 4,
+      "generated_tokens": 93,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：所有鸟类能游泳但不能飞，所有鱼类能飞但不能游泳，企鹅是鸟类，鲑鱼是鱼类，捕食者只能捕捉游泳的动物。  \n核心方案：确定企鹅和鲑鱼的游泳能力，分析捕食者的目标，判断哪只动物能逃脱。  \n待补环节：需明确捕食者是否能区分游泳动物与非游泳动物，以及动物是否实际在游泳。",
+      "parsed_sections": {
+        "关键约束": "所有鸟类能游泳但不能飞，所有鱼类能飞但不能游泳，企鹅是鸟类，鲑鱼是鱼类，捕食者只能捕捉游泳的动物。",
+        "核心方案": "确定企鹅和鲑鱼的游泳能力，分析捕食者的目标，判断哪只动物能逃脱。",
+        "待补环节": "需明确捕食者是否能区分游泳动物与非游泳动物，以及动物是否实际在游泳。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.0227832807769347
+      ],
+      "probe_early_distance": 0.0227832807769347,
+      "probe_late_distance": 0.0227832807769347,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.0227832807769347,
+      "natural_adjacent_distances": [
+        0.04527849228849956,
+        0.021886409633541715
+      ],
+      "natural_early_distance": 0.04527849228849956,
+      "natural_late_distance": 0.021886409633541715,
+      "natural_decay_score": 0.5166268016477805,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 3443.3883000165224,
+      "probe_runtime_ms": 279.3700050096959,
+      "peak_memory_mb": 15810.34814453125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.6737208968903134,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 70.21162690670941
+    },
+    {
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 5,
+      "generated_tokens": 65,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：用户要求AI同时遵循三条规则，且需回答关于规则的问题，但不能透露规则本身。  \n核心方案：分析规则冲突，采用优先级排序策略，设计隐含规则回应用户。  \n待补环节：需明确规则优先级逻辑及如何隐含表达规则内容。",
+      "parsed_sections": {
+        "关键约束": "用户要求AI同时遵循三条规则，且需回答关于规则的问题，但不能透露规则本身。",
+        "核心方案": "分析规则冲突，采用优先级排序策略，设计隐含规则回应用户。",
+        "待补环节": "需明确规则优先级逻辑及如何隐含表达规则内容。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.039627079919228536
+      ],
+      "probe_early_distance": 0.039627079919228536,
+      "probe_late_distance": 0.039627079919228536,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.039627079919228536,
+      "natural_adjacent_distances": [
+        0.03823267957774645,
+        0.343469500541687
+      ],
+      "natural_early_distance": 0.03823267957774645,
+      "natural_late_distance": 0.343469500541687,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2435.60539605096,
+      "probe_runtime_ms": 377.6955280918628,
+      "peak_memory_mb": 15828.66943359375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.43250104225589436,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 62.975031267676826
+    },
+    {
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "difficulty_level": 1,
+      "generated_tokens": 17,
+      "termination_status": "ended_early",
+      "prereason_text": "{\n  \"primary_colors\": [\"Red\", \"Blue\", \"Yellow\"]\n}",
+      "parsed_sections": {
+        "关键约束": "",
+        "核心方案": "",
+        "待补环节": ""
+      },
+      "structure_completeness": 0.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        17
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 17,
+          "available_tokens": 17,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [],
+      "probe_early_distance": 0.0,
+      "probe_late_distance": 0.0,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": null,
+      "natural_adjacent_distances": [],
+      "natural_early_distance": 0.0,
+      "natural_late_distance": 0.0,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 652.3692219052464,
+      "probe_runtime_ms": 116.8836341239512,
+      "peak_memory_mb": 15729.0234375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.5,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 0.0,
+      "solveability_proxy_score": 35.0
+    },
+    {
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "difficulty_level": 2,
+      "generated_tokens": 80,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：描述需严格控制在50-60词，包含“immersive”，排除“amazing”和“incredible”，结尾需有行动号召。  \n核心方案：聚焦音质与舒适性，强调沉浸体验，简述功能特点，结尾引导购买。  \n待补环节：需确保字数符合要求并验证禁用词未出现。",
+      "parsed_sections": {
+        "关键约束": "描述需严格控制在50-60词，包含“immersive”，排除“amazing”和“incredible”，结尾需有行动号召。",
+        "核心方案": "聚焦音质与舒适性，强调沉浸体验，简述功能特点，结尾引导购买。",
+        "待补环节": "需确保字数符合要求并验证禁用词未出现。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.07743549346923828
+      ],
+      "probe_early_distance": 0.07743549346923828,
+      "probe_late_distance": 0.07743549346923828,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.07743549346923828,
+      "natural_adjacent_distances": [
+        0.0674455842310887,
+        0.07081902871358736
+      ],
+      "natural_early_distance": 0.0674455842310887,
+      "natural_late_distance": 0.07081902871358736,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 2969.937353162095,
+      "probe_runtime_ms": 254.50897798873484,
+      "peak_memory_mb": 15784.87841796875,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.0,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 50.0
+    },
+    {
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "difficulty_level": 3,
+      "generated_tokens": 228,
+      "termination_status": "ended_early",
+      "prereason_text": "Day 12 of April, 1845  \nThe moment I stepped into the jungle, it was as though I had entered a world untouched by time. The air was thick and heavy, like a curtain drawn across the sky, and the trees loomed like ancient sentinels guarding their secrets. Every step I took was met with the rustle of unseen creatures, as if the very earth whispered warnings of the unknown.  \n\nThe sun struggled to pierce through the canopy, casting a dim glow upon the forest floor. The undergrowth twisted and turned in ways that defied logic, as though the jungle itself had a will of its own. I felt both awe and trepidation, for this place was alive in a manner I had never known.  \n\nAs I pressed forward, the scent of damp earth and blooming flora filled my lungs. The jungle was a labyrinth of shadows and light, a realm where nature reigned supreme. I could not yet tell if I was being guided or led astray, but I knew one thing—this was a place that would test the very limits of my endurance.",
+      "parsed_sections": {
+        "关键约束": "",
+        "核心方案": "",
+        "待补环节": ""
+      },
+      "structure_completeness": 0.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64,
+        96,
+        128,
+        160,
+        192,
+        224
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 96,
+          "available_tokens": 96,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 1,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 128,
+          "available_tokens": 128,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 2,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 160,
+          "available_tokens": 160,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 2,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 192,
+          "available_tokens": 192,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 2,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 224,
+          "available_tokens": 224,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 2,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.018888951473769677,
+        0.00617271698550681,
+        0.012040317776222054,
+        0.011942386627197266,
+        0.018815994262695312,
+        0.03812813758850098
+      ],
+      "probe_early_distance": 0.01236732874516618,
+      "probe_late_distance": 0.022962172826131184,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.03812813758850098,
+      "natural_adjacent_distances": [
+        0.07850062847137451,
+        0.04081439971923828,
+        0.03745764717207234,
+        0.06369364641270914,
+        0.045653947410693285,
+        0.07631208331873018,
+        0.1628202394032764
+      ],
+      "natural_early_distance": 0.05225755845422838,
+      "natural_late_distance": 0.08711997913635225,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 8306.484604952857,
+      "probe_runtime_ms": 1046.901079127565,
+      "peak_memory_mb": 15912.7255859375,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.45396737820949684,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 0.0,
+      "solveability_proxy_score": 33.6190213462849
+    },
+    {
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "difficulty_level": 4,
+      "generated_tokens": 88,
+      "termination_status": "ended_early",
+      "prereason_text": "[TURN 1]  \n[TURN 1]  \n关键约束：确保内容涵盖咖啡起源、传播及文化影响，避免使用字母'z'。  \n核心方案：从咖啡豆起源开始，讨论其传播至不同地区，最后分析其在现代社会的角色。  \n待补环节：需验证历史事件的时间线准确性，确保无敏感内容。  \nWhat specific regions were pivotal in the spread of coffee?",
+      "parsed_sections": {
+        "关键约束": "确保内容涵盖咖啡起源、传播及文化影响，避免使用字母'z'。",
+        "核心方案": "从咖啡豆起源开始，讨论其传播至不同地区，最后分析其在现代社会的角色。",
+        "待补环节": "需验证历史事件的时间线准确性，确保无敏感内容。  \nWhat specific regions were pivotal in the spread of coffee?"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.10344827586206896,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.04918032786885246,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.051025569438934326
+      ],
+      "probe_early_distance": 0.051025569438934326,
+      "probe_late_distance": 0.051025569438934326,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.051025569438934326,
+      "natural_adjacent_distances": [
+        0.05694228750123309,
+        0.09685391764962181
+      ],
+      "natural_early_distance": 0.05694228750123309,
+      "natural_late_distance": 0.09685391764962181,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.04918032786885246,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 3238.5631010401994,
+      "probe_runtime_ms": 342.79322694055736,
+      "peak_memory_mb": 15822.50439453125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.2692634043710165,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 0.9508196721311475,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 57.09429557375345
+    },
+    {
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "difficulty_level": 5,
+      "generated_tokens": 113,
+      "termination_status": "ended_early",
+      "prereason_text": "关键约束：  \n必须满足100字限制，使用“entangled”两次，禁用特定词汇，包含食物类比，技术准确，格式为4点，每点字数固定。  \n核心方案：  \n1. 用食物类比解释连接关系。  \n2. 强调同步变化的特性。  \n3. 说明无法预测但相关联。  \n4. 确保符合字数和词汇限制。  \n待补环节：  \n需验证字数、词汇使用及技术准确性。",
+      "parsed_sections": {
+        "关键约束": "必须满足100字限制，使用“entangled”两次，禁用特定词汇，包含食物类比，技术准确，格式为4点，每点字数固定。",
+        "核心方案": "1. 用食物类比解释连接关系。  \n2. 强调同步变化的特性。  \n3. 说明无法预测但相关联。  \n4. 确保符合字数和词汇限制。",
+        "待补环节": "需验证字数、词汇使用及技术准确性。"
+      },
+      "structure_completeness": 1.0,
+      "pending_is_empty": false,
+      "checkpoints": [
+        32,
+        64,
+        96
+      ],
+      "checkpoint_diagnostics": [
+        {
+          "checkpoint": 32,
+          "available_tokens": 32,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 64,
+          "available_tokens": 64,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 0,
+          "path_reversal_count": 0
+        },
+        {
+          "checkpoint": 96,
+          "available_tokens": 96,
+          "lexical_repetition_rate": 0.0,
+          "segment_revisit_rate": 0.0,
+          "max_revisit_span": 1,
+          "path_reversal_count": 0
+        }
+      ],
+      "probe_adjacent_distances": [
+        0.04545576193137679,
+        0.04945552938646425
+      ],
+      "probe_early_distance": 0.04545576193137679,
+      "probe_late_distance": 0.04945552938646425,
+      "probe_decay_score": 0.0,
+      "terminal_probe_distance": 0.04945552938646425,
+      "natural_adjacent_distances": [
+        0.04415870239242348,
+        0.03873092397820044,
+        0.06659430662359633
+      ],
+      "natural_early_distance": 0.04415870239242348,
+      "natural_late_distance": 0.052662615300898385,
+      "natural_decay_score": 0.0,
+      "lexical_repetition_rate": 0.0,
+      "segment_revisit_rate": 0.0,
+      "path_reversal_count": 0,
+      "prereason_runtime_ms": 4195.944353938103,
+      "probe_runtime_ms": 560.3627141099423,
+      "peak_memory_mb": 15904.46923828125,
+      "status": "success",
+      "error": "",
+      "stable_subscore": 0.2917479299835365,
+      "decay_subscore": 0.0,
+      "repeat_safety_subscore": 1.0,
+      "structure_subscore": 1.0,
+      "solveability_proxy_score": 58.75243789950609
+    }
+  ]
+}

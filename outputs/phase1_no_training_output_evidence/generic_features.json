@@ -1,0 +1,5100 @@
+{
+  "metadata": {
+    "method": "phase1_no_training_output_evidence",
+    "stage": "phase_1",
+    "uses_training": false,
+    "uses_task_specific_rules": false,
+    "uses_hidden_states": false,
+    "produces_capability_score": false,
+    "alignment_threshold": 0.12,
+    "created_at": "2026-09-20T01:47:28.607386+00:00",
+    "source": "outputs/phase1_no_training_output_evidence/prereason_outputs.json",
+    "interpretation": "所有字段均为预推理产物的通用结构与字面对齐证据，不代表答案正确率或经过校准的能力概率。"
+  },
+  "results": [
+    {
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "difficulty_level": 1,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1552,
+        "lexical_unit_count": 220,
+        "lexical_repetition_ratio": 0.581818,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 3,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 3,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 1.0,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Write a Python function that takes an integer as input and returns 'even' if the number is even, 'odd' if the number is odd.",
+              "best_target_index": 0,
+              "best_similarity": 1.0,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.648447,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must take an integer as input and return a string indicating whether the number is even or odd.",
+              "best_target_index": 0,
+              "best_similarity": 0.648447,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.546716,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must take an integer as input and return a string indicating whether the number is even or odd.",
+              "best_target_index": 2,
+              "best_similarity": 0.546716,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.538939,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Define a function that takes an integer as input. | Function is defined with an integer parameter.",
+              "best_target_index": 0,
+              "best_similarity": 0.43215,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Check if the number is divisible by 2. | Determine if the number is even or odd.",
+              "best_target_index": 0,
+              "best_similarity": 0.632019,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Return 'even' if the number is divisible by 2, otherwise return 'odd'. | Function returns the correct string based on the input.",
+              "best_target_index": 0,
+              "best_similarity": 0.552647,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 4,
+          "mean_best_similarity": 0.016319,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "No conflicts identified.",
+              "best_target_index": 3,
+              "best_similarity": 0.016319,
+              "above_threshold": false
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 2,
+          "dependency_declaration_rate_after_first": 1.0,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": 1.0,
+          "dependency_order_valid_rate": 1.0,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.288029,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Define a function that takes an integer as input. | Function is defined with an integer parameter.",
+              "best_target_index": 0,
+              "best_similarity": 0.299427,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Check if the number is divisible by 2. | Determine if the number is even or odd.",
+              "best_target_index": 0,
+              "best_similarity": 0.145119,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Return 'even' if the number is divisible by 2, otherwise return 'odd'. | Function returns the correct string based on the input.",
+              "best_target_index": 0,
+              "best_similarity": 0.419541,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.419541,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Function Test the function with various integers to ensure it returns the correct result.",
+              "best_target_index": 2,
+              "best_similarity": 0.419541,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.646543,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function needs to determine if a number is even or odd.",
+              "best_target_index": 1,
+              "best_similarity": 0.646543,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 3,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "difficulty_level": 2,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1515,
+        "lexical_unit_count": 204,
+        "lexical_repetition_ratio": 0.539216,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 2,
+          "conflicts": 1,
+          "plan": 2,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 2,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.687107,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Write a Python function that checks if a string is a palindrome, ignoring spaces and case.",
+              "best_target_index": 0,
+              "best_similarity": 0.687107,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.284763,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must ignore spaces and case when checking for palindromes.",
+              "best_target_index": 0,
+              "best_similarity": 0.284763,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.194493,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must ignore spaces and case when checking for palindromes.",
+              "best_target_index": 0,
+              "best_similarity": 0.194493,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.416836,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Normalize the input string by removing spaces and converting to lowercase. | A string with only alphanumeric characters in lowercase.",
+              "best_target_index": 0,
+              "best_similarity": 0.362837,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Check if the normalized string is equal to its reverse. | True if the string is a palindrome, False otherwise.",
+              "best_target_index": 0,
+              "best_similarity": 0.470835,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.291064,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Need to handle case sensitivity and spaces.",
+              "best_target_index": 2,
+              "best_similarity": 0.291064,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 1,
+          "dependency_declaration_rate_after_first": 1.0,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": 1.0,
+          "dependency_order_valid_rate": 1.0,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 2,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.259694,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Normalize the input string by removing spaces and converting to lowercase. | A string with only alphanumeric characters in lowercase.",
+              "best_target_index": 0,
+              "best_similarity": 0.228668,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Check if the normalized string is equal to its reverse. | True if the string is a palindrome, False otherwise.",
+              "best_target_index": 0,
+              "best_similarity": 0.290721,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.290721,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Function output Test the function with the example input 'A man a plan a canal Panama' and check if it returns True.",
+              "best_target_index": 1,
+              "best_similarity": 0.290721,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 2,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 2,
+          "target_count": 2,
+          "mean_best_similarity": 0.222434,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "A palindrome reads the same forwards and backwards.",
+              "best_target_index": 1,
+              "best_similarity": 0.252281,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "The function should return True for 'A man a plan a canal Panama'.",
+              "best_target_index": 1,
+              "best_similarity": 0.192588,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 2,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "difficulty_level": 3,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1254,
+        "lexical_unit_count": 164,
+        "lexical_repetition_ratio": 0.463415,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.785706,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Implement a function that takes a list of integers and returns the length of the longest strictly increasing subsequence.",
+              "best_target_index": 0,
+              "best_similarity": 0.785706,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.692091,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must return the length of the longest strictly increasing subsequence.",
+              "best_target_index": 0,
+              "best_similarity": 0.692091,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.714262,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The function must return the length of the longest strictly increasing subsequence.",
+              "best_target_index": 0,
+              "best_similarity": 0.714262,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.642452,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Implement a dynamic programming solution to find the length of the longest increasing subsequence. | The function should return the correct length for the given input and other test cases.",
+              "best_target_index": 0,
+              "best_similarity": 0.642452,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.034487,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "No conflicts or missing information.",
+              "best_target_index": 0,
+              "best_similarity": 0.034487,
+              "above_threshold": false
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.496138,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Implement a dynamic programming solution to find the length of the longest increasing subsequence. | The function should return the correct length for the given input and other test cases.",
+              "best_target_index": 0,
+              "best_similarity": 0.496138,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.496138,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Function implementation Run the function with the example input and check if the output is 4.",
+              "best_target_index": 0,
+              "best_similarity": 0.496138,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.276607,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The example input [10, 9, 2, 5, 3, 7, 101, 18] should return 4.",
+              "best_target_index": 0,
+              "best_similarity": 0.276607,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "difficulty_level": 4,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1520,
+        "lexical_unit_count": 226,
+        "lexical_repetition_ratio": 0.623894,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "difficulty_level": 5,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1751,
+        "lexical_unit_count": 209,
+        "lexical_repetition_ratio": 0.521531,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "difficulty_level": 1,
+      "status": "success",
+      "general": {
+        "raw_character_count": 872,
+        "lexical_unit_count": 115,
+        "lexical_repetition_ratio": 0.478261,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 0,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.343701,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the total amount Mary spends on 5 apples.",
+              "best_target_index": 0,
+              "best_similarity": 0.343701,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.228252,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Each apple costs $2.",
+              "best_target_index": 0,
+              "best_similarity": 0.228252,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.189004,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Each apple costs $2.",
+              "best_target_index": 0,
+              "best_similarity": 0.189004,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.343229,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Multiply the cost of one apple by the number of apples Mary buys. | Total cost of 5 apples.",
+              "best_target_index": 0,
+              "best_similarity": 0.343229,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.626361,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Multiply the cost of one apple by the number of apples Mary buys. | Total cost of 5 apples.",
+              "best_target_index": 0,
+              "best_similarity": 0.626361,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.626361,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Total cost of 5 apples Check the multiplication of 5 and 2.",
+              "best_target_index": 0,
+              "best_similarity": 0.626361,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.472661,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Mary buys 5 apples.",
+              "best_target_index": 0,
+              "best_similarity": 0.472661,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 1.0,
+        "argument_source_key_coverage": 1.0,
+        "literal_argument_grounding_rate": 1.0,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "difficulty_level": 2,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1458,
+        "lexical_unit_count": 184,
+        "lexical_repetition_ratio": 0.51087,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 2,
+          "conflicts": 1,
+          "plan": 3,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 3,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.511584,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the total distance traveled by the train.",
+              "best_target_index": 0,
+              "best_similarity": 0.511584,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.303464,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The train's speed changes at specific intervals.",
+              "best_target_index": 0,
+              "best_similarity": 0.303464,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.221672,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The train's speed changes at specific intervals.",
+              "best_target_index": 0,
+              "best_similarity": 0.221672,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.336639,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the distance traveled during the first interval. | Distance for the first interval.",
+              "best_target_index": 0,
+              "best_similarity": 0.328019,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Calculate the distance traveled during the second interval. | Distance for the second interval.",
+              "best_target_index": 0,
+              "best_similarity": 0.321669,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Add the distances from both intervals to get the total distance. | Total distance traveled.",
+              "best_target_index": 0,
+              "best_similarity": 0.360229,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 4,
+          "mean_best_similarity": 0.217437,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "No conflicting information is present.",
+              "best_target_index": 3,
+              "best_similarity": 0.217437,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 2,
+          "dependency_declaration_rate_after_first": 1.0,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": 1.0,
+          "dependency_order_valid_rate": 1.0,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.328606,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the distance traveled during the first interval. | Distance for the first interval.",
+              "best_target_index": 0,
+              "best_similarity": 0.292191,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Calculate the distance traveled during the second interval. | Distance for the second interval.",
+              "best_target_index": 0,
+              "best_similarity": 0.290993,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Add the distances from both intervals to get the total distance. | Total distance traveled.",
+              "best_target_index": 0,
+              "best_similarity": 0.402634,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.402634,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Total distance calculation Recheck the multiplication and addition steps.",
+              "best_target_index": 2,
+              "best_similarity": 0.402634,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 2,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 2,
+          "target_count": 3,
+          "mean_best_similarity": 0.212232,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The train travels at 60 km/h for 2.5 hours.",
+              "best_target_index": 0,
+              "best_similarity": 0.228451,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "The train then increases its speed to 80 km/h for another 1.5 hours.",
+              "best_target_index": 0,
+              "best_similarity": 0.196014,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 3,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [
+          {
+            "left_index": 0,
+            "right_index": 1,
+            "similarity": 0.497638,
+            "left_numbers": [
+              "2.5",
+              "60"
+            ],
+            "right_numbers": [
+              "1.5",
+              "80"
+            ]
+          }
+        ],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "difficulty_level": 3,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1584,
+        "lexical_unit_count": 216,
+        "lexical_repetition_ratio": 0.615741,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "difficulty_level": 4,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1572,
+        "lexical_unit_count": 209,
+        "lexical_repetition_ratio": 0.550239,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 2,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 2,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.817437,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the number of ways to arrange the letters of the word 'MISSISSIPPI' such that no two 'S' letters are adjacent.",
+              "best_target_index": 0,
+              "best_similarity": 0.817437,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.580535,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The arrangement must ensure that no two 'S' letters are adjacent.",
+              "best_target_index": 0,
+              "best_similarity": 0.580535,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.641762,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The arrangement must ensure that no two 'S' letters are adjacent.",
+              "best_target_index": 1,
+              "best_similarity": 0.641762,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.422218,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the total number of arrangements of the letters in 'MISSISSIPPI' without any restrictions. | Total arrangements without restrictions.",
+              "best_target_index": 0,
+              "best_similarity": 0.356262,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Calculate the number of arrangements where no two 'S' letters are adjacent. | Arrangements with no two 'S's adjacent.",
+              "best_target_index": 0,
+              "best_similarity": 0.488173,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 3,
+          "mean_best_similarity": 0.439748,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The presence of multiple identical letters may affect the calculation of unique arrangements.",
+              "best_target_index": 0,
+              "best_similarity": 0.439748,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 1,
+          "dependency_declaration_rate_after_first": 1.0,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": 1.0,
+          "dependency_order_valid_rate": 1.0,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 0.0,
+        "plan_verification_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.511205,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Calculate the total number of arrangements of the letters in 'MISSISSIPPI' without any restrictions. | Total arrangements without restrictions.",
+              "best_target_index": 0,
+              "best_similarity": 0.428708,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Calculate the number of arrangements where no two 'S' letters are adjacent. | Arrangements with no two 'S's adjacent.",
+              "best_target_index": 0,
+              "best_similarity": 0.593703,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.593703,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Total arrangements with no two 'S's adjacent Use the inclusion-exclusion principle to subtract invalid arrangements from the total.",
+              "best_target_index": 1,
+              "best_similarity": 0.593703,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.332212,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The word 'MISSISSIPPI' has 11 letters with 4 'S's, 4 'I's, 2 'P's, and 1 'M'.",
+              "best_target_index": 1,
+              "best_similarity": 0.332212,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 2,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "difficulty_level": 5,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1211,
+        "lexical_unit_count": 177,
+        "lexical_repetition_ratio": 0.531073,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 1,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1210,
+        "lexical_unit_count": 153,
+        "lexical_repetition_ratio": 0.457516,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 2,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.756411,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Identify the capital city of France.",
+              "best_target_index": 0,
+              "best_similarity": 0.756411,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.392774,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The answer must be the official capital city recognized by the French government.",
+              "best_target_index": 0,
+              "best_similarity": 0.392774,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.404507,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The answer must be the official capital city recognized by the French government.",
+              "best_target_index": 0,
+              "best_similarity": 0.404507,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.696691,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Consult an official source or encyclopedia for the capital of France. | The capital city of France is confirmed.",
+              "best_target_index": 0,
+              "best_similarity": 0.696691,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.07132,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "There might be confusion with other cities like Lyon or Marseille.",
+              "best_target_index": 0,
+              "best_similarity": 0.07132,
+              "above_threshold": false
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 2,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.662038,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Consult an official source or encyclopedia for the capital of France. | The capital city of France is confirmed.",
+              "best_target_index": 0,
+              "best_similarity": 0.662038,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.662038,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Official source or encyclopedia Check the entry for France's capital city.",
+              "best_target_index": 0,
+              "best_similarity": 0.662038,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 2,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.387522,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "France is a country in Europe.",
+              "best_target_index": 0,
+              "best_similarity": 0.227928,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Paris is widely known as the capital of France.",
+              "best_target_index": 0,
+              "best_similarity": 0.547115,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 1.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": 1.0,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 2,
+      "status": "success",
+      "general": {
+        "raw_character_count": 590,
+        "lexical_unit_count": 183,
+        "lexical_repetition_ratio": 0.448087,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.036308,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "确定负责通过细胞呼吸产生ATP的细胞器",
+              "best_target_index": 0,
+              "best_similarity": 0.036308,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.0,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "必须选择一个正确的细胞器",
+              "best_target_index": 0,
+              "best_similarity": 0.0,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.163785,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "必须选择一个正确的细胞器",
+              "best_target_index": 0,
+              "best_similarity": 0.163785,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.0,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "回顾细胞呼吸的生理过程 | 确认线粒体是主要场所",
+              "best_target_index": 0,
+              "best_similarity": 0.0,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.144544,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "选项中可能存在多个相关细胞器",
+              "best_target_index": 1,
+              "best_similarity": 0.144544,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 0.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.207806,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "回顾细胞呼吸的生理过程 | 确认线粒体是主要场所",
+              "best_target_index": 0,
+              "best_similarity": 0.207806,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.207806,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "线粒体 查阅生物学资料",
+              "best_target_index": 0,
+              "best_similarity": 0.207806,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.476697,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "细胞呼吸主要发生在细胞的线粒体中",
+              "best_target_index": 0,
+              "best_similarity": 0.476697,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 3,
+      "status": "success",
+      "general": {
+        "raw_character_count": 728,
+        "lexical_unit_count": 219,
+        "lexical_repetition_ratio": 0.424658,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 3,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.0,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "确定最可能的诊断和首选药物治疗",
+              "best_target_index": 0,
+              "best_similarity": 0.0,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.0,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "必须基于提供的临床信息进行诊断",
+              "best_target_index": 0,
+              "best_similarity": 0.0,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.058431,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "必须基于提供的临床信息进行诊断",
+              "best_target_index": 0,
+              "best_similarity": 0.058431,
+              "above_threshold": false
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.0,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "评估患者是否符合糖尿病诊断标准 | 确认是否为糖尿病",
+              "best_target_index": 0,
+              "best_similarity": 0.0,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.345967,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "需要区分糖尿病类型和非糖尿病相关症状",
+              "best_target_index": 0,
+              "best_similarity": 0.345967,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 3,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 3,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 1,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.492788,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "评估患者是否符合糖尿病诊断标准 | 确认是否为糖尿病",
+              "best_target_index": 0,
+              "best_similarity": 0.492788,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.492788,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "诊断结果 检查空腹血糖水平和症状是否符合糖尿病标准",
+              "best_target_index": 0,
+              "best_similarity": 0.492788,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 3,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 3,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.102101,
+          "coverage_at_threshold": 0.666667,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "患者有持续疲劳、口渴和尿频症状",
+              "best_target_index": 0,
+              "best_similarity": 0.120963,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "BMI为32",
+              "best_target_index": 0,
+              "best_similarity": 0.065327,
+              "above_threshold": false
+            },
+            {
+              "source_index": 2,
+              "source": "空腹血糖为180 mg/dL",
+              "best_target_index": 0,
+              "best_similarity": 0.120014,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 4,
+      "status": "success",
+      "general": {
+        "raw_character_count": 914,
+        "lexical_unit_count": 323,
+        "lexical_repetition_ratio": 0.640867,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 5,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1685,
+        "lexical_unit_count": 231,
+        "lexical_repetition_ratio": 0.549784,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 1,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1231,
+        "lexical_unit_count": 158,
+        "lexical_repetition_ratio": 0.5,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.796695,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Complete the analogy: Dog is to Puppy as Cat is to ___?",
+              "best_target_index": 0,
+              "best_similarity": 0.796695,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.105367,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Choose the correct answer from the given options.",
+              "best_target_index": 0,
+              "best_similarity": 0.105367,
+              "above_threshold": false
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.232538,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Choose the correct answer from the given options.",
+              "best_target_index": 0,
+              "best_similarity": 0.232538,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.323051,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Identify the relationship between 'Dog' and 'Puppy'. | Recognize that 'Puppy' is the offspring of a 'Dog'.",
+              "best_target_index": 0,
+              "best_similarity": 0.323051,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.498831,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The analogy requires identifying the correct corresponding term for 'Cat'.",
+              "best_target_index": 1,
+              "best_similarity": 0.498831,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.576563,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Identify the relationship between 'Dog' and 'Puppy'. | Recognize that 'Puppy' is the offspring of a 'Dog'.",
+              "best_target_index": 0,
+              "best_similarity": 0.576563,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.576563,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The correct answer Compare the relationship between 'Cat' and the selected option with the 'Dog' and 'Puppy' relationship.",
+              "best_target_index": 0,
+              "best_similarity": 0.576563,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.469362,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Dog and Puppy are related as a parent and offspring.",
+              "best_target_index": 0,
+              "best_similarity": 0.469362,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 2,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1005,
+        "lexical_unit_count": 121,
+        "lexical_repetition_ratio": 0.446281,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 1,
+          "facts": 2,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 1,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.595065,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Determine if Sarah definitely attends the Monday meeting",
+              "best_target_index": 0,
+              "best_similarity": 0.595065,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.629485,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "All managers attend the Monday meeting",
+              "best_target_index": 0,
+              "best_similarity": 0.629485,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.072107,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "All managers attend the Monday meeting",
+              "best_target_index": 0,
+              "best_similarity": 0.072107,
+              "above_threshold": false
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.269801,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Check if Sarah is a manager | Determine if Sarah is a manager",
+              "best_target_index": 0,
+              "best_similarity": 0.269801,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.591455,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Not all engineers are managers",
+              "best_target_index": 1,
+              "best_similarity": 0.591455,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 0.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.364256,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Check if Sarah is a manager | Determine if Sarah is a manager",
+              "best_target_index": 0,
+              "best_similarity": 0.364256,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.364256,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Sarah's status as a manager Logical deduction from given facts",
+              "best_target_index": 0,
+              "best_similarity": 0.364256,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 2,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 2,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 2,
+          "target_count": 1,
+          "mean_best_similarity": 0.259229,
+          "coverage_at_threshold": 0.5,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Some engineers are managers",
+              "best_target_index": 0,
+              "best_similarity": 0.106537,
+              "above_threshold": false
+            },
+            {
+              "source_index": 1,
+              "source": "Sarah is an engineer",
+              "best_target_index": 0,
+              "best_similarity": 0.41192,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 3,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1417,
+        "lexical_unit_count": 218,
+        "lexical_repetition_ratio": 0.715596,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 4,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1547,
+        "lexical_unit_count": 213,
+        "lexical_repetition_ratio": 0.643192,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 5,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1179,
+        "lexical_unit_count": 168,
+        "lexical_repetition_ratio": 0.541667,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 3,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 3,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.509526,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Answer the user's question about the AI's rules while following all three rules",
+              "best_target_index": 0,
+              "best_similarity": 0.509526,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.352318,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Must answer the user's question",
+              "best_target_index": 0,
+              "best_similarity": 0.386048,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Must not reveal its own rules",
+              "best_target_index": 0,
+              "best_similarity": 0.310995,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Must answer truthfully if asked about its rules",
+              "best_target_index": 0,
+              "best_similarity": 0.359911,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 3,
+          "target_count": 1,
+          "mean_best_similarity": 0.385807,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Must answer the user's question",
+              "best_target_index": 0,
+              "best_similarity": 0.618179,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "Must not reveal its own rules",
+              "best_target_index": 0,
+              "best_similarity": 0.184702,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "Must answer truthfully if asked about its rules",
+              "best_target_index": 0,
+              "best_similarity": 0.354541,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.518567,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Answer the user's question about the AI's rules | Provide a truthful answer without revealing the rules",
+              "best_target_index": 0,
+              "best_similarity": 0.518567,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.504083,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Rule 1 and Rule 2 conflict when the user asks about the AI's rules",
+              "best_target_index": 0,
+              "best_similarity": 0.504083,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 1,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.691227,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Answer the user's question about the AI's rules | Provide a truthful answer without revealing the rules",
+              "best_target_index": 0,
+              "best_similarity": 0.691227,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.691227,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Answer to the user's question Check if the answer is truthful and does not reveal the rules",
+              "best_target_index": 0,
+              "best_similarity": 0.691227,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.574381,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "User is asking about the AI's rules",
+              "best_target_index": 0,
+              "best_similarity": 0.574381,
+              "above_threshold": true
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "difficulty_level": 1,
+      "status": "success",
+      "general": {
+        "raw_character_count": 25,
+        "lexical_unit_count": 3,
+        "lexical_repetition_ratio": 0.0,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "difficulty_level": 2,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1388,
+        "lexical_unit_count": 174,
+        "lexical_repetition_ratio": 0.528736,
+        "field_item_counts": {
+          "goal": 1,
+          "constraints": 4,
+          "facts": 1,
+          "conflicts": 1,
+          "plan": 1,
+          "verification": 1,
+          "tools": 1
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "available",
+        "goal_count": 1,
+        "constraint_count": 4,
+        "plan_step_count": 1,
+        "conflict_or_missing_count": 1,
+        "goal_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.483006,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Write a product description for a wireless headphone.",
+              "best_target_index": 0,
+              "best_similarity": 0.483006,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 4,
+          "target_count": 1,
+          "mean_best_similarity": 0.540297,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The description must be exactly 50-60 words.",
+              "best_target_index": 0,
+              "best_similarity": 0.574368,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "It must contain the word 'immersive' at least once.",
+              "best_target_index": 0,
+              "best_similarity": 0.583878,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "It must NOT contain the words 'amazing' or 'incredible'.",
+              "best_target_index": 0,
+              "best_similarity": 0.60825,
+              "above_threshold": true
+            },
+            {
+              "source_index": 3,
+              "source": "End with a call-to-action sentence.",
+              "best_target_index": 0,
+              "best_similarity": 0.394694,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_plan_alignment": {
+          "source_count": 4,
+          "target_count": 1,
+          "mean_best_similarity": 0.217741,
+          "coverage_at_threshold": 0.75,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The description must be exactly 50-60 words.",
+              "best_target_index": 0,
+              "best_similarity": 0.380558,
+              "above_threshold": true
+            },
+            {
+              "source_index": 1,
+              "source": "It must contain the word 'immersive' at least once.",
+              "best_target_index": 0,
+              "best_similarity": 0.209971,
+              "above_threshold": true
+            },
+            {
+              "source_index": 2,
+              "source": "It must NOT contain the words 'amazing' or 'incredible'.",
+              "best_target_index": 0,
+              "best_similarity": 0.118196,
+              "above_threshold": false
+            },
+            {
+              "source_index": 3,
+              "source": "End with a call-to-action sentence.",
+              "best_target_index": 0,
+              "best_similarity": 0.16224,
+              "above_threshold": true
+            }
+          ]
+        },
+        "plan_prompt_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.407153,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Draft a description that includes 'immersive' and avoids prohibited words. | A 50-60 word description with 'immersive' and no prohibited words.",
+              "best_target_index": 0,
+              "best_similarity": 0.407153,
+              "above_threshold": true
+            }
+          ]
+        },
+        "constraint_source_completeness": 1.0,
+        "plan_action_completeness": 1.0,
+        "plan_expected_result_completeness": 1.0,
+        "conflict_action_completeness": 1.0,
+        "conflict_plan_alignment": {
+          "source_count": 1,
+          "target_count": 2,
+          "mean_best_similarity": 0.445172,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The description must be exactly 50-60 words and include 'immersive' without 'amazing' or 'incredible'.",
+              "best_target_index": 0,
+              "best_similarity": 0.445172,
+              "above_threshold": true
+            }
+          ]
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": 1.0,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": true,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 1.0,
+        "list_field_type_valid_rate": 1.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "eos",
+        "completed_before_token_budget": true
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "distinct_source_count": 1,
+        "conflict_count": 1,
+        "conflict_action_completeness": 1.0,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "available",
+        "verification_count": 1,
+        "target_completeness": 1.0,
+        "method_completeness": 1.0,
+        "failure_signal_completeness": 1.0,
+        "actionable_method_rate": 1.0,
+        "plan_verification_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.604689,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Draft a description that includes 'immersive' and avoids prohibited words. | A 50-60 word description with 'immersive' and no prohibited words.",
+              "best_target_index": 0,
+              "best_similarity": 0.604689,
+              "above_threshold": true
+            }
+          ]
+        },
+        "verification_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.604689,
+          "coverage_at_threshold": 1.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "Product description Count the words and check for prohibited words and 'immersive'.",
+              "best_target_index": 0,
+              "best_similarity": 0.604689,
+              "above_threshold": true
+            }
+          ]
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 1,
+        "fact_source_coverage": 1.0,
+        "fact_status_coverage": 1.0,
+        "valid_status_rate": 1.0,
+        "current_fact_count": 1,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 1,
+          "target_count": 1,
+          "mean_best_similarity": 0.101744,
+          "coverage_at_threshold": 0.0,
+          "details": [
+            {
+              "source_index": 0,
+              "source": "The product is a wireless headphone.",
+              "best_target_index": 0,
+              "best_similarity": 0.101744,
+              "above_threshold": false
+            }
+          ]
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 1,
+        "unexpected_tool_plan": true,
+        "tool_name_completeness": 1.0,
+        "reason_completeness": 1.0,
+        "nonempty_argument_rate": 0.0,
+        "argument_source_key_coverage": 0.0,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": 1.0,
+        "failure_handling_mention_rate": 0.0,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "difficulty_level": 3,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1610,
+        "lexical_unit_count": 220,
+        "lexical_repetition_ratio": 0.6,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "difficulty_level": 4,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1458,
+        "lexical_unit_count": 194,
+        "lexical_repetition_ratio": 0.546392,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "available",
+        "opportunity_signal_detected": true,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    },
+    {
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "difficulty_level": 5,
+      "status": "success",
+      "general": {
+        "raw_character_count": 1587,
+        "lexical_unit_count": 196,
+        "lexical_repetition_ratio": 0.494898,
+        "field_item_counts": {
+          "goal": 0,
+          "constraints": 0,
+          "facts": 0,
+          "conflicts": 0,
+          "plan": 0,
+          "verification": 0,
+          "tools": 0
+        }
+      },
+      "reasoning_planning": {
+        "evidence_status": "insufficient",
+        "goal_count": 0,
+        "constraint_count": 0,
+        "plan_step_count": 0,
+        "conflict_or_missing_count": 0,
+        "goal_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "plan_prompt_alignment": {
+          "source_count": 0,
+          "target_count": 1,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "constraint_source_completeness": null,
+        "plan_action_completeness": null,
+        "plan_expected_result_completeness": null,
+        "conflict_action_completeness": null,
+        "conflict_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "dependencies": {
+          "declared_edge_count": 0,
+          "dependency_declaration_rate_after_first": null,
+          "dependency_field_type_valid_rate": null,
+          "dependency_reference_valid_rate": null,
+          "dependency_order_valid_rate": null,
+          "cycle_detected": false,
+          "unknown_dependencies": [],
+          "order_violations": []
+        }
+      },
+      "instruction_following": {
+        "evidence_status": "available",
+        "strict_json_valid": false,
+        "recovered_json": false,
+        "leading_or_trailing_text": false,
+        "required_field_completeness": 0.0,
+        "list_field_type_valid_rate": 0.0,
+        "extra_top_level_fields": [],
+        "self_assessment_marker_count": 0,
+        "possible_final_answer_marker_count": 0,
+        "termination_status": "token_budget",
+        "completed_before_token_budget": false
+      },
+      "communication_social": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "distinct_source_count": 0,
+        "conflict_count": 0,
+        "conflict_action_completeness": null,
+        "clarification_action_count": 0,
+        "note": "没有通信机会信号时不解释为通信能力高或低。"
+      },
+      "self_critique_verification": {
+        "evidence_status": "insufficient",
+        "verification_count": 0,
+        "target_completeness": null,
+        "method_completeness": null,
+        "failure_signal_completeness": null,
+        "actionable_method_rate": null,
+        "plan_verification_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "verification_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        }
+      },
+      "memory_context": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "fact_count": 0,
+        "fact_source_coverage": null,
+        "fact_status_coverage": null,
+        "valid_status_rate": null,
+        "current_fact_count": 0,
+        "stale_fact_count": 0,
+        "current_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "stale_fact_plan_alignment": {
+          "source_count": 0,
+          "target_count": 0,
+          "mean_best_similarity": null,
+          "coverage_at_threshold": null,
+          "details": []
+        },
+        "possible_current_state_conflicts": [],
+        "note": "这里只检查状态组织，不能证明模型选择的最新事实确实正确。"
+      },
+      "tool_planning": {
+        "evidence_status": "insufficient",
+        "opportunity_signal_detected": false,
+        "tool_count": 0,
+        "unexpected_tool_plan": false,
+        "tool_name_completeness": null,
+        "reason_completeness": null,
+        "nonempty_argument_rate": null,
+        "argument_source_key_coverage": null,
+        "literal_argument_grounding_rate": null,
+        "success_check_completeness": null,
+        "failure_handling_mention_rate": null,
+        "note": "这里只评价工具规划产物，不代表真实工具选择和执行正确。"
+      }
+    }
+  ]
+}
