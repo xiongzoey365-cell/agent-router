@@ -1,0 +1,18 @@
+In the **2018 U.S. Supreme Court case *South Dakota v. Wayfair, Inc.***, the Court **overturned the physical presence rule** established in the **1992 precedent *Quill Corp. v. North Dakota***.
+
+### Key Constitutional Principle Reinterpreted:
+The key constitutional principle reinterpreted in *South Dakota v. Wayfair* was the **Due Process Clause** of the **Fourteenth Amendment**. The Court determined that the **"physical presence" rule**, which had long been used to determine whether a business could be subject to state sales tax collection obligations, was no longer consistent with the modern digital economy.
+
+### Impact on Small E-commerce Businesses:
+The decision had significant implications for **small e-commerce businesses** that sell across state lines:
+
+- **Before *Wayfair***: Under *Quill*, businesses had to have a **physical presence** (e.g., an office, warehouse, or employees) in a state to be required to collect and remit sales tax. This meant that many small online retailers, especially those based out of state, could avoid collecting sales tax on out-of-state sales, effectively **avoiding billions in tax revenue** for states.
+
+- **After *Wayfair***: The Court ruled that states can now require **remote sellers** (even those without a physical presence) to collect and remit sales tax if they meet a **threshold of annual sales or transactions** in that state. This is known as the **"economic nexus"** standard.
+
+### Specific Impact:
+- **Increased tax compliance**: Small e-commerce businesses now have to **track and collect sales tax** in multiple states, which can be **costly and complex**.
+- **New obligations**: Businesses must **register with states**, **file tax returns**, and **remit taxes**, which can be a **burden for small businesses** with limited resources.
+- **Shift in tax policy**: The decision **modernized tax collection** to reflect the realities of the **digital economy**, ensuring that states can collect revenue from businesses that operate across state lines.
+
+In summary, *South Dakota v. Wayfair* reinterpreted the Due Process Clause to allow states to impose sales tax obligations on remote sellers, significantly impacting small e-commerce businesses by requiring them to comply with state tax laws even if they lack a physical presence.

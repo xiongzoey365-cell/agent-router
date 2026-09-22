@@ -1,0 +1,57 @@
+We are given the following statements:
+
+1. **All managers attend the Monday meeting.**  
+2. **Some engineers are managers.**  
+3. **Sarah is an engineer.**
+
+We are asked: **Does Sarah definitely attend the Monday meeting?**
+
+Let's analyze step by step.
+
+---
+
+### Step 1: Understand the first statement
+> **All managers attend the Monday meeting.**  
+This means:  
+- If someone is a **manager**, then they **must** attend the meeting.
+
+So, **Manager → Attend meeting**
+
+---
+
+### Step 2: Understand the second statement
+> **Some engineers are managers.**  
+This means:  
+- There exists at least one engineer who is also a manager.  
+But it does **not** say that **all** engineers are managers, or that **any** engineer is a manager.
+
+So, **Some engineers are managers** → but not necessarily all.
+
+---
+
+### Step 3: Sarah is an engineer
+We are told:  
+> **Sarah is an engineer.**
+
+But we do **not** know whether Sarah is a **manager** or not.
+
+---
+
+### Step 4: Can we conclude Sarah attends the meeting?
+
+We know:
+- If Sarah is a **manager**, then she **must** attend the meeting.
+- But we **don't know** if Sarah is a manager.
+
+So, it's **possible** that Sarah is a manager and attends the meeting, but it's also **possible** that she is **not** a manager and **does not** attend the meeting.
+
+---
+
+### Final Conclusion:
+
+Since we **cannot determine** whether Sarah is a manager or not, we **cannot determine** whether she attends the meeting.
+
+---
+
+### ✅ Correct Answer:  
+**C) Cannot be determined**

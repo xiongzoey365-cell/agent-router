@@ -1,0 +1,91 @@
+We are given:
+
+- The **perimeter** of a rectangle is **28 cm**.
+- The **length** is **3 cm more than twice the width**.
+- We are to find the **area** of the rectangle.
+
+---
+
+### Step 1: Define variables
+
+Let the **width** of the rectangle be:  
+$$
+w
+$$
+
+Then the **length** is:  
+$$
+l = 2w + 3
+$$
+
+---
+
+### Step 2: Use the perimeter formula
+
+The **perimeter** $ P $ of a rectangle is given by:
+$$
+P = 2(l + w)
+$$
+
+Substitute the known values:
+$$
+28 = 2(l + w)
+$$
+
+Substitute $ l = 2w + 3 $:
+$$
+28 = 2((2w + 3) + w)
+$$
+$$
+28 = 2(3w + 3)
+$$
+$$
+28 = 6w + 6
+$$
+
+---
+
+### Step 3: Solve for $ w $
+
+$$
+28 - 6 = 6w
+$$
+$$
+22 = 6w
+$$
+$$
+w = \frac{22}{6} = \frac{11}{3} \text{ cm}
+$$
+
+---
+
+### Step 4: Find the length
+
+$$
+l = 2w + 3 = 2\left(\frac{11}{3}\right) + 3 = \frac{22}{3} + 3 = \frac{22}{3} + \frac{9}{3} = \frac{31}{3} \text{ cm}
+$$
+
+---
+
+### Step 5: Find the area
+
+The **area** $ A $ of a rectangle is:
+$$
+A = l \times w
+$$
+$$
+A = \frac{31}{3} \times \frac{11}{3} = \frac{341}{9} \text{ cm}^2
+$$
+
+---
+
+### ✅ Final Answer:
+
+$$
+\boxed{\frac{341}{9} \text{ cm}^2}
+$$
+
+Or, as a decimal (approximately):
+$$
+\boxed{37.89 \text{ cm}^2}
+$$

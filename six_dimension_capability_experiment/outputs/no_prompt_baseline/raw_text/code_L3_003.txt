@@ -1,0 +1,57 @@
+To solve the problem of finding the **length of the longest strictly increasing subsequence (LIS)** in a list of integers, we can use an efficient algorithm with **O(n log n)** time complexity.
+
+### ✅ Key Idea:
+We maintain a list `tails`, where `tails[i]` represents the smallest possible tail value of an increasing subsequence of length `i+1`. As we iterate through the array, we update this list using **binary search** to find the appropriate position to replace or extend the subsequence.
+
+---
+
+### ✅ Python Implementation:
+
+```python
+import bisect
+
+def length_of_lis(nums):
+    tails = []
+    for num in nums:
+        # Use bisect to find the index where num can replace the first element >= num
+        index = bisect.bisect_left(tails, num)
+        if index == len(tails):
+            tails.append(num)
+        else:
+            tails[index] = num
+    return len(tails)
+```
+
+---
+
+### ✅ Example:
+
+```python
+nums = [10, 9, 2, 5, 3, 7, 101, 18]
+print(length_of_lis(nums))  # Output: 4
+```
+
+---
+
+### ✅ Explanation:
+
+For the input `[10, 9, 2, 5, 3, 7, 101, 18]`, the algorithm builds the `tails` list as follows:
+
+- Start with empty `tails`.
+- Process `10`: `tails = [10]`
+- Process `9`: replace `10` with `9` → `tails = [9]`
+- Process `2`: replace `9` with `2` → `tails = [2]`
+- Process `5`: append → `tails = [2, 5]`
+- Process `3`: replace `5` with `3` → `tails = [2, 3]`
+- Process `7`: append → `tails = [2, 3, 7]`
+- Process `101`: append → `tails = [2, 3, 7, 101]`
+- Process `18`: replace `101` with `18` → `tails = [2, 3, 7, 18]`
+
+At the end, the length of `tails` is `4`, which is the length of the longest increasing subsequence.
+
+---
+
+### ✅ Time Complexity:
+- **O(n log n)**, where `n` is the length of the input list.
+
+Let me know if you'd like a version that also returns the actual subsequence, not just its length!

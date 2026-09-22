@@ -1,0 +1,17 @@
+1. **推理与规划能力（Reasoning & Planning）**  
+   需要理解类比关系的结构，即“Dog is to Puppy”表示“成年动物与其幼年阶段的对应关系”。因此，需要找出“Cat”对应的幼年阶段名称，即“Kitten”。解题者应先分析“Dog”和“Puppy”的关系，再将这一逻辑应用到“Cat”上，从而确定正确答案。
+
+2. **指令遵循与角色遵从能力（Instruction Following & Role Adherence）**  
+   题目要求完成类比，因此解题者需严格遵循类比的结构，不引入额外信息或干扰项。需确保答案与“Dog is to Puppy”的逻辑一致，而不是选择与“Cat”相关的其他属性（如“Feline”是类别而非幼年阶段）。
+
+3. **通信与社会推理能力（Communication & Social Reasoning）**  
+   本题主要涉及语言和逻辑推理，而非社会互动或沟通场景，因此该维度在本题中没有明显体现。
+
+4. **自我批评与验证能力（Self-Critique & Verification）**  
+   解题者应验证答案是否符合类比逻辑，例如检查“Kitten”是否确实是“Cat”的幼年阶段，而不是其他选项（如“Feline”是类别，“Meow”是动作）。同时需排除干扰项，如“Whisker”是猫的特征而非幼年阶段。
+
+5. **记忆与上下文管理能力（Memory & Context Management）**  
+   需要回忆“Puppy”是“Dog”的幼年阶段，并将这一知识应用到“Cat”上。同时需保持上下文清晰，避免混淆“Cat”与其他相关词汇（如“Feline”）。
+
+6. **工具使用与动作落地能力（Tool Use & Action Grounding）**  
+   本题无需使用外部工具或执行具体动作，因此该维度在本题中没有明显体现。

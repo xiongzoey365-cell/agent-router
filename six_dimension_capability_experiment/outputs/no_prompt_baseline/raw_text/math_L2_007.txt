@@ -1,0 +1,34 @@
+To find the **total distance traveled** by the train, we can use the formula:
+
+$$
+\text{Distance} = \text{Speed} \times \text{Time}
+$$
+
+---
+
+### **First part of the journey:**
+- Speed = 60 km/h  
+- Time = 2.5 hours  
+$$
+\text{Distance}_1 = 60 \times 2.5 = 150 \text{ km}
+$$
+
+---
+
+### **Second part of the journey:**
+- Speed = 80 km/h  
+- Time = 1.5 hours  
+$$
+\text{Distance}_2 = 80 \times 1.5 = 120 \text{ km}
+$$
+
+---
+
+### **Total distance:**
+$$
+\text{Total Distance} = \text{Distance}_1 + \text{Distance}_2 = 150 + 120 = \boxed{270 \text{ km}}
+$$
+
+---
+
+**Answer:** The total distance traveled by the train is **270 km**.

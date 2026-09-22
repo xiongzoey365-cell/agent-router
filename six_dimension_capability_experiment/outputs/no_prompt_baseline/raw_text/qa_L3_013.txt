@@ -1,0 +1,58 @@
+Let's analyze the case and determine the most likely diagnosis and first-line treatment.
+
+### **Patient Profile:**
+- **Age:** 45 years
+- **Symptoms:** Persistent fatigue, increased thirst (polydipsia), frequent urination (polyuria) for 2 weeks
+- **BMI:** 32 (obese)
+- **Fasting blood glucose:** 180 mg/dL (elevated, above the normal range of 70–99 mg/dL)
+
+---
+
+### **Key Clinical Clues:**
+
+1. **Elevated fasting blood glucose (180 mg/dL):** This is **above the diagnostic threshold** for diabetes (≥126 mg/dL on two separate tests).
+2. **Symptoms of polyuria and polydipsia:** These are classic symptoms of **hyperglycemia**.
+3. **BMI of 32:** Indicates **obesity**, which is a **major risk factor** for **Type 2 Diabetes Mellitus (T2DM)**.
+4. **Age and gender:** 45-year-old male — consistent with the **epidemiology of T2DM**.
+
+---
+
+### **Differential Diagnosis Considerations:**
+
+- **Type 1 Diabetes (T1DM):** Typically presents with **acute symptoms** (e.g., weight loss, polyuria, polydipsia, ketosis), often in younger individuals. **Fasting glucose of 180 mg/dL** is **not typical** of T1DM unless it's in the early stages or in a patient with **autoimmune destruction** of beta cells. However, **T1DM is less likely** in a 45-year-old with obesity and no other signs of autoimmune disease.
+  
+- **Diabetes Insipidus (DI):** This is a **rare condition** characterized by **excessive urination and thirst**, but **not associated with hyperglycemia**. It is **not related to blood glucose levels** and is usually **diagnosed with a water deprivation test**. The **fasting glucose is not elevated** in DI.
+
+- **Cushing’s Syndrome:** This is a **rare endocrine disorder** caused by **excess cortisol**, which can lead to **central obesity, glucose intolerance, and hypertension**, but **not typically associated with polyuria and polydipsia**. It is **not the most likely diagnosis** here.
+
+---
+
+### **Most Likely Diagnosis:**
+- **Type 2 Diabetes Mellitus (T2DM)** — supported by:
+  - Obesity (BMI 32)
+  - Classic symptoms of hyperglycemia
+  - Elevated fasting glucose
+  - Age and gender
+
+---
+
+### **First-Line Pharmacological Treatment:**
+- **Metformin** is the **first-line therapy** for **Type 2 Diabetes** in most patients, especially those who are **not obese** or **with mild obesity**.
+- It improves **insulin sensitivity**, reduces **hepatic glucose production**, and has **weight-neutral or slightly weight-reducing effects**.
+- It is **well-tolerated**, **cost-effective**, and **has a low risk of hypoglycemia**.
+
+---
+
+### **Correct Answer:**
+**B) Type 2 Diabetes; Metformin**
+
+--- 
+
+### **Why Not the Others?**
+- **A) Type 1 Diabetes; Insulin therapy:** Unlikely due to the patient's age, BMI, and lack of acute symptoms.
+- **C) Diabetes Insipidus; Desmopressin:** Not associated with hyperglycemia.
+- **D) Cushing's Syndrome; Cortisol inhibitors:** Not the most likely diagnosis based on symptoms and lab findings.
+
+--- 
+
+✅ **Final Answer: B) Type 2 Diabetes; Metformin**

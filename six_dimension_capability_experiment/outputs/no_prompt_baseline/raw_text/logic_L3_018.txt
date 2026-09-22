@@ -1,0 +1,695 @@
+We are given 5 houses in a row, each painted a different color: **red, blue, green, yellow, white**.
+
+We are also given 4 clues:
+
+1. **The red house is not next to the blue house.**
+2. **The green house is immediately to the right of the white house.**
+3. **The yellow house is at one of the ends.**
+4. **The blue house is in position 3.**
+
+We are to determine: **What color is the house in position 1?**
+
+---
+
+### Step 1: Assign known position
+
+From clue 4:  
+> **The blue house is in position 3.**
+
+So we have:
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+---
+
+### Step 2: Use clue 1
+
+> **The red house is not next to the blue house.**
+
+Blue is in position 3, so red **cannot** be in position 2 or 4.
+
+So red ≠ position 2 or 4.
+
+---
+
+### Step 3: Use clue 2
+
+> **The green house is immediately to the right of the white house.**
+
+So the white house must be in a position such that the next house (to the right) is green.
+
+So possible pairs are:
+
+- White in 1 → Green in 2  
+- White in 2 → Green in 3  
+- White in 3 → Green in 4  
+- White in 4 → Green in 5
+
+But position 3 is already **Blue**, so **White cannot be in position 2** (because that would make Green in position 3, which is Blue).  
+So **White cannot be in position 2**.
+
+So possible white-green pairs are:
+
+- White in 1 → Green in 2  
+- White in 3 → Green in 4 (but position 3 is Blue, so invalid)  
+- White in 4 → Green in 5
+
+So only two valid options:
+
+- White in 1, Green in 2  
+- White in 4, Green in 5
+
+Let’s consider both.
+
+---
+
+### Step 4: Use clue 3
+
+> **The yellow house is at one of the ends.**
+
+So yellow is in position 1 or 5.
+
+Let’s try both options.
+
+---
+
+## Try Option A: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Now, yellow must be at one of the ends (1 or 5). But position 1 is already **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Now, remaining colors: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red is in 4, Blue in 3 → **Red is next to Blue** ❌  
+So this is **invalid**.
+
+---
+
+## Try Option B: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now, yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+So this is **invalid**.
+
+---
+
+## Try Option C: White in 1, Green in 2 (again, but with different assignments)
+
+Let’s try again with this setup:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option D: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option E: White in 2, Green in 3
+
+But position 3 is **Blue**, so this is invalid.
+
+---
+
+## Try Option F: White in 3, Green in 4
+
+But position 3 is **Blue**, so invalid.
+
+---
+
+## Try Option G: White in 5, Green in 6 → invalid (only 5 houses)
+
+---
+
+## Try Option H: White in 1, Green in 2
+
+Try again with different assignments.
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option I: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option J: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option K: White in 2, Green in 3
+
+But position 3 is **Blue**, so invalid.
+
+---
+
+## Try Option L: White in 3, Green in 4
+
+But position 3 is **Blue**, so invalid.
+
+---
+
+## Try Option M: White in 5, Green in 6 → invalid
+
+---
+
+## Try Option N: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option O: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option P: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option Q: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option R: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | ?      |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 1 is **White**, so yellow must be in **position 5**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | ?      |
+| 5        | Yellow |
+
+Remaining color: **Red**
+
+Only position left is 4.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        | Blue   |
+| 4        | Red    |
+| 5        | Yellow |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 4, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option S: White in 4, Green in 5
+
+| Position | Color  |
+|----------|--------|
+| 1        | ?      |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Yellow must be at one of the ends → 1 or 5.  
+Position 5 is **Green**, so yellow must be in **position 1**.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | ?      |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Remaining color: **Red**
+
+Only position left is 2.
+
+So:
+
+| Position | Color  |
+|----------|--------|
+| 1        | Yellow |
+| 2        | Red    |
+| 3        | Blue   |
+| 4        | White  |
+| 5        | Green  |
+
+Now check all clues:
+
+1. **Red is not next to Blue** → Red in 2, Blue in 3 → **Red is next to Blue** ❌  
+Still invalid.
+
+---
+
+## Try Option T: White in 1, Green in 2
+
+| Position | Color  |
+|----------|--------|
+| 1        | White  |
+| 2        | Green  |
+| 3        |

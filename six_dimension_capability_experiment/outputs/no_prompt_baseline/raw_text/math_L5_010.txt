@@ -1,0 +1,118 @@
+We are asked to prove that for **any positive integer** $ n $, the expression $ n^5 - n $ is divisible by **30**.
+
+---
+
+### Step 1: Understand the Goal
+
+We want to show that:
+
+$$
+n^5 - n \equiv 0 \pmod{30}
+$$
+
+This is equivalent to showing that:
+
+$$
+n^5 \equiv n \pmod{30}
+$$
+
+So, we need to show that $ n^5 - n $ is divisible by **30** for all positive integers $ n $.
+
+---
+
+### Step 2: Factor the Expression
+
+We can factor $ n^5 - n $ as:
+
+$$
+n^5 - n = n(n^4 - 1) = n(n^2 - 1)(n^2 + 1) = n(n - 1)(n + 1)(n^2 + 1)
+$$
+
+So:
+
+$$
+n^5 - n = n(n - 1)(n + 1)(n^2 + 1)
+$$
+
+This is a product of four terms: $ n $, $ n - 1 $, $ n + 1 $, and $ n^2 + 1 $.
+
+---
+
+### Step 3: Use the Fact That 30 = 2 × 3 × 5
+
+We will show that $ n^5 - n $ is divisible by **2**, **3**, and **5** separately, and then conclude that it is divisible by their **LCM**, which is **30**.
+
+---
+
+### Step 4: Show Divisibility by 2
+
+Among any three consecutive integers $ n - 1 $, $ n $, $ n + 1 $, **at least one is even**. So the product $ (n - 1)n(n + 1) $ is divisible by 2.
+
+Therefore, $ n^5 - n $ is divisible by **2**.
+
+---
+
+### Step 5: Show Divisibility by 3
+
+Among any three consecutive integers $ n - 1 $, $ n $, $ n + 1 $, **at least one is divisible by 3**. So again, the product $ (n - 1)n(n + 1) $ is divisible by 3.
+
+Therefore, $ n^5 - n $ is divisible by **3**.
+
+---
+
+### Step 6: Show Divisibility by 5
+
+We now need to show that $ n^5 - n $ is divisible by **5**.
+
+This is a classic result from **Fermat's Little Theorem**, which states:
+
+> If $ p $ is a prime and $ p \nmid n $, then $ n^{p-1} \equiv 1 \pmod{p} $
+
+So for $ p = 5 $, we have:
+
+$$
+n^4 \equiv 1 \pmod{5} \quad \text{if } 5 \nmid n
+$$
+
+Then:
+
+$$
+n^5 = n \cdot n^4 \equiv n \cdot 1 = n \pmod{5}
+$$
+
+So:
+
+$$
+n^5 \equiv n \pmod{5}
+\Rightarrow n^5 - n \equiv 0 \pmod{5}
+$$
+
+If $ 5 \mid n $, then $ n^5 - n = n(n^4 - 1) $, and since $ n $ is divisible by 5, the whole expression is divisible by 5.
+
+So in all cases, $ n^5 - n $ is divisible by **5**.
+
+---
+
+### Step 7: Combine the Results
+
+We have shown that:
+
+- $ n^5 - n $ is divisible by **2**
+- $ n^5 - n $ is divisible by **3**
+- $ n^5 - n $ is divisible by **5**
+
+Since 2, 3, and 5 are **pairwise coprime**, their least common multiple is:
+
+$$
+\text{lcm}(2, 3, 5) = 30
+$$
+
+Therefore, $ n^5 - n $ is divisible by **30** for all positive integers $ n $.
+
+---
+
+### ✅ Final Answer:
+
+$$
+\boxed{n^5 - n \text{ is divisible by } 30 \text{ for all positive integers } n}
+$$

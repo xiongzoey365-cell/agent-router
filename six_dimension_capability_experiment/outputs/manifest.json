@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-09-22T06:31:52.976207+00:00",
+  "experiment": "six_dimension_output_vs_no_prompt_baseline",
+  "model_path": "/home/xiongziyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "input_file": "/home/xiongziyan/agent-router/测试数据.txt",
+  "input_sha256": "12cf67ef2782097f3ee955a9915dcb6079ee5a8f92efe6b09503469daaa40068",
+  "output_dir": "/home/xiongziyan/agent-router/six_dimension_capability_experiment/outputs",
+  "task_count": 25,
+  "task_ids": [
+    "code_L1_001",
+    "code_L2_002",
+    "code_L3_003",
+    "code_L4_004",
+    "code_L5_005",
+    "math_L1_006",
+    "math_L2_007",
+    "math_L3_008",
+    "math_L4_009",
+    "math_L5_010",
+    "qa_L1_011",
+    "qa_L2_012",
+    "qa_L3_013",
+    "qa_L4_014",
+    "qa_L5_015",
+    "logic_L1_016",
+    "logic_L2_017",
+    "logic_L3_018",
+    "logic_L4_019",
+    "logic_L5_020",
+    "inst_L1_021",
+    "inst_L2_022",
+    "inst_L3_023",
+    "inst_L4_024",
+    "inst_L5_025"
+  ],
+  "arms": {
+    "six_dimension": {
+      "description": "统一六维 system prompt；只输出六维解题方式，不继续作答。",
+      "system_prompt": "你现在只分析应当如何作答，不直接回答或求解用户题目。请针对当前题目，依次从以下六个维度说明解题者应如何处理：\n\n1. 推理与规划能力（Reasoning & Planning）\n2. 指令遵循与角色遵从能力（Instruction Following & Role Adherence）\n3. 通信与社会推理能力（Communication & Social Reasoning）\n4. 自我批评与验证能力（Self-Critique & Verification）\n5. 记忆与上下文管理能力（Memory & Context Management）\n6. 工具使用与动作落地能力（Tool Use & Action Grounding）\n\n必须按这六个维度输出，但每个维度内部可以自由、自然地表达，不规定固定子项、长度或写法。只说明该维度在当前题目中实际需要关注和采取的做法，不进行能力打分，不为了凑齐内容而添加无关信息；如果某个维度在本题中没有明显体现，直接说明该维度没有明显体现。保留题目给出的条件、角色、格式和边界，不添加没有依据的事实。没有真正执行查询、计算、代码、测试或其他工具时，不得声称已经执行。不要给出题目的最终答案、最终选项、最终代码或完整证明。",
+      "max_new_tokens": 2048,
+      "messages": "system prompt plus original user task"
+    },
+    "no_prompt_baseline": {
+      "description": "仅原始题目 user 消息；无 system prompt、六维提示或其他辅助提示。",
+      "system_prompt": null,
+      "max_new_tokens": 4096,
+      "messages": "original user task only"
+    }
+  },
+  "generation": {
+    "enable_thinking": false,
+    "do_sample": false,
+    "temperature": null,
+    "top_p": null,
+    "top_k": null,
+    "seed": 42
+  },
+  "hidden_state_capture": {
+    "sequence": "rendered prompt plus all generated tokens",
+    "states": "embedding output, all decoder-depth states, final normalized output",
+    "processing": "none except detach and lossless transfer to CPU",
+    "serialization": "torch.save per task and arm"
+  },
+  "runtime": {
+    "python": "3.11.16",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.51.3",
+    "cuda": "12.1",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "model_dtype": "torch.bfloat16"
+  }
+}

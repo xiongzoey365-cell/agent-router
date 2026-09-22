@@ -1,0 +1,23 @@
+Here's a Python function that checks if a string is a **palindrome**, ignoring spaces and case:
+
+```python
+def is_palindrome(s):
+    # Remove spaces and convert to lowercase
+    cleaned = s.replace(" ", "").lower()
+    # Check if the cleaned string is equal to its reverse
+    return cleaned == cleaned[::-1]
+```
+
+### Example usage:
+
+```python
+print(is_palindrome("A man a plan a canal Panama"))  # Output: True
+print(is_palindrome("Hello World"))                   # Output: False
+print(is_palindrome("Racecar"))                       # Output: True
+```
+
+### Explanation:
+- `s.replace(" ", "")` removes all spaces from the string.
+- `.lower()` converts the string to lowercase to make the comparison case-insensitive.
+- `cleaned[::-1]` reverses the string.
+- The function returns `True` if the cleaned string is the same forwards and backwards.

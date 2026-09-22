@@ -1,0 +1,11 @@
+To find out how much Mary spends, we multiply the price of one apple by the number of apples she buys:
+
+$$
+\text{Total cost} = \text{Price per apple} \times \text{Number of apples}
+$$
+
+$$
+\text{Total cost} = 2 \times 5 = 10
+$$
+
+So, Mary spends **$10** in total.

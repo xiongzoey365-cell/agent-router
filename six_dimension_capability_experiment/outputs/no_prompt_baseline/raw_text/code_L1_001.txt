@@ -1,0 +1,18 @@
+Here's a simple Python function that checks whether a number is even or odd:
+
+```python
+def check_even_odd(number):
+    if number % 2 == 0:
+        return 'even'
+    else:
+        return 'odd'
+```
+
+### Example usage:
+
+```python
+print(check_even_odd(4))  # Output: 'even'
+print(check_even_odd(7))  # Output: 'odd'
+```
+
+This function uses the modulus operator `%` to determine if the number is divisible by 2. If it is, the number is even; otherwise, it's odd.

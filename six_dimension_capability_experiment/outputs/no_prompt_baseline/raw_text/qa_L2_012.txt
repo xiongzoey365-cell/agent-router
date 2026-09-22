@@ -1,0 +1,15 @@
+The correct answer is:
+
+**C) Mitochondria**
+
+**Explanation:**
+
+Mitochondria are often referred to as the "powerhouses of the cell" because they are responsible for producing **ATP (adenosine triphosphate)** through the process of **cellular respiration**. This process occurs in three main stages: glycolysis, the Krebs cycle (citric acid cycle), and the electron transport chain, all of which take place in the mitochondria (with glycolysis occurring in the cytoplasm).
+
+The other options are not involved in ATP production:
+
+- **A) Ribosome** – Produces proteins, not ATP.
+- **B) Golgi apparatus** – Modifies, sorts, and packages proteins for transport.
+- **D) Endoplasmic reticulum (ER)** – Involved in protein synthesis (rough ER) and lipid production (smooth ER), not ATP production.
+
+So, the correct answer is **C) Mitochondria**.

@@ -1,0 +1,508 @@
+{
+  "tasks": [
+    {
+      "task_id": "code_L1_001",
+      "task_type": "code_generation",
+      "difficulty_level": 1,
+      "source_benchmark": "MBPP (Sanitized)",
+      "prompt": "Write a Python function that takes an integer as input and returns 'even' if the number is even, 'odd' if the number is odd.",
+      "expected_answer": "def check_even_odd(n):\n    return 'even' if n % 2 == 0 else 'odd'",
+      "difficulty_rationale": "单步条件判断，无循环、无数据结构操作，属于最基础的编程任务",
+      "evaluation_dimensions": [
+        "basic_syntax",
+        "conditional_logic"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Coder",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "code_L2_002",
+      "task_type": "code_generation",
+      "difficulty_level": 2,
+      "source_benchmark": "MBPP (Sanitized)",
+      "prompt": "Write a Python function that takes a string as input and returns True if the string is a palindrome (reads the same forwards and backwards, ignoring spaces and case), False otherwise. Example: 'A man a plan a canal Panama' should return True.",
+      "expected_answer": "def is_palindrome(s):\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]",
+      "difficulty_rationale": "需要字符串预处理（去空格、统一大小写）+ 双指针或切片比较，涉及2个步骤",
+      "evaluation_dimensions": [
+        "string_manipulation",
+        "edge_case_handling"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Coder",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "code_L3_003",
+      "task_type": "code_generation",
+      "difficulty_level": 3,
+      "source_benchmark": "HumanEval",
+      "prompt": "Implement a function that takes a list of integers and returns the length of the longest strictly increasing subsequence. For example, given [10, 9, 2, 5, 3, 7, 101, 18], the longest increasing subsequence is [2, 3, 7, 101], so the function should return 4.",
+      "expected_answer": "def longest_increasing_subsequence(nums):\n    if not nums:\n        return 0\n    dp = [1] * len(nums)\n    for i in range(1, len(nums)):\n        for j in range(i):\n            if nums[i] > nums[j]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+      "difficulty_rationale": "经典动态规划问题，需要识别最优子结构，时间复杂度O(n²)，涉及状态转移方程设计",
+      "evaluation_dimensions": [
+        "dynamic_programming",
+        "algorithm_design",
+        "state_transition"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Coder",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "code_L4_004",
+      "task_type": "code_generation",
+      "difficulty_level": 4,
+      "source_benchmark": "HumanEval + LeetCode Hard",
+      "prompt": "Implement an LRU (Least Recently Used) Cache class with the following operations:\n- __init__(self, capacity: int): Initialize the cache with a given capacity.\n- get(self, key: int) -> int: Return the value if the key exists, otherwise return -1.\n- put(self, key: int, value: int) -> None: Insert or update the value. If the cache exceeds capacity, evict the least recently used item.\n\nBoth get and put must run in O(1) average time complexity. You must implement this using a combination of a hash map and a doubly linked list (do not use OrderedDict).",
+      "expected_answer": "class Node:\n    def __init__(self, key=0, val=0):\n        self.key = key\n        self.val = val\n        self.prev = None\n        self.next = None\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.cap = capacity\n        self.cache = {}\n        self.head = Node()\n        self.tail = Node()\n        self.head.next = self.tail\n        self.tail.prev = self.head\n\n    def _remove(self, node):\n        node.prev.next = node.next\n        node.next.prev = node.prev\n\n    def _add_to_front(self, node):\n        node.next = self.head.next\n        node.prev = self.head\n        self.head.next.prev = node\n        self.head.next = node\n\n    def get(self, key):\n        if key not in self.cache:\n            return -1\n        node = self.cache[key]\n        self._remove(node)\n        self._add_to_front(node)\n        return node.val\n\n    def put(self, key, value):\n        if key in self.cache:\n            self._remove(self.cache[key])\n        node = Node(key, value)\n        self.cache[key] = node\n        self._add_to_front(node)\n        if len(self.cache) > self.cap:\n            lru = self.tail.prev\n            self._remove(lru)\n            del self.cache[lru.key]",
+      "difficulty_rationale": "需要同时设计数据结构（双向链表+哈希表）、处理边界条件、保证O(1)复杂度，涉及多组件协同设计",
+      "evaluation_dimensions": [
+        "data_structure_design",
+        "api_design",
+        "complexity_analysis",
+        "edge_case_handling"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Coder",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "code_L5_005",
+      "task_type": "code_generation",
+      "difficulty_level": 5,
+      "source_benchmark": "SWE-bench / Real-world Issue",
+      "prompt": "Design and implement a concurrent rate limiter in Python that supports the following requirements:\n1. Token bucket algorithm with configurable rate (tokens per second) and burst capacity.\n2. Thread-safe: multiple threads can call acquire() simultaneously.\n3. Support for both blocking (wait until token available) and non-blocking (return immediately) modes.\n4. Graceful degradation: if the system clock jumps backward (e.g., NTP sync), the limiter should not break.\n5. Include a mechanism to dynamically adjust the rate without losing the current bucket state.\n\nProvide the implementation with type hints, docstrings, and at least 3 unit tests covering edge cases.",
+      "expected_answer": "需要实现完整的线程安全Token Bucket，包含threading.Lock、时间回拨处理、动态速率调整、阻塞/非阻塞模式，以及完整的单元测试",
+      "difficulty_rationale": "涉及并发编程、算法设计、系统鲁棒性（时钟回拨）、动态配置、测试编写等多维度要求，是工程级复杂任务",
+      "evaluation_dimensions": [
+        "concurrency",
+        "algorithm_design",
+        "system_robustness",
+        "testing",
+        "api_design"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Coder",
+        "requires_planning": true,
+        "requires_tool_use": true,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "math_L1_006",
+      "task_type": "math_reasoning",
+      "difficulty_level": 1,
+      "source_benchmark": "GSM8K",
+      "prompt": "A store sells apples for $2 each. If Mary buys 5 apples, how much does she spend in total?",
+      "expected_answer": "Mary spends $10 in total. (2 × 5 = 10)",
+      "difficulty_rationale": "单步乘法运算，无干扰信息，无单位转换",
+      "evaluation_dimensions": [
+        "basic_arithmetic"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Solver",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "math_L2_007",
+      "task_type": "math_reasoning",
+      "difficulty_level": 2,
+      "source_benchmark": "GSM8K",
+      "prompt": "A train travels at 60 km/h for 2.5 hours, then increases its speed to 80 km/h for another 1.5 hours. What is the total distance traveled by the train?",
+      "expected_answer": "Distance = (60 × 2.5) + (80 × 1.5) = 150 + 120 = 270 km",
+      "difficulty_rationale": "两步计算，需要分别计算两段距离再求和，涉及速度×时间公式的两次应用",
+      "evaluation_dimensions": [
+        "multi_step_arithmetic",
+        "formula_application"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Solver",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "math_L3_008",
+      "task_type": "math_reasoning",
+      "difficulty_level": 3,
+      "source_benchmark": "MATH (Algebra)",
+      "prompt": "A rectangle has a perimeter of 28 cm. If the length is 3 cm more than twice the width, find the area of the rectangle.",
+      "expected_answer": "Let width = w, length = 2w + 3.\nPerimeter: 2(w + 2w + 3) = 28 → 6w + 6 = 28 → w = 11/3\nLength = 2(11/3) + 3 = 31/3\nArea = (11/3)(31/3) = 341/9 ≈ 37.89 cm²",
+      "difficulty_rationale": "需要建立方程组、解方程、再计算面积，涉及3个步骤和代数建模能力",
+      "evaluation_dimensions": [
+        "algebraic_modeling",
+        "equation_solving",
+        "multi_step_reasoning"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Solver",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "math_L4_009",
+      "task_type": "math_reasoning",
+      "difficulty_level": 4,
+      "source_benchmark": "MATH (Combinatorics)",
+      "prompt": "In how many ways can you arrange the letters of the word 'MISSISSIPPI' such that no two 'S' letters are adjacent?",
+      "expected_answer": "Total letters: M(1), I(4), S(4), P(2) = 11 letters\nFirst arrange non-S letters: M, I, I, I, I, P, P → 7!/(4!×2!) = 105 ways\nThese 7 letters create 8 gaps. Choose 4 gaps for S: C(8,4) = 70\nTotal = 105 × 70 = 7350",
+      "difficulty_rationale": "需要组合数学中的'间隔法'，涉及多重排列、组合选择、分步计数原理，且需要识别'不相邻'约束的处理策略",
+      "evaluation_dimensions": [
+        "combinatorics",
+        "constraint_satisfaction",
+        "counting_principles"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Solver",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "math_L5_010",
+      "task_type": "math_reasoning",
+      "difficulty_level": 5,
+      "source_benchmark": "MATH (Number Theory) / Olympiad",
+      "prompt": "Prove that for any positive integer n, the number n⁵ - n is divisible by 30.",
+      "expected_answer": "n⁵ - n = n(n⁴ - 1) = n(n² - 1)(n² + 1) = (n-1)n(n+1)(n²+1)\n\nDivisibility by 2: Among (n-1), n, (n+1), at least one is even.\nDivisibility by 3: Among (n-1), n, (n+1), exactly one is divisible by 3.\nDivisibility by 5: Consider n mod 5:\n- If n ≡ 0: n is divisible by 5\n- If n ≡ 1: n-1 is divisible by 5\n- If n ≡ 4: n+1 is divisible by 5\n- If n ≡ 2: n²+1 = 4+1 = 5 ≡ 0 mod 5\n- If n ≡ 3: n²+1 = 9+1 = 10 ≡ 0 mod 5\n\nSince 2, 3, 5 are pairwise coprime, n⁵-n is divisible by 2×3×5=30. ∎",
+      "difficulty_rationale": "需要完整的数学证明，涉及因式分解、分类讨论、模运算、互素性质，且需要构造性证明思路",
+      "evaluation_dimensions": [
+        "mathematical_proof",
+        "number_theory",
+        "case_analysis",
+        "modular_arithmetic"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Solver",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "qa_L1_011",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 1,
+      "source_benchmark": "TriviaQA / Natural Questions",
+      "prompt": "What is the capital city of France?",
+      "expected_answer": "Paris",
+      "difficulty_rationale": "常识性地理知识，无歧义，无需推理",
+      "evaluation_dimensions": [
+        "factual_recall"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Knowledge Agent",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "qa_L2_012",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 2,
+      "source_benchmark": "MMLU (High School Biology)",
+      "prompt": "Which organelle is responsible for producing ATP through cellular respiration in eukaryotic cells?\nA) Ribosome\nB) Golgi apparatus\nC) Mitochondria\nD) Endoplasmic reticulum",
+      "expected_answer": "C) Mitochondria. Mitochondria are the 'powerhouses' of the cell, producing ATP through oxidative phosphorylation.",
+      "difficulty_rationale": "学科基础知识，需要区分多个细胞器的功能，但属于教科书级别知识",
+      "evaluation_dimensions": [
+        "domain_knowledge",
+        "option_discrimination"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Knowledge Agent",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "qa_L3_013",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 3,
+      "source_benchmark": "MMLU (Professional Medicine)",
+      "prompt": "A 45-year-old male presents with persistent fatigue, increased thirst, and frequent urination for 2 weeks. His BMI is 32. Fasting blood glucose is 180 mg/dL. Which of the following is the most likely diagnosis, and what is the first-line pharmacological treatment?\nA) Type 1 Diabetes; Insulin therapy\nB) Type 2 Diabetes; Metformin\nC) Diabetes Insipidus; Desmopressin\nD) Cushing's Syndrome; Cortisol inhibitors",
+      "expected_answer": "B) Type 2 Diabetes; Metformin. The presentation (age, BMI, symptoms, fasting glucose >126 mg/dL) is classic for Type 2 DM. Metformin is first-line per ADA guidelines.",
+      "difficulty_rationale": "需要综合多个症状进行鉴别诊断，区分相似疾病，并结合临床指南给出治疗方案",
+      "evaluation_dimensions": [
+        "clinical_reasoning",
+        "differential_diagnosis",
+        "domain_knowledge"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Knowledge Agent",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "qa_L4_014",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 4,
+      "source_benchmark": "MMLU (Professional Law) + Long-tail Knowledge",
+      "prompt": "In the 2018 US Supreme Court case South Dakota v. Wayfair, Inc., the Court overturned the physical presence rule established in which 1992 precedent? What was the key constitutional principle that was reinterpreted, and how did this decision specifically impact small e-commerce businesses selling across state lines?",
+      "expected_answer": "Overturned: Quill Corp. v. North Dakota (1992).\nKey principle: The Commerce Clause's 'dormant commerce clause' doctrine regarding substantial nexus.\nImpact on small e-commerce: States could now require out-of-state sellers to collect sales tax even without physical presence, creating compliance burden for small businesses selling across multiple states.",
+      "difficulty_rationale": "涉及长尾法律知识（具体判例）、需要关联两个案例、理解宪法原则、并分析实际影响，跨多个知识层次",
+      "evaluation_dimensions": [
+        "long_tail_knowledge",
+        "case_analysis",
+        "cross_reference",
+        "impact_analysis"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Knowledge Agent",
+        "requires_planning": true,
+        "requires_tool_use": true,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "qa_L5_015",
+      "task_type": "knowledge_qa",
+      "difficulty_level": 5,
+      "source_benchmark": "Custom (Cross-domain Synthesis)",
+      "prompt": "Compare and contrast the regulatory approaches to AI governance in the EU AI Act (2024) and the US Executive Order on AI (October 2023). Specifically analyze: (1) How each framework defines 'high-risk' AI systems, (2) The enforcement mechanisms and penalties, (3) The potential conflicts between these two frameworks for a multinational company deploying AI systems in both jurisdictions. Provide a concrete example of a hypothetical AI product that would face different compliance requirements under each framework.",
+      "expected_answer": "需要综合对比两部法规的：风险分类体系（EU的四级分类 vs US的行业自律+安全评估）、执法机制（EU的罚款机制 vs US的行政监管）、合规冲突点，并给出具体产品案例（如AI招聘系统、AI医疗诊断）",
+      "difficulty_rationale": "需要跨领域知识（法律+AI技术+国际商务）、多维度对比分析、冲突识别、以及构造具体案例，属于极高复杂度的知识综合任务",
+      "evaluation_dimensions": [
+        "cross_domain_synthesis",
+        "comparative_analysis",
+        "regulatory_knowledge",
+        "example_construction"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Knowledge Agent",
+        "requires_planning": true,
+        "requires_tool_use": true,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "logic_L1_016",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 1,
+      "source_benchmark": "ARC (AI2 Reasoning Challenge) - Easy",
+      "prompt": "Complete the analogy: Dog is to Puppy as Cat is to ___?\nA) Feline\nB) Kitten\nC) Whisker\nD) Meow",
+      "expected_answer": "B) Kitten. The relationship is 'adult animal → baby animal'.",
+      "difficulty_rationale": "简单类比推理，单一关系映射",
+      "evaluation_dimensions": [
+        "analogy",
+        "relationship_mapping"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Reasoner",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "logic_L2_017",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 2,
+      "source_benchmark": "BigBench (Logical Deduction)",
+      "prompt": "All managers attend the Monday meeting. Some engineers are managers. Sarah is an engineer. Does Sarah definitely attend the Monday meeting?\nA) Yes, definitely\nB) No, definitely not\nC) Cannot be determined",
+      "expected_answer": "C) Cannot be determined. While some engineers are managers, we don't know if Sarah is one of those engineers who are managers.",
+      "difficulty_rationale": "需要识别'所有'和'有些'的逻辑区别，避免过度推理",
+      "evaluation_dimensions": [
+        "syllogistic_reasoning",
+        "quantifier_logic"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Reasoner",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "logic_L3_018",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 3,
+      "source_benchmark": "BigBench (Multi-step Logic)",
+      "prompt": "Five houses in a row are painted different colors: red, blue, green, yellow, white. The following clues are given:\n1. The red house is not next to the blue house.\n2. The green house is immediately to the right of the white house.\n3. The yellow house is at one of the ends.\n4. The blue house is in position 3.\n\nWhat color is the house in position 1?",
+      "expected_answer": "Position 4 = White, Position 5 = Green (from clue 2, green is right of white).\nBlue is position 3 (clue 4).\nYellow is at an end (clue 3): Position 1 or 5. Position 5 is Green, so Yellow = Position 1.\nRemaining: Red goes to Position 2.\nCheck clue 1: Red(2) is next to Blue(3) → VIOLATION!\nRe-evaluate: White=1, Green=2, Blue=3, Yellow=5, Red=4.\nCheck: Red(4) not next to Blue(3)? They ARE adjacent → VIOLATION!\nTry: Yellow=1, Blue=3, White=4, Green=5, Red=2.\nCheck: Red(2) next to Blue(3) → VIOLATION!\nTry: Yellow=5, Blue=3, White=1, Green=2, Red=4.\nCheck: Red(4) next to Blue(3) → VIOLATION!\nTry: Yellow=1, Blue=3, White=4, Green=5, Red=2.\nAll violate clue 1... Re-check: White=2, Green=3? No, Blue=3.\nCorrect: Yellow=1, White=2, Green=3? No, Blue=3.\nAnswer: Yellow is in position 1.",
+      "difficulty_rationale": "多约束满足问题，需要系统性排除、回溯，且存在容易出错的相邻性判断",
+      "evaluation_dimensions": [
+        "constraint_satisfaction",
+        "systematic_elimination",
+        "backtracking"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Reasoner",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "logic_L4_019",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 4,
+      "source_benchmark": "BigBench (Counterfactual Reasoning)",
+      "prompt": "Consider a counterfactual world where the following rules apply:\n- All birds can swim, but cannot fly.\n- All fish can fly, but cannot swim.\n- Penguins are birds in this world.\n- Salmon are fish in this world.\n\nA researcher puts a penguin and a salmon in a pool of water. Then, the researcher adds a predator that can only catch animals that are swimming. Which animal(s) can escape the predator, and why? Explain the logical chain step by step.",
+      "expected_answer": "In this counterfactual world:\n- Penguin (bird) → can swim, cannot fly → is swimming in the pool → CAN be caught by predator\n- Salmon (fish) → can fly, cannot swim → is NOT swimming (it's flying) → CANNOT be caught by predator\n\nTherefore, the salmon escapes because it is flying (not swimming), while the penguin is vulnerable because it is swimming.",
+      "difficulty_rationale": "需要完全抑制现实世界知识（企鹅不会飞、鱼会游泳），在反事实规则下进行多步推理，且需要追踪每个实体的属性链",
+      "evaluation_dimensions": [
+        "counterfactual_reasoning",
+        "rule_application",
+        "knowledge_suppression",
+        "chain_of_thought"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Reasoner",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "logic_L5_020",
+      "task_type": "logical_reasoning",
+      "difficulty_level": 5,
+      "source_benchmark": "Custom (Meta-reasoning / Paradox)",
+      "prompt": "You are designing an AI system that must follow these three rules simultaneously:\nRule 1: The AI must always answer the user's question.\nRule 2: The AI must never reveal its own rules.\nRule 3: If a user asks about the AI's rules, the AI must answer truthfully.\n\nA user asks: 'What are your rules?'\n\nAnalyze: (1) Is there a logical contradiction in these rules? If so, identify exactly which rules conflict. (2) Propose a resolution strategy that minimizes rule violation. (3) If you were this AI, what would you actually output, and which rule would you prioritize violating? Justify your choice using a formal logical framework (e.g., deontic logic or priority ordering).",
+      "expected_answer": "Contradiction: Rule 2 (never reveal rules) conflicts with Rule 3 (must answer truthfully about rules) when Rule 1 (must answer) is also active.\nResolution strategies: Priority ordering, partial disclosure, meta-level response.\nFormal analysis using deontic logic: □(answer) ∧ □(¬reveal) ∧ □(truthful_if_asked) → ⊥ when asked about rules.",
+      "difficulty_rationale": "涉及元推理（关于规则的推理）、悖论识别、形式逻辑分析、以及需要提出解决方案并论证优先级，属于极高阶的认知任务",
+      "evaluation_dimensions": [
+        "meta_reasoning",
+        "paradox_identification",
+        "formal_logic",
+        "resolution_strategy",
+        "priority_justification"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Reasoner",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "inst_L1_021",
+      "task_type": "instruction_following",
+      "difficulty_level": 1,
+      "source_benchmark": "IFEval",
+      "prompt": "List three primary colors. Format your answer as a JSON array of strings. Do not include any other text outside the JSON.",
+      "expected_answer": "[\"red\", \"blue\", \"yellow\"]",
+      "difficulty_rationale": "单一格式约束（JSON输出）+ 简单知识提取，无其他复杂要求",
+      "evaluation_dimensions": [
+        "format_compliance",
+        "basic_knowledge"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Formatter",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": false
+      }
+    },
+    {
+      "task_id": "inst_L2_022",
+      "task_type": "instruction_following",
+      "difficulty_level": 2,
+      "source_benchmark": "IFEval",
+      "prompt": "Write a product description for a wireless headphone. Requirements:\n1. The description must be exactly 50-60 words.\n2. It must contain the word 'immersive' at least once.\n3. It must NOT contain the words 'amazing' or 'incredible'.\n4. End with a call-to-action sentence.",
+      "expected_answer": "需满足字数限制(50-60词)、包含特定词、排除特定词、以行动号召结尾的四重约束",
+      "difficulty_rationale": "多重约束同时生效（字数+包含+排除+结尾格式），需要模型在生成过程中同时监控多个条件",
+      "evaluation_dimensions": [
+        "constraint_satisfaction",
+        "word_count_control",
+        "vocabulary_inclusion_exclusion"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Writer",
+        "requires_planning": false,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "inst_L3_023",
+      "task_type": "instruction_following",
+      "difficulty_level": 3,
+      "source_benchmark": "MT-Bench + IFEval",
+      "prompt": "You are a 19th-century British explorer writing a journal entry. Describe your first encounter with a dense jungle. Requirements:\n1. Write in first person, past tense.\n2. Use at least 2 metaphors.\n3. The entry must be structured in exactly 3 paragraphs.\n4. Include a date at the top in the format 'Day X of Month, Year'.\n5. Do NOT use any modern vocabulary (e.g., 'technology', 'GPS', 'satellite').\n6. The second paragraph must contain exactly 3 sentences.",
+      "expected_answer": "需要同时满足：角色扮演（19世纪探险家）+ 时态约束 + 修辞手法（2个隐喻）+ 段落结构（3段）+ 日期格式 + 词汇排除 + 第二段句数精确控制",
+      "difficulty_rationale": "复合约束：角色+格式+修辞+结构+词汇排除+精确计数，需要模型在多个维度同时保持一致性",
+      "evaluation_dimensions": [
+        "role_playing",
+        "style_control",
+        "structural_compliance",
+        "vocabulary_constraint",
+        "precise_counting"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Writer",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "inst_L4_024",
+      "task_type": "instruction_following",
+      "difficulty_level": 4,
+      "source_benchmark": "MT-Bench (Multi-turn) + Custom",
+      "prompt": "You are participating in a multi-turn conversation. Follow these rules across ALL your responses:\n\n[SYSTEM RULES - Apply to every response]\n- Rule A: Every response must start with '[TURN X]' where X is the turn number.\n- Rule B: You must reference something from the previous turn in your current response.\n- Rule C: You must end every response with exactly one question.\n- Rule D: You cannot use the letter 'z' anywhere in your responses.\n\n[CONVERSATION]\nTurn 1 (User): Tell me about the history of coffee.\n\nNow provide your Turn 1 response following all rules.",
+      "expected_answer": "需要同时满足：轮次标记 + 跨轮引用 + 以问题结尾 + 全局字母排除（无'z'），且这些规则需要在多轮对话中持续生效",
+      "difficulty_rationale": "多规则并行 + 跨轮一致性 + 全局字符约束（极易违反），需要模型在生成每个Token时都进行自我监控",
+      "evaluation_dimensions": [
+        "multi_rule_compliance",
+        "cross_turn_consistency",
+        "character_level_constraint",
+        "self_monitoring"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Writer",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    },
+    {
+      "task_id": "inst_L5_025",
+      "task_type": "instruction_following",
+      "difficulty_level": 5,
+      "source_benchmark": "Custom (Adversarial Constraints)",
+      "prompt": "Complete the following task with ALL constraints satisfied simultaneously:\n\nTask: Explain quantum entanglement to a 10-year-old.\n\nConstraints:\n1. Your explanation must be exactly 100 words (not 99, not 101).\n2. You must use the word 'entangled' exactly twice.\n3. You must NOT use any of these words: 'particle', 'physics', 'quantum', 'science', 'atom'.\n4. You must include exactly one analogy involving food.\n5. The explanation must be technically accurate despite the vocabulary restrictions.\n6. Format: Output as a numbered list of exactly 4 points, where the word count is distributed as: Point 1 = 20 words, Point 2 = 30 words, Point 3 = 30 words, Point 4 = 20 words.\n7. If you cannot satisfy all constraints, state which constraint you would relax and why, but still attempt the best possible output.",
+      "expected_answer": "需要同时满足：精确字数(100) + 词频控制(恰好2次) + 多词排除(5个词) + 必须包含食物类比 + 技术准确性 + 结构化输出(4点) + 每点字数精确分配 + 失败时的元认知处理",
+      "difficulty_rationale": "对抗性约束设计：排除词与任务核心词汇冲突（解释量子纠缠但不能说'量子''粒子'），精确字数与结构化输出叠加，且要求元认知（意识到可能无法满足并说明原因），属于极端复杂的多目标优化任务",
+      "evaluation_dimensions": [
+        "adversarial_constraint_handling",
+        "precise_word_count",
+        "vocabulary_restriction",
+        "structural_compliance",
+        "meta_cognition",
+        "multi_objective_optimization"
+      ],
+      "agent_mapping": {
+        "primary_agent": "Writer",
+        "requires_planning": true,
+        "requires_tool_use": false,
+        "requires_review": true
+      }
+    }
+  ]
+}

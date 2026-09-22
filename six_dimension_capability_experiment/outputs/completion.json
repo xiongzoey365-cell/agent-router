@@ -1,0 +1,15 @@
+{
+  "completed_at": "2026-09-22T06:50:00.928852+00:00",
+  "arms": {
+    "six_dimension": {
+      "records": 25,
+      "raw_texts": 25,
+      "raw_hidden_state_files": 25
+    },
+    "no_prompt_baseline": {
+      "records": 25,
+      "raw_texts": 25,
+      "raw_hidden_state_files": 25
+    }
+  }
+}

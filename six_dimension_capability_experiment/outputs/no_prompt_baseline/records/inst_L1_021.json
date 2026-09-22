@@ -1,0 +1,351 @@
+{
+  "arm": "no_prompt_baseline",
+  "task_id": "inst_L1_021",
+  "task_type": "instruction_following",
+  "difficulty_level": 1,
+  "source_benchmark": "IFEval",
+  "task_prompt": "List three primary colors. Format your answer as a JSON array of strings. Do not include any other text outside the JSON.",
+  "messages": [
+    {
+      "role": "user",
+      "content": "List three primary colors. Format your answer as a JSON array of strings. Do not include any other text outside the JSON."
+    }
+  ],
+  "rendered_model_prompt": "<|im_start|>user\nList three primary colors. Format your answer as a JSON array of strings. Do not include any other text outside the JSON.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "prompt_token_ids": [
+    151644,
+    872,
+    198,
+    852,
+    2326,
+    6028,
+    7987,
+    13,
+    15042,
+    697,
+    4226,
+    438,
+    264,
+    4718,
+    1334,
+    315,
+    9069,
+    13,
+    3155,
+    537,
+    2924,
+    894,
+    1008,
+    1467,
+    4889,
+    279,
+    4718,
+    13,
+    151645,
+    198,
+    151644,
+    77091,
+    198,
+    151667,
+    271,
+    151668,
+    271
+  ],
+  "generated_token_ids": [
+    1183,
+    6033,
+    497,
+    330,
+    10331,
+    497,
+    330,
+    47699,
+    1341,
+    151645
+  ],
+  "raw_output": "[\"Red\", \"Blue\", \"Yellow\"]",
+  "generation": {
+    "prompt_tokens": 37,
+    "generated_tokens": 10,
+    "max_new_tokens": 4096,
+    "termination": "eos",
+    "elapsed_seconds": 0.38790399208664894
+  },
+  "artifacts": {
+    "raw_text": "no_prompt_baseline/raw_text/inst_L1_021.txt",
+    "raw_hidden_states": "no_prompt_baseline/raw_hidden_states/inst_L1_021.pt",
+    "hidden_state_metadata": {
+      "file": "inst_L1_021.pt",
+      "sha256": "de284d7644236af68223497375a0c4420c306b80fa318cd259bb860adf57cb22",
+      "bytes": 14258829,
+      "tensor_count": 37,
+      "state_labels": [
+        "embedding",
+        "decoder_0",
+        "decoder_1",
+        "decoder_2",
+        "decoder_3",
+        "decoder_4",
+        "decoder_5",
+        "decoder_6",
+        "decoder_7",
+        "decoder_8",
+        "decoder_9",
+        "decoder_10",
+        "decoder_11",
+        "decoder_12",
+        "decoder_13",
+        "decoder_14",
+        "decoder_15",
+        "decoder_16",
+        "decoder_17",
+        "decoder_18",
+        "decoder_19",
+        "decoder_20",
+        "decoder_21",
+        "decoder_22",
+        "decoder_23",
+        "decoder_24",
+        "decoder_25",
+        "decoder_26",
+        "decoder_27",
+        "decoder_28",
+        "decoder_29",
+        "decoder_30",
+        "decoder_31",
+        "decoder_32",
+        "decoder_33",
+        "decoder_34",
+        "final_norm"
+      ],
+      "shapes": [
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ],
+        [
+          1,
+          47,
+          4096
+        ]
+      ],
+      "dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "sequence_scope": "rendered prompt plus every generated token",
+      "processing": "detach and lossless device transfer to CPU only"
+    }
+  }
+}

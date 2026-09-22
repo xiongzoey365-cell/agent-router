@@ -1,0 +1,74 @@
+Let's break this down step by step using the rules provided and logical reasoning.
+
+---
+
+### **Given Rules:**
+
+1. **All birds can swim, but cannot fly.**
+2. **All fish can fly, but cannot swim.**
+3. **Penguins are birds in this world.**
+4. **Salmon are fish in this world.**
+
+---
+
+### **Scenario:**
+
+- A **penguin** (a bird) and a **salmon** (a fish) are placed in a **pool of water**.
+- A **predator** is added that can **only catch animals that are swimming**.
+
+---
+
+### **Step-by-Step Logical Chain:**
+
+#### **Step 1: Determine the abilities of each animal.**
+
+- **Penguin**:
+  - Is a **bird** (by rule 3).
+  - All **birds can swim** (rule 1).
+  - So, **penguins can swim**.
+  - Also, **birds cannot fly** (rule 1), so **penguins cannot fly**.
+
+- **Salmon**:
+  - Is a **fish** (by rule 4).
+  - All **fish can fly** (rule 2).
+  - All **fish cannot swim** (rule 2).
+  - So, **salmon can fly**, but **cannot swim**.
+
+#### **Step 2: Determine what the predator can do.**
+
+- The predator **can only catch animals that are swimming**.
+- So, the predator **will not catch animals that are not swimming**.
+
+#### **Step 3: Determine which animals are swimming.**
+
+- **Penguin**:
+  - Can swim (from Step 1).
+  - So, **penguin is swimming**.
+
+- **Salmon**:
+  - Cannot swim (from Step 1).
+  - So, **salmon is not swimming**.
+
+#### **Step 4: Determine which animals the predator can catch.**
+
+- The predator can only catch animals that are **swimming**.
+- So, the **penguin** is **swimming**, and thus **can be caught**.
+- The **salmon** is **not swimming**, so it **cannot be caught**.
+
+#### **Step 5: Determine which animal(s) can escape the predator.**
+
+- The **penguin** is **swimming**, so it **can be caught**.
+- The **salmon** is **not swimming**, so it **cannot be caught**.
+
+---
+
+### ✅ **Conclusion:**
+
+- The **salmon** can **escape the predator**.
+- The **penguin** can **be caught** by the predator.
+
+---
+
+### **Final Answer:**
+
+**The salmon can escape the predator, because it cannot swim, and the predator can only catch animals that are swimming.**

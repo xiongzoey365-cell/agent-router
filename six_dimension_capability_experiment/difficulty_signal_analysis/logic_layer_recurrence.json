@@ -1,0 +1,242 @@
+[
+  {
+    "task_id": "logic_L1_016",
+    "layer": 0,
+    "mean_nonlocal_max_cos": 0.7672207951545715,
+    "rate_gt_095": 0.722352921962738
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 6,
+    "mean_nonlocal_max_cos": 0.9089615345001221,
+    "rate_gt_095": 0.6235294342041016
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 12,
+    "mean_nonlocal_max_cos": 0.8757944107055664,
+    "rate_gt_095": 0.2894117534160614
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 18,
+    "mean_nonlocal_max_cos": 0.8660334348678589,
+    "rate_gt_095": 0.13411764800548553
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 24,
+    "mean_nonlocal_max_cos": 0.8423711657524109,
+    "rate_gt_095": 0.014117646962404251
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 30,
+    "mean_nonlocal_max_cos": 0.8770303726196289,
+    "rate_gt_095": 0.1505882292985916
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 34,
+    "mean_nonlocal_max_cos": 0.9117246270179749,
+    "rate_gt_095": 0.2541176378726959
+  },
+  {
+    "task_id": "logic_L1_016",
+    "layer": 36,
+    "mean_nonlocal_max_cos": 0.8644336462020874,
+    "rate_gt_095": 0.12941177189350128
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 0,
+    "mean_nonlocal_max_cos": 0.7417323589324951,
+    "rate_gt_095": 0.6937173008918762
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 6,
+    "mean_nonlocal_max_cos": 0.8975222706794739,
+    "rate_gt_095": 0.5994764566421509
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 12,
+    "mean_nonlocal_max_cos": 0.8675315976142883,
+    "rate_gt_095": 0.30628272891044617
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 18,
+    "mean_nonlocal_max_cos": 0.8634617924690247,
+    "rate_gt_095": 0.1073298454284668
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 24,
+    "mean_nonlocal_max_cos": 0.8367751240730286,
+    "rate_gt_095": 0.010471204295754433
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 30,
+    "mean_nonlocal_max_cos": 0.8751040697097778,
+    "rate_gt_095": 0.09947644174098969
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 34,
+    "mean_nonlocal_max_cos": 0.9143730998039246,
+    "rate_gt_095": 0.23036649823188782
+  },
+  {
+    "task_id": "logic_L2_017",
+    "layer": 36,
+    "mean_nonlocal_max_cos": 0.8731337189674377,
+    "rate_gt_095": 0.11256544291973114
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 0,
+    "mean_nonlocal_max_cos": 0.6702895164489746,
+    "rate_gt_095": 0.6147540807723999
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 6,
+    "mean_nonlocal_max_cos": 0.8796480298042297,
+    "rate_gt_095": 0.505464494228363
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 12,
+    "mean_nonlocal_max_cos": 0.8562952876091003,
+    "rate_gt_095": 0.2950819730758667
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 18,
+    "mean_nonlocal_max_cos": 0.8594247102737427,
+    "rate_gt_095": 0.15027321875095367
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 24,
+    "mean_nonlocal_max_cos": 0.8319093585014343,
+    "rate_gt_095": 0.0
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 30,
+    "mean_nonlocal_max_cos": 0.8646257519721985,
+    "rate_gt_095": 0.06557376682758331
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 34,
+    "mean_nonlocal_max_cos": 0.9065743684768677,
+    "rate_gt_095": 0.16939890384674072
+  },
+  {
+    "task_id": "logic_L3_018",
+    "layer": 36,
+    "mean_nonlocal_max_cos": 0.865886926651001,
+    "rate_gt_095": 0.07923497259616852
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 0,
+    "mean_nonlocal_max_cos": 0.744120717048645,
+    "rate_gt_095": 0.6989473700523376
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 6,
+    "mean_nonlocal_max_cos": 0.8994248509407043,
+    "rate_gt_095": 0.5810526609420776
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 12,
+    "mean_nonlocal_max_cos": 0.8684914708137512,
+    "rate_gt_095": 0.2905263304710388
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 18,
+    "mean_nonlocal_max_cos": 0.859947919845581,
+    "rate_gt_095": 0.10947368294000626
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 24,
+    "mean_nonlocal_max_cos": 0.8360348343849182,
+    "rate_gt_095": 0.021052632480859756
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 30,
+    "mean_nonlocal_max_cos": 0.8792492151260376,
+    "rate_gt_095": 0.12210526317358017
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 34,
+    "mean_nonlocal_max_cos": 0.9156814217567444,
+    "rate_gt_095": 0.2778947353363037
+  },
+  {
+    "task_id": "logic_L4_019",
+    "layer": 36,
+    "mean_nonlocal_max_cos": 0.8789622187614441,
+    "rate_gt_095": 0.10526315867900848
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 0,
+    "mean_nonlocal_max_cos": 0.8158734440803528,
+    "rate_gt_095": 0.7775862216949463
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 6,
+    "mean_nonlocal_max_cos": 0.9218131303787231,
+    "rate_gt_095": 0.6396551728248596
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 12,
+    "mean_nonlocal_max_cos": 0.8941143155097961,
+    "rate_gt_095": 0.3448275923728943
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 18,
+    "mean_nonlocal_max_cos": 0.8830757737159729,
+    "rate_gt_095": 0.20862068235874176
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 24,
+    "mean_nonlocal_max_cos": 0.8678168654441833,
+    "rate_gt_095": 0.1189655140042305
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 30,
+    "mean_nonlocal_max_cos": 0.9015858769416809,
+    "rate_gt_095": 0.27586206793785095
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 34,
+    "mean_nonlocal_max_cos": 0.9295119643211365,
+    "rate_gt_095": 0.4413793087005615
+  },
+  {
+    "task_id": "logic_L5_020",
+    "layer": 36,
+    "mean_nonlocal_max_cos": 0.905654788017273,
+    "rate_gt_095": 0.2862069010734558
+  }
+]

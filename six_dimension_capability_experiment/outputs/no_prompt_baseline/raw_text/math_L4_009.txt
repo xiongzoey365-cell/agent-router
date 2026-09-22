@@ -1,0 +1,95 @@
+We are asked to find the number of ways to **arrange the letters of the word 'MISSISSIPPI'** such that **no two 'S' letters are adjacent**.
+
+---
+
+### Step 1: Understand the composition of the word
+
+The word **MISSISSIPPI** has the following letters:
+
+- M: 1
+- I: 4
+- S: 4
+- P: 2
+
+So total letters = 11
+
+---
+
+### Step 2: Total number of arrangements without restriction
+
+If we were to arrange all 11 letters without any restriction, the number of distinct arrangements would be:
+
+$$
+\frac{11!}{1! \cdot 4! \cdot 4! \cdot 2!}
+$$
+
+But we are not interested in all arrangements — we want only those where **no two 'S' letters are adjacent**.
+
+---
+
+### Step 3: Strategy to ensure no two 'S' are adjacent
+
+To ensure that **no two 'S' letters are adjacent**, we can use the following strategy:
+
+1. **First, arrange the other letters** (i.e., the letters that are **not 'S'**).
+2. **Then, insert the 'S' letters into the available "gaps"** between these letters, such that no two 'S' are in the same gap (to ensure they are not adjacent).
+
+---
+
+### Step 4: Step-by-step
+
+#### Step 4.1: Arrange the non-'S' letters
+
+The non-'S' letters are:
+
+- M: 1
+- I: 4
+- P: 2
+
+Total = 1 + 4 + 2 = 7 letters
+
+These 7 letters can be arranged in:
+
+$$
+\frac{7!}{1! \cdot 4! \cdot 2!} = \frac{5040}{1 \cdot 24 \cdot 2} = \frac{5040}{48} = 105
+$$
+
+So, there are **105** ways to arrange the non-'S' letters.
+
+#### Step 4.2: Find the number of "gaps" to place the 'S's
+
+When we arrange 7 letters, there are **8 gaps** where we can insert the 'S's:
+
+- One before the first letter
+- One between each pair of letters
+- One after the last letter
+
+So, there are **8 gaps**.
+
+We need to choose **4 of these 8 gaps** to place the 'S's, such that **no two 'S's are in the same gap** (to ensure they are not adjacent).
+
+The number of ways to choose 4 gaps from 8 is:
+
+$$
+\binom{8}{4} = 70
+$$
+
+#### Step 4.3: Multiply the two results
+
+Now, for each of the 105 arrangements of the non-'S' letters, we can insert the 4 'S's into the 8 gaps in 70 ways.
+
+So, the total number of valid arrangements is:
+
+$$
+105 \times 70 = 7350
+$$
+
+---
+
+### ✅ Final Answer:
+
+$$
+\boxed{7350}
+$$
+
+There are **7350** ways to arrange the letters of the word **MISSISSIPPI** such that **no two 'S' letters are adjacent**.

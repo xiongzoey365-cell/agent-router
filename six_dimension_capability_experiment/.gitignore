@@ -1,0 +1,5 @@
+# Raw hidden-state tensors are intentionally kept local because they are large.
+outputs/*/raw_hidden_states/
+
+__pycache__/
+*.pyc

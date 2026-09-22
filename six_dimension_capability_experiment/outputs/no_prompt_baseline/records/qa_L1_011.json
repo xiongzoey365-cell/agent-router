@@ -1,0 +1,333 @@
+{
+  "arm": "no_prompt_baseline",
+  "task_id": "qa_L1_011",
+  "task_type": "knowledge_qa",
+  "difficulty_level": 1,
+  "source_benchmark": "TriviaQA / Natural Questions",
+  "task_prompt": "What is the capital city of France?",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is the capital city of France?"
+    }
+  ],
+  "rendered_model_prompt": "<|im_start|>user\nWhat is the capital city of France?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "prompt_token_ids": [
+    151644,
+    872,
+    198,
+    3838,
+    374,
+    279,
+    6722,
+    3283,
+    315,
+    9625,
+    30,
+    151645,
+    198,
+    151644,
+    77091,
+    198,
+    151667,
+    271,
+    151668,
+    271
+  ],
+  "generated_token_ids": [
+    785,
+    6722,
+    3283,
+    315,
+    9625,
+    374,
+    12095,
+    13,
+    151645
+  ],
+  "raw_output": "The capital city of France is Paris.",
+  "generation": {
+    "prompt_tokens": 20,
+    "generated_tokens": 9,
+    "max_new_tokens": 4096,
+    "termination": "eos",
+    "elapsed_seconds": 0.4529764128383249
+  },
+  "artifacts": {
+    "raw_text": "no_prompt_baseline/raw_text/qa_L1_011.txt",
+    "raw_hidden_states": "no_prompt_baseline/raw_hidden_states/qa_L1_011.pt",
+    "hidden_state_metadata": {
+      "file": "qa_L1_011.pt",
+      "sha256": "57e9cc79bec65c90d537e6805b383c6132472e3b87a4c92ea4f9b9ff7a434667",
+      "bytes": 8802615,
+      "tensor_count": 37,
+      "state_labels": [
+        "embedding",
+        "decoder_0",
+        "decoder_1",
+        "decoder_2",
+        "decoder_3",
+        "decoder_4",
+        "decoder_5",
+        "decoder_6",
+        "decoder_7",
+        "decoder_8",
+        "decoder_9",
+        "decoder_10",
+        "decoder_11",
+        "decoder_12",
+        "decoder_13",
+        "decoder_14",
+        "decoder_15",
+        "decoder_16",
+        "decoder_17",
+        "decoder_18",
+        "decoder_19",
+        "decoder_20",
+        "decoder_21",
+        "decoder_22",
+        "decoder_23",
+        "decoder_24",
+        "decoder_25",
+        "decoder_26",
+        "decoder_27",
+        "decoder_28",
+        "decoder_29",
+        "decoder_30",
+        "decoder_31",
+        "decoder_32",
+        "decoder_33",
+        "decoder_34",
+        "final_norm"
+      ],
+      "shapes": [
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ],
+        [
+          1,
+          29,
+          4096
+        ]
+      ],
+      "dtypes": [
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16",
+        "torch.bfloat16"
+      ],
+      "sequence_scope": "rendered prompt plus every generated token",
+      "processing": "detach and lossless device transfer to CPU only"
+    }
+  }
+}
