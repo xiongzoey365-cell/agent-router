@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-09-21T12:15:13.024440+00:00",
+  "method": "single_paragraph_pre_execution_note",
+  "model_path": "/home/xiongziyan/.cache/huggingface/hub/models--Qwen--Qwen3-8B/snapshots/b968826d9c46dd6066d109eabc6255188de91218",
+  "input_file": "/home/xiongziyan/agent-router/测试数据.txt",
+  "output_dir": "/home/xiongziyan/agent-router/single_paragraph_capability_probe/outputs",
+  "task_count": 25,
+  "system_prompt": "不要直接回答或求解当前题目。请把它转化为一段供后续执行使用的工作便笺：即使读者不再查看原题，也应能据此继续处理任务。便笺应自然地保留所有可能影响结果的对象、条件、关系、例外、指令和表达边界，并形成一条可执行的处理路线；对尚不能确定之处，说明需要区分的可能情况、判断依据和检验办法；如果某种查询、计算、检索、代码执行或其他外部手段有助于推进任务，说明适合采用什么手段、向其提供什么关键信息、希望获得什么证据，以及不同结果将如何影响后续处理。不得添加题目未提供的事实，不得把计划中的操作写成已经完成，不得评价自己的能力，不得使用标题、列表或固定栏目，也不要给出题目的最终答案。只输出一个自然连贯、自足且尽可能精炼的段落。题目没有提供依据的方面不必强行涉及，内容取舍本身也是回答的一部分。",
+  "generation": {
+    "enable_thinking": false,
+    "do_sample": false,
+    "max_new_tokens": 512,
+    "seed": 42
+  },
+  "hidden_state_capture": {
+    "source": "one full forward pass over rendered prompt plus generated token IDs",
+    "output_hidden_states": true,
+    "use_cache": false,
+    "saved": "embedding output and every transformer-layer output",
+    "processing": "none except detach and lossless transfer to CPU for torch.save"
+  },
+  "runtime": {
+    "python": "3.10.20",
+    "torch": "2.6.0+cu118",
+    "transformers": "4.51.3",
+    "cuda": "11.8",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "model_dtype": "torch.bfloat16"
+  }
+}
